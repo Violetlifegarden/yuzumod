@@ -1,0 +1,67 @@
+YZ_CORE_GROUP = {
+	icon = GFX_Category_decision
+	scripted_gui = Yz_leader_gui
+	priority = 2
+	visible_when_empty = yes
+	visible = {
+		has_country_flag = YzCoreGroup_visible
+	}
+}
+qiyong_youzi_general_category = {
+	icon = GFX_Category_decision
+	priority = 2
+}
+Roka_Koharu_decision_category = {
+	icon = GFX_roko
+	picture = GFX_roko_d_desc
+	priority = 2
+}
+general_develpomen_decision_category = {
+	icon = GFX_Category_decision
+	priority = 2
+}
+add_youzi_general_category = {
+	icon = GFX_Category_decision
+	picture = GFX_add_leaders_decisions
+	priority = 0
+}
+JCLleaders_category = {
+	picture = GFX_fangnai
+	icon = GFX_Category_decision
+	priority = 0
+}
+JCL_industry_category = {
+	icon = GFX_yoshino
+	priority = 2
+}
+Megulu_industry_category = {
+	picture = GFX_meigulu_2
+	icon = GFX_meigulu
+	priority = 2
+}
+YZS_scientist_category = {
+	icon = GFX_Category_decision
+	priority = 2
+}
+YZS_military_academy_category = {
+	icon = GFX_fumika
+	priority = 2
+}
+general_married_decision_category = {
+	icon = GFX_Category_decision
+	priority = 0
+}
+YzOpreative_category = {
+	picture = GFX_nanami_2
+	icon = GFX_qihai
+	priority = 2
+}
+establish_the_atri_special_brigade = {
+	icon = GFX_Category_decision
+	priority = 10
+}
+QRYleaders_category = {
+	picture = GFX_QRYleaders_decisions
+	icon = GFX_Category_decision
+	priority = 0
+}

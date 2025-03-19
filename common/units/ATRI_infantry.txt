@@ -1,0 +1,251 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+
+	atri_infantry = {
+		
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+		
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		#can_exfiltrate_from_coast = yes #Can this subunit board convoys from a non-port location. 
+		#Intended for use with special forces marine templates; all non-support subunits in the division must have this flag set to yes
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+			category_infantry_and_bicycle
+		}
+		
+		combat_width = 3
+		
+		#Size Definitions
+		max_strength = 70
+		max_organisation = 90
+		default_morale = 0.4
+		manpower = 600
+
+		#Misc Abilities
+		training_time = 30
+		suppression = 5
+		weight = 0.2
+		
+		supply_consumption = 0.03
+	
+		need = {
+			infantry_equipment = 50
+			ATRI_equipment = 45
+			motorized_equipment = 10
+			artillery_equipment = 24
+		}
+
+		soft_attack = 1.25
+		breakthrough = 1.25
+		hard_attack = 1.2
+		
+		plains = {
+			movement = 0.2
+			attack = 0.2
+			defence = 0.2
+		}
+		
+		forest = {	#森林
+			defence = 0.15
+			movement = 0.15
+			attack = 0.15
+		}
+
+		hills = {	#丘陵
+			defence = 0.15
+			movement = 0.15
+			attack = 0.15
+		}
+
+		jungle = {	#丛林
+			defence = 0.15
+			movement = 0.15
+			attack = 0.15
+		}
+
+		marsh = {	#沼泽
+			defence = -0.1
+			movement = -0.1
+			attack = 0.1
+		}
+
+		fort = {	#堡垒
+			attack = 0.1
+			defence = 0.1
+		}
+
+		urban = {	
+			attack = 0.1
+			defence = 0.15
+			movement = 0.2
+		}
+
+		river = {
+			defence = -0.1
+			movement = -0.1
+			attack = -0.1
+		}
+
+		amphibious = {
+			defence = -0.1
+			movement = -0.1
+			attack = -0.1
+		}
+		
+		snow = {
+			movement = 0.2
+			attack = 0.1
+			defence = 0.15
+		}
+
+		mud = {
+			movement = -0.1
+			attack = -0.05
+			defence = -0.05
+		}
+	}
+
+	atri_mechanized = {
+		abbreviation = "MEC"
+		sprite = mechanized
+		map_icon_category = infantry
+
+		priority = 610
+		ai_priority = 200
+		active = yes
+
+		type = {
+			mechanized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_vehicle_infantry
+			category_mobile_and_mobile_combat_sup
+		}
+
+		combat_width = 3
+		
+		#Size Definitions
+		max_strength = 70
+		max_organisation = 90
+		default_morale = 0.4
+		manpower = 600
+
+		#Misc Abilities
+		training_time = 30
+		suppression = 5
+		weight = 0.2
+		
+		supply_consumption = 0.03
+	
+		soft_attack = 2
+		breakthrough = 2.25
+		hard_attack = 1.5
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			infantry_equipment
+			mechanized_equipment
+		}
+
+		# this is what moves us and sets speed
+
+		need = {
+			mechanized_equipment = 45
+			infantry_equipment = 55
+			ATRI_equipment = 45
+			motorized_equipment = 10
+			artillery_equipment = 24
+		}
+
+		plains = {
+			movement = 0.2
+			attack = 0.2
+			defence = 0.2
+		}
+		
+		forest = {	#森林
+			defence = 0.15
+			movement = 0.15
+			attack = 0.15
+		}
+
+		hills = {	#丘陵
+			defence = 0.15
+			movement = 0.15
+			attack = 0.15
+		}
+
+		jungle = {	#丛林
+			defence = 0.15
+			movement = 0.15
+			attack = 0.15
+		}
+
+		marsh = {	#沼泽
+			defence = -0.1
+			movement = -0.1
+			attack = 0.1
+		}
+
+		fort = {	#堡垒
+			attack = 0.1
+			defence = 0.1
+		}
+
+		urban = {	
+			attack = 0.1
+			defence = 0.15
+			movement = 0.2
+		}
+
+		river = {
+			defence = -0.1
+			movement = -0.1
+			attack = -0.1
+		}
+
+		amphibious = {
+			defence = -0.1
+			movement = -0.1
+			attack = -0.1
+		}
+		
+		snow = {
+			movement = 0.2
+			attack = 0.1
+			defence = 0.15
+		}
+
+		mud = {
+			movement = -0.1
+			attack = -0.05
+			defence = -0.05
+		}
+
+		#hardness = 0.2 moving these buffs to unit stats
+	}
+
+}

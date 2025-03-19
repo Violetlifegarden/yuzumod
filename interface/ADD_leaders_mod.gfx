@@ -1,0 +1,136 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_ADD_chaowufangnai"
+		texturefile = "gfx/leader/chaowufangnai_leader.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_chaowufangnai"
+		texturefile = "gfx/leader/chaowufangnai_leader.png"
+	}
+    spriteType = {
+		name = "GFX_portrait_ADD_gongping"
+		texturefile = "gfx/leader/gongping3.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_gongping"
+		texturefile = "gfx/leader/gongping3.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_linglai"
+		texturefile = "gfx/leader/Ayase_leader.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_linglai"
+		texturefile = "gfx/leader/Ayase_leader.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_JCL_mako"
+		texturefile = "gfx/leader/mako.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CSS_kanna"
+		texturefile = "gfx/leader/kanna.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_STW_Nene"
+		texturefile = "gfx/leader/Nene.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_RGR_Nanami"
+		texturefile = "gfx/leader/Nanami.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_TSL_sana"
+		texturefile = "gfx/leader/sana.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_MON_ningning"
+		texturefile = "gfx/leader/monvningning.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_ningning"
+		texturefile = "gfx/leader/zhifuningning.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_RGR_hazuki"
+		texturefile = "gfx/leader/hazuki.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ASHC_BLRL"
+		texturefile = "gfx/leader/baliu.png"
+	}
+	spriteType = {
+		name = "GFX_trait_maid_fangnai2_trait"
+		texturefile = "gfx/traits/maid_fangnai2_trait.png"
+	}
+	spriteType = {
+		name = "GFX_trait_maid_fangnai3_trait"
+		texturefile = "gfx/traits/maid_fangnai3_trait.png"
+	}
+	spriteType = {
+		name = "GFX_trait_dahefuzi"
+		texturefile = "gfx/traits/dahefuzi.png"
+	}
+	spriteType = {
+		name = "GFX_trait_tielurenou"
+		texturefile = "gfx/traits/tielurenou.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_yzwyh"
+		texturefile = "gfx/leader/yzwyh.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_yzgh"
+		texturefile = "gfx/leader/yzwyh2.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_yzjzf"
+		texturefile = "gfx/leader/yzwyh3.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_yzyh"
+		texturefile = "gfx/leader/yzwyh4.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_murasame"
+		texturefile = "gfx/leader/Murasame_leader.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_meiyu"
+		texturefile = "gfx/leader/meiyu.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_ADD_yuyue"
+		texturefile = "gfx/leader/yuyue.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_Meguru"
+		texturefile = "gfx/leader/Meguru.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_Mayu"
+		texturefile = "gfx/leader/Mayu.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_Fumika"
+		texturefile = "gfx/leader/Fumika.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_Noa"
+		texturefile = "gfx/leader/Noa.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_Kanna"
+		texturefile = "gfx/leader/kanna.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_toko"
+		texturefile = "gfx/leader/Toko.png"
+	}
+
+	#工业企业
+	spriteType = {
+		name = "GFX_idea_aishanghuoche_train"
+		texturefile = "gfx/ideas/diguotielu.png"
+	}
+}

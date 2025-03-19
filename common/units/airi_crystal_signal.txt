@@ -1,0 +1,75 @@
+sub_units = {
+	airi_crystal_signal_company = {
+		abbreviation = "SIG"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+			motorized
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_front_line
+		}
+
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 30
+		default_morale = 0.6
+		manpower = 200
+		training_time = 130
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Important Ability
+		initiative = 0.5
+		
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		
+		essential = {
+			support_equipment
+			motorized_equipment
+			airi_crystal_support_equipment
+			infantry_equipment
+		}
+
+		need = {
+			infantry_equipment = 10
+			support_equipment = 40
+			motorized_equipment = 20
+			airi_crystal_support_equipment = 20
+		}
+
+		battalion_mult = {
+			category = category_front_line
+			defense = 0.2
+			breakthrough = 0.1
+			max_organisation = 0.15
+			supply_consumption_factor = 0.05
+		}
+		battalion_mult = {
+			category = category_artillery
+			defense = 0.2
+			breakthrough = 0.1
+			attack = 0.1
+			supply_consumption_factor = 0.05
+		}
+
+		same_support_type = signal_company
+	}
+}

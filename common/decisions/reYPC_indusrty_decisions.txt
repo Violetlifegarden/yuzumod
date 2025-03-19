@@ -1,0 +1,2809 @@
+ ######  #### ##     ## #### ##       ####    ###    ##    ## 
+##    ##  ##  ##     ##  ##  ##        ##    ## ##   ###   ## 
+##        ##  ##     ##  ##  ##        ##   ##   ##  ####  ## 
+##        ##  ##     ##  ##  ##        ##  ##     ## ## ## ## 
+##        ##   ##   ##   ##  ##        ##  ######### ##  #### 
+##    ##  ##    ## ##    ##  ##        ##  ##     ## ##   ### 
+ ######  ####    ###    #### ######## #### ##     ## ##    ## 
+JCL_industry_category = {
+	Yoshino_industry_540days = {  
+		priority = 1000   
+		activation = {                         
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = finished_yoshino_industry }
+		}                                 
+		available = {                           
+			check_variable = { 
+				num_yoshino_industray_completed > 12
+			}
+		}
+		
+		is_good = no                       
+	
+		days_mission_timeout = 730
+		timeout_effect = {            
+			set_country_flag = finished_yoshino_industry          
+			add_stability = -0.2
+			add_political_power = -300
+			remove_advisor_role = {
+				character = "Yoshino_advisor"
+				slot = political_advisor
+			}
+			remove_dynamic_modifier = {
+				modifier = Yoshino_industry_dynamic_modifier
+			}
+		}
+		complete_effect = {                   
+			hidden_effect = { 
+				remove_ideas = bupingheng
+				remove_ideas = manglujianshe
+				clr_country_flag = doing_Yoshino_industry
+				set_country_flag = finished_yoshino_industry
+				country_event = start_event.5
+				remove_dynamic_modifier = {
+					modifier = Yoshino_industry_dynamic_modifier
+				}
+				add_dynamic_modifier = {
+					modifier = Yoshino_industry_finished_dynamic_modifier
+				}
+			}
+			
+		}
+	}
+	
+	Yoshino_industry_five_year_yes = {		#芳乃五年计划显示决议
+		icon = GFX_yoshino
+		days_remove = 1
+		cost = 0
+		
+		visible = { 
+			has_country_flag = have_yoshino
+			has_country_flag = qiyong_youzi_2
+			has_country_flag = yoshino_industry_start
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = Yoshino_industry_five_year_yes }
+			not = { has_country_flag = finished_yoshino_industry }
+		}
+
+		available = {
+			industrial_complex > 5
+		}
+
+		complete_effect = {
+			add_dynamic_modifier = { modifier = Yoshino_industry_dynamic_modifier }
+			force_update_dynamic_modifier = yes
+			set_country_flag = Yoshino_industry_five_year_yes
+			set_country_flag = doing_Yoshino_industry
+			if = {
+				limit = {
+					has_country_flag = doing_Megulu_industry
+				}
+				add_ideas = manglujianshe
+			}
+		}
+	}
+
+	Yoshino_industry_five_year_no = {		#芳乃五年计划隐藏决议
+		icon = GFX_yoshino
+		days_remove = 1
+		cost = 0
+		
+		visible = { 
+			has_country_flag = have_yoshino
+			has_country_flag = qiyong_youzi_2
+			has_country_flag = yoshino_industry_start
+			not = { has_country_flag = yz_bad_end }
+			has_country_flag = finished_yoshino_industry
+			has_country_flag = Yoshino_industry_five_year_yes
+		}
+		
+		complete_effect = {
+			clr_country_flag = Yoshino_industry_five_year_yes
+		}
+	}
+	
+	auto_industrial_complex = {
+		icon = GFX_decision_NOR_prepare_state_dem_0
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 1000
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_1000
+
+		visible = { 
+			has_country_flag = doing_Yoshino_industry
+			not = { has_country_flag = industry_industrial_complex_line }
+		}
+		
+		complete_effect = {
+			set_country_flag = industry_industrial_complex_line
+			if = {
+				limit = {
+					not = { has_country_flag = yoshino_industrial_complex_1 }
+				}
+				activate_mission = Yoshino_industry_five_year_industrial_complex_1
+			}
+			add_to_variable = { 
+				yz_money = -1000 
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Yoshino_industry_five_year_industrial_complex_1 = {		#芳乃五年民工计划
+		icon = GFX_decision_NOR_prepare_state_dem_1
+		days_mission_timeout = 40
+		activation = {                
+			has_country_flag = industry_industrial_complex_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_industrial_complex_1 }
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 40
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = { Yoshino_production_speed_industrial_complex_factor = 0.05 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { Yoshino_consumer_goods_factor = 0.025 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_industrial_complex_1
+			set_temp_variable = { zengjiamingong = 0 } 
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							industrial_complex > 2
+							arms_factory > 2
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 3
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiamingong < 8 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							industrial_complex > 2
+							arms_factory > 2
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiamingong = 1 }
+				}
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 1000
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_industrial_complex_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_industrial_complex_2
+				add_to_variable = { 
+					yz_money = -1000 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}       
+	}
+
+	Yoshino_industry_five_year_industrial_complex_2 = {		#芳乃五年民工计划
+		icon = GFX_decision_NOR_prepare_state_dem_2
+		days_mission_timeout = 35
+		activation = {                
+			has_country_flag = industry_industrial_complex_line
+			has_country_flag = yoshino_industrial_complex_1
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_industrial_complex_2 }
+		}    
+		is_good = yes
+		available = {
+			always = no
+		}        
+		days_remove = 35
+		modifier = {
+			consumer_goods_factor = 0.2
+		}              
+		timeout_effect = {                      
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_production_speed_buildings_factor = 0.025
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_industrial_complex_2
+			set_temp_variable = { zengjiamingong = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							industrial_complex > 1
+							arms_factory > 1
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiamingong < 10 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							industrial_complex > 1
+							arms_factory > 1
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiamingong = 1 }
+				}
+				
+			}				
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 1000
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_industrial_complex_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_industrial_complex_3
+				add_to_variable = { 
+					yz_money = -1000 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}          
+	}
+
+	Yoshino_industry_five_year_industrial_complex_3 = {		#芳乃五年民工计划
+		icon = GFX_decision_NOR_prepare_state_dem_3
+		days_mission_timeout = 35
+		activation = {                
+			has_country_flag = industry_industrial_complex_line
+			not = { has_country_flag = yz_bad_end }
+			has_country_flag = yoshino_industrial_complex_2
+			not = { has_country_flag = yoshino_industrial_complex_3 }
+		}    
+		is_good = yes       
+		available = {
+			always = no
+		}     
+		days_remove = 35
+		modifier = {
+			consumer_goods_factor = 0.2
+		}            
+		timeout_effect = {                      
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_production_speed_buildings_factor = 0.025
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_industrial_complex_3
+			set_temp_variable = { zengjiamingong = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							industrial_complex > 1
+							arms_factory > 1
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiamingong < 8 } }
+				random_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiamingong = 1 }
+				}
+			}	
+									
+		}         
+	}
+
+	auto_infrastructure = {
+		icon = GFX_decision_generic_construction
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 400
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_400
+
+		visible = { 
+			has_country_flag = doing_Yoshino_industry
+			not = { has_country_flag = industry_infrastructure_line }
+		}
+		
+		complete_effect = {
+			set_country_flag = industry_infrastructure_line
+			if = {
+				limit = {
+					not = { has_country_flag = yoshino_infrastructure_1 }
+				}
+				activate_mission = Yoshino_industry_five_year_infrastructure_1
+				add_manpower = -10000
+				custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+				add_to_variable = {
+					Yoshino_production_speed_infrastructure_factor = 0.1
+					tooltip =  production_speed_infrastructure_factor_tt
+				}
+			}
+			add_to_variable = { 
+				yz_money = -400
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Yoshino_industry_five_year_infrastructure_1 = {		#芳乃五年基建计划
+		icon = GFX_decision_generic_construction
+		days_mission_timeout = 35
+		activation = {                
+			has_country_flag = industry_infrastructure_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_infrastructure_1 }
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 35
+		modifier = {
+			consumer_goods_factor = 0.12
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_infrastructure_1
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_stability = 0.01
+				tooltip = stability_factor_neutral_tt
+			}
+			add_manpower = 10000
+			set_temp_variable = { zengjiajijian = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiajijian = 1 }
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajijian < 6 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiajijian = 1 }
+				}
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 400
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_infrastructure_line
+				country_event = start_event.17
+			}
+			else = {
+				add_to_variable = { 
+					yz_money = -400
+					tooltip = yz_money_tooltip_subtain 
+				}
+				add_to_variable = { yz_money = -400 }
+				add_manpower = -15000
+				add_to_variable = {
+					production_speed_infrastructure_factor = 0.05
+				}
+				add_to_variable = {
+					Yoshino_consumer_goods_factor = -0.025
+				}
+				activate_mission = Yoshino_industry_five_year_infrastructure_2
+			}
+		}   
+	}
+
+	Yoshino_industry_five_year_infrastructure_2 = {		#芳乃五年基建计划
+		icon = GFX_decision_generic_construction
+		days_mission_timeout = 35
+		activation = {                
+			has_country_flag = industry_infrastructure_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_infrastructure_2 }
+			has_country_flag = yoshino_infrastructure_1
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 35
+		modifier = {
+			consumer_goods_factor = 0.12
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_infrastructure_2
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_stability = 0.01
+				tooltip = stability_factor_tt
+			}
+			add_manpower = 15000
+			set_temp_variable = { zengjiajijian = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_town
+							has_state_category = large_city
+						}
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiajijian = 1 }
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajijian < 11 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_town
+							has_state_category = large_city
+						}
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiajijian = 1 }
+				}
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 350
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_infrastructure_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_infrastructure_3
+				add_to_variable = { 
+					yz_money = -350
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		} 
+	}
+
+	Yoshino_industry_five_year_infrastructure_3 = {		#芳乃五年基建计划
+		icon = GFX_decision_generic_construction
+		days_mission_timeout = 35
+		activation = {                
+			has_country_flag = industry_infrastructure_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_infrastructure_3 }
+			has_country_flag = yoshino_infrastructure_2
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 35
+		modifier = {
+			consumer_goods_factor = 0.15
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			set_country_flag = yoshino_infrastructure_3
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_stability = 0.08
+				tooltip = stability_factor_neutral_tt
+			}
+			add_manpower = 30000
+			set_temp_variable = { zengjiajijian = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiajijian = 1 }
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajijian < 13 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = rural
+						has_state_category = town
+						has_state_category = large_town
+						}
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiajijian = 1 }
+				}
+			}
+		} 
+	}
+
+	auto_state_category = {
+		icon = GFX_decision_generic_electricity
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 350
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_350
+
+		visible = { 
+			has_country_flag = doing_Yoshino_industry
+			not = { has_country_flag = industry_state_category_line }
+		}
+		complete_effect = {
+			set_country_flag = industry_state_category_line
+			if = {
+				limit = {
+					not = { has_country_flag = yoshino_state_category_1 }
+				}
+				activate_mission = Yoshino_industry_five_year_state_category_1
+			}
+			add_to_variable = { 
+				yz_money = -350
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Yoshino_industry_five_year_state_category_1 = {		#地区改造
+		icon = GFX_decision_generic_electricity
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_state_category_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_state_category_1 }
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes 
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.12
+		}                
+		timeout_effect = {                     
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_state_category_1
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_production_factory_max_efficiency_factor = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			set_temp_variable = { diqugaizao = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_city
+							has_state_category = metropolis
+						}
+					}
+					set_state_category = megalopolis
+					add_to_temp_variable = { diqugaizao = 1 }
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajijian < 6 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_city
+							has_state_category = metropolis
+						}
+					}
+					set_state_category = megalopolis
+					add_to_temp_variable = { diqugaizao = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 350
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_state_category_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_state_category_2
+				add_to_variable = { 
+					yz_money = -350
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		} 
+	}
+	Yoshino_industry_five_year_state_category_2 = {		#地区改造
+		icon = GFX_decision_generic_electricity
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_state_category_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_state_category_2 }
+			has_country_flag = yoshino_state_category_1
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes 
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.18
+		}                  
+		timeout_effect = {                     
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			set_country_flag = yoshino_state_category_2
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_production_factory_efficiency_gain_factor = 0.025
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_production_factory_start_efficiency_factor = 0.05
+				tooltip = production_factory_start_efficiency_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_industrial_capacity_factory = 0.025
+				tooltip = industrial_capacity_factory_tt
+			}
+			set_temp_variable = { diqugaizao = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_town
+							has_state_category = city
+						}
+					}
+					random_list = {
+						50 = { set_state_category = large_city }
+						50 = { set_state_category = metropolis }
+					}
+					add_to_temp_variable = { diqugaizao = 1 }
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajijian < 7 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = large_town
+							has_state_category = city
+						}
+					}
+					random_list = {
+						50 = { set_state_category = large_city }
+						50 = { set_state_category = metropolis }
+					}
+					add_to_temp_variable = { diqugaizao = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 350
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_state_category_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_state_category_3
+				add_to_variable = { 
+					yz_money = -350
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+	Yoshino_industry_five_year_state_category_3 = {		#地区改造
+		icon = GFX_decision_generic_electricity
+		days_mission_timeout = 35
+		activation = {                
+			has_country_flag = industry_state_category_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_state_category_3 }
+			has_country_flag = yoshino_infrastructure_2
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 35
+		modifier = {
+			civilian_factory_use = 8
+			add_manpower = -50000
+		}
+		is_good = yes                   
+		timeout_effect = {                     
+			set_country_flag = yoshino_state_category_3
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			add_manpower = 50000
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_production_factory_max_efficiency_factor = 0.025
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_production_factory_efficiency_gain_factor = 0.025
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_stability = 0.05
+				tooltip = stability_factor_tt
+			}
+			set_temp_variable = { diqugaizao = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+			random_controlled_state = {
+				limit = {
+					or = {
+						has_state_category = rural
+						has_state_category = town
+					}
+				}
+				random_list = {
+					50 = { set_state_category = large_city }
+					50 = { set_state_category = city }
+				}
+				add_to_temp_variable = { diqugaizao = 1 }
+			}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajijian < 6 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = rural
+							has_state_category = town
+						}
+					}
+					random_list = {
+						50 = { set_state_category = large_city }
+						50 = { set_state_category = city }
+					}
+					add_to_temp_variable = { diqugaizao = 1 }
+				}
+			}	
+		}
+	}
+
+	auto_others = {
+		icon = GFX_decision_generic_wreckers
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 300
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_300
+
+		visible = { 
+			has_country_flag = doing_Yoshino_industry
+			not = { has_country_flag = industry_auto_others_line }
+		}
+		complete_effect = {
+			set_country_flag = industry_auto_others_line
+			if = {
+				limit = {
+					not = { has_country_flag = yoshino_steels }
+				}
+				activate_mission = Yoshino_industry_five_year_3
+			}
+			add_to_variable = { 
+				yz_money = -300
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Yoshino_industry_five_year_3 = {		#芳乃五年铁矿开采计划
+		icon = GFX_decision_steel
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_auto_others_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_steels }
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes 
+		days_remove = 30   
+		modifier = {
+			civilian_factory_use = 3
+		}             
+		timeout_effect = {                     
+			set_country_flag = yoshino_steels
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			add_to_variable = {
+				Yoshino_local_resources_factor = 0.1
+				tooltip = local_resources_factor_tt
+			}
+			set_temp_variable = { add_steel = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						not = { impassable = yes }
+					}
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { add_steel < 11 } }
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						not = { impassable = yes }
+						or = {
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+					}
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+				add_to_temp_variable = {
+					add_steel = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_auto_others_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_4
+				add_to_variable = { 
+					yz_money = -300
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}	
+		} 
+	}
+
+	Yoshino_industry_five_year_4 = {		#芳乃五年产业链整合
+		icon = GFX_decision_generic_wreckers
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_auto_others_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_4 }
+			has_country_flag = yoshino_steels
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes 
+		days_remove = 45     
+		modifier = {
+			consumer_goods_factor = 0.12
+		}              
+		timeout_effect = {                     
+			set_country_flag = yoshino_4
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Yoshino_min_export = -0.15
+			}
+			add_to_variable = {
+				Yoshino_local_resources_factor = 0.1
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_industrial_capacity_factory = 0.025
+				tooltip = industrial_capacity_factory_tt
+			} 
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_auto_others_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_5
+				add_to_variable = { 
+					yz_money = -300
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}	
+		}
+	}
+
+	Yoshino_industry_five_year_5 = {		#工农业两条腿走路
+		icon = GFX_decision_generic_wreckers
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_auto_others_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_5 }
+			has_country_flag = yoshino_4
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes 
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.15
+		}                  
+		timeout_effect = {                     
+			set_country_flag = yoshino_5
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			add_to_variable = {
+				Yoshino_consumer_goods_factor = -0.1
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_local_resources_factor = 0.05
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_production_speed_buildings_factor = 0.025
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_stability = 0.025
+				tooltip = stability_factor_neutral_tt
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_auto_others_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Yoshino_industry_five_year_20
+				add_to_variable = { 
+					yz_money = -300
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}	
+		}
+	}
+
+	Yoshino_industry_five_year_20 = {		#农业机械化
+		icon = GFX_decision_generic_trucks
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_auto_others_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = yoshino_20 }
+			has_country_flag = yoshino_5
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes   
+		days_remove = 45  
+		modifier = {
+			civilian_factory_use = 9
+			industrial_capacity_factory = -0.05
+			production_factory_efficiency_gain_factor = -0.1
+		}               
+		timeout_effect = {                     
+			set_country_flag = yoshino_20
+			add_ideas = agricultural_mechanization
+			custom_effect_tooltip = Yoshino_industry_dynamic_modifier_tt
+			add_to_variable = { num_yoshino_industray_completed = 1 }
+			add_to_variable = {
+				Yoshino_consumer_goods_factor = -0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_local_resources_factor = 0.05
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				Yoshino_stability = 0.025
+				tooltip = stability_factor_neutral_tt
+			}	
+		}
+	}
+
+	Yoshino_industry_five_year_9 = {		#芳乃殖民地建设计划
+		icon = GFX_yoshino
+		days_remove = 165
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 500
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_500
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -250 }
+		}
+
+		modifier = {
+			local_factories = 0.35
+			compliance_gain = 0.15
+			non_core_manpower = 0.25
+			required_garrison_factor = 0.15
+			weekly_manpower = 1500
+			training_time_factor = -0.05
+			subjects_autonomy_gain = -1.5
+			consumer_goods_factor = 0.2
+			equipment_bonus = {
+				tankers = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		remove_effect = {
+		}
+	}
+	
+	Yoshino_industry_five_year_12 = {		#芳乃五年钨矿开采计划
+		icon = GFX_decision_tungsten
+		days_remove = 16
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 250
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_250
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -250 }
+		}
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = tungsten
+					amount = 20
+					}
+				}
+		}
+	}
+
+	Yoshino_industry_five_year_13 = {		#芳乃五年铝矿开采计划
+		icon = GFX_decision_aluminium
+		days_remove = 16
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 250
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_250
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -250 }
+		}
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = aluminium
+					amount = 20
+					}
+				}
+		}
+	}
+
+	Yoshino_industry_five_year_6 = {		#芳乃五年橡胶开采计划
+		icon = GFX_decision_rubber
+		days_remove = 16
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 250
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_250
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -250 }
+		}
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = rubber
+					amount = 20
+					}
+				}
+		}
+	}
+
+	Yoshino_industry_five_year_7 = {		#芳乃五年石油开采计划
+		icon = GFX_decision_oil
+		days_remove = 16
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 350
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_350
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -350 }
+		}
+
+		modifier = {
+			civilian_factory_use = 6
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = oil
+					amount = 20
+					}
+				}
+		}
+	}
+
+	Yoshino_industry_five_year_8 = {		#芳乃五年铬矿开采计划
+		icon = GFX_decision_chromium
+		days_remove = 16
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 250
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_250
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -250 }
+		}
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = chromium
+					amount = 20
+					}
+				}
+		}
+	}
+	Yoshino_industry_five_year_10 = {		#芳乃五年铁矿开采计划
+		icon = GFX_decision_steel
+		days_remove = 16
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 250
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_250
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_yoshino
+			}
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -250 }
+		}
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+
+	Yoshino_industry_five_year_11 = {		#死战不退
+	icon = GFX_yoshino
+		days_remove = 400
+		cost = 30
+		
+		visible = { 
+			has_country_flag = Yoshino_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+		}
+ 
+		available = {
+			has_war =yes
+			or = {
+				surrender_progress > 0.55
+			}
+			
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -50 }
+			play_song = comintern_war_3
+		}
+
+		modifier = {
+			political_power_gain = -0.45
+			conscription = 0.3
+			industrial_capacity_factory = 0.35
+			training_time_factor = -0.15
+			special_forces_training_time_factor = -0.2
+			army_core_defence_factor = 0.25
+			surrender_limit = 1
+		    max_surrender_limit_offset = 0.01
+			global_building_slots_factor = 0.25
+		}
+
+		remove_effect = {
+		}
+	}	
+}
+##     ## #### ##       #### ########    ###    ########  ##    ## 
+###   ###  ##  ##        ##     ##      ## ##   ##     ##  ##  ##  
+#### ####  ##  ##        ##     ##     ##   ##  ##     ##   ####   
+## ### ##  ##  ##        ##     ##    ##     ## ########     ##    
+##     ##  ##  ##        ##     ##    ######### ##   ##      ##    
+##     ##  ##  ##        ##     ##    ##     ## ##    ##     ##    
+##     ## #### ######## ####    ##    ##     ## ##     ##    ##    
+
+Megulu_industry_category = {
+	
+	Megulu_industry_540days = {  
+		priority = 1000   
+		activation = {                         
+			has_country_flag = Megulu_industry_five_year_yes
+		}        
+		activation = {
+			not = { has_country_flag = finished_megulu_industry }
+		}                                 
+		available = {                           
+			check_variable = { 
+				num_megulu_industray_completed > 16
+			}
+		}
+		
+		is_good = no                       
+	
+		days_mission_timeout = 730
+		timeout_effect = {        
+			set_country_flag = finished_megulu_industry              
+			add_stability = -0.25
+			add_political_power = -300
+			remove_advisor_role = {
+				character = "Megulu_advisor"
+				slot = political_advisor
+			}
+			remove_dynamic_modifier = {
+				modifier = Megulu_industry_dynamic_modifier
+			}
+		}
+		complete_effect = {                   
+			hidden_effect = { 
+				remove_ideas = manglujianshe
+				clr_country_flag = doing_Megulu_industry
+				set_country_flag = finished_megulu_industry
+				country_event = start_event.6
+				remove_dynamic_modifier = {
+					modifier = Megulu_industry_dynamic_modifier
+				}
+				add_dynamic_modifier = {
+					modifier = Megulu_industry_finished_dynamic_modifier
+				}
+			}
+			
+		}
+	}
+
+	Megulu_industry_five_year_yes = {		#美咕噜军工计划显示
+		icon = GFX_meigulu
+		days_remove = 1
+		cost = 0
+		
+		visible = { 
+			has_country_flag = have_meigulu
+			not = { has_country_flag = Megulu_industry_five_year_yes }
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_country_flag = megulu_industry_start
+		}
+
+		available = {
+			industrial_complex > 5
+		}
+
+		complete_effect = {
+			set_country_flag = Megulu_industry_five_year_yes
+			set_country_flag = doing_Megulu_industry
+			if = {
+				limit = {
+					not = { has_country_flag = finished_yoshino_industry }
+				}
+				add_ideas = bupingheng
+			}
+			if = {
+				limit = { has_country_flag = doing_Yoshino_industry }
+				add_ideas = manglujianshe
+			}
+			add_dynamic_modifier = {
+				modifier = Megulu_industry_dynamic_modifier
+			}
+			force_update_dynamic_modifier = yes
+		}
+
+	}
+
+	auto_army_factory = {
+		icon = GFX_decision_generic_merge_plant_tank
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 1000
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_1000
+
+		visible = { 
+			has_country_flag = doing_Megulu_industry
+			not = { has_country_flag = industry_army_factory_line }
+		}
+		
+		complete_effect = {
+			set_country_flag = industry_army_factory_line
+			if = {
+				limit = {
+					not = { has_country_flag = Megulu_industry_1 }
+				}
+				activate_mission = Megulu_industry_1
+			}
+			add_to_variable = { 
+				yz_money = -1000 
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Megulu_industry_1 = {		#美咕噜军工计划
+		icon = GFX_decision_generic_merge_plant_tank
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_army_factory_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_1 }
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.25
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_1
+			set_temp_variable = { zengjiajungong = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					random_list = {
+						50 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+							}
+						}
+						50 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+							}
+						}
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajungong < 9 } }
+				random_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					random_list = {
+						50 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+							}
+						}
+						50 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+							}
+						}
+					}
+					add_to_temp_variable = { zengjiajungong = 1 }
+				}
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 1000
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_army_factory_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_2
+				add_to_variable = { 
+					yz_money = -1000 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}   
+	}
+
+	Megulu_industry_2 = {		#美咕噜军工计划
+		icon = GFX_decision_generic_merge_plant_tank
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_army_factory_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_2 }
+			has_country_flag = megulu_industry_1
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.25
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { Megulu_armor_build_cost_ic = -0.025 }
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_2
+			set_temp_variable = { zengjiajungong = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajungong < 7 } }
+				random_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					}
+					
+					add_to_temp_variable = { zengjiajungong = 1 }
+				}
+				
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 1000
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_army_factory_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_3
+				add_to_variable = { 
+					yz_money = -1000 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}  
+	}
+
+	Megulu_industry_3 = {		#美咕噜军工计划
+		icon = GFX_decision_generic_merge_plant_tank
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_army_factory_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_3 }
+			has_country_flag = megulu_industry_2
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.25
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_3
+			set_temp_variable = { zengjiajungong = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+			random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 3
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiajungong < 6 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 3
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+					}
+					
+					add_to_temp_variable = { zengjiajungong = 1 }
+				}
+				
+			}
+		}  
+	}
+
+	auto_production_line = {
+		icon = GFX_decision_generic_wreckers
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 300
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_300
+
+		visible = { 
+			has_country_flag = doing_Megulu_industry
+			not = { has_country_flag = industry_production_line_line }
+		}
+		
+		complete_effect = {
+			set_country_flag = industry_production_line_line
+			if = {
+				limit = {
+					not = { has_country_flag = Megulu_industry_4 }
+				}
+				activate_mission = Megulu_industry_4
+			}
+			add_to_variable = { 
+				yz_money = -300
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Megulu_industry_4 = {		#美咕噜产线计划
+		icon = GFX_decision_generic_wreckers
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_production_line_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_4 }
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.025
+			production_factory_start_efficiency_factor = -0.05
+			production_factory_efficiency_gain_factor = -0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_4
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { Megulu_production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { Megulu_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_production_line_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_5
+				add_to_variable = { 
+					yz_money = -300 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_5 = {		#美咕噜产线计划
+		icon = GFX_decision_generic_wreckers
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_production_line_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_5 }
+			has_country_flag = megulu_industry_4
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.25
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_5
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_industrial_capacity_factory = 0.025 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { Megulu_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { 
+				Megulu_attrition = -0.025 
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_production_line_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_6
+				add_to_variable = { 
+					yz_money = -300 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_6 = {		#美咕噜产线计划
+		icon = GFX_decision_generic_wreckers
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_production_line_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_6 }
+			has_country_flag = megulu_industry_5
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_6
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
+			add_to_variable = { Megulu_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { Megulu_industrial_capacity_factory = 0.025 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { Megulu_line_change_production_efficiency_factor = 0.1 tooltip = line_change_production_efficiency_factor_tt }
+			add_to_variable = { Megulu_production_resource_need_factor = -0.05 }
+		}
+	}
+
+	auto_army_prepare = {
+		icon = GFX_decision_generic_military
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 300
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_300
+
+		visible = { 
+			has_country_flag = doing_Megulu_industry
+			not = { has_country_flag = industry_army_prepare_line }
+		}
+		
+		complete_effect = {
+			set_country_flag = industry_army_prepare_line
+			if = {
+				limit = {
+					not = { has_country_flag = Megulu_industry_7 }
+				}
+				activate_mission = Megulu_industry_7
+			}
+			add_to_variable = { 
+				yz_money = -300
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Megulu_industry_7 = {		#未雨绸缪
+		icon = GFX_decision_generic_military
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_army_prepare_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_7 }
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_7
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { Megulu_production_speed_supply_node_factor = 1 tooltip = production_speed_supply_node_factor_tt }
+			add_to_variable = { Megulu_production_speed_bunker_factor = 0.1 tooltip = production_speed_bunker_factor_tt }
+			add_to_variable = { Megulu_consumer_goods_factor = 0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { Megulu_production_resource_need_factor = -0.05 }
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_army_prepare_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_8
+				add_to_variable = { 
+					yz_money = -300 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_8 = {		#未雨绸缪
+		icon = GFX_decision_generic_military
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_army_prepare_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_8 }
+			has_country_flag = megulu_industry_7
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_8
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_speed_arms_factory_factor = 0.1 tooltip = production_speed_arms_factory_factor_tt }
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_army_prepare_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_9
+				add_to_variable = { 
+					yz_money = -300 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_9 = {		#未雨绸缪
+		icon = GFX_decision_generic_military
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_army_prepare_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_9 }
+			has_country_flag = megulu_industry_8
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_9
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_speed_bunker_factor = 0.05 tooltip = production_speed_bunker_factor_tt }
+			add_to_variable = { Megulu_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
+		}
+	}
+
+	Megulu_industry_10 = {		#未雨绸缪
+		icon = GFX_decision_generic_military
+		days_mission_timeout = 45
+		activation = {                
+			has_country_flag = industry_army_prepare_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_10 }
+			has_country_flag = megulu_industry_8
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 45
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_10
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_speed_buildings_factor = 0.02 tooltip = production_speed_buildings_factor_tt }
+			add_to_variable = { Megulu_industry_air_damage_factor = -0.15 tooltip = industry_air_damage_factor_tt }
+			add_to_variable = { Megulu_industry_repair_factor = 0.15 }
+			add_to_variable = { Megulu_industrial_capacity_factory = 0.01 tooltip = industrial_capacity_factory_tt }
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 300
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_army_factory_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_9
+				add_to_variable = { 
+					yz_money = -300 
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	auto_resourse = {
+		icon = GFX_decision_generic_construction
+		days_remove = 0
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 250
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_250
+
+		visible = { 
+			has_country_flag = doing_Megulu_industry
+			not = { has_country_flag = industry_resourse_line }
+		}
+		
+		complete_effect = {
+			set_country_flag = industry_resourse_line
+			if = {
+				limit = {
+					not = { has_country_flag = Megulu_industry_12 }
+				}
+				activate_mission = Megulu_industry_12
+			}
+			add_to_variable = { 
+				yz_money = -250
+				tooltip = yz_money_tooltip_subtain 
+			}
+		}
+	}
+
+	Megulu_industry_12 = {		#优先保障军用
+		icon = GFX_decision_ger_military_buildup
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_resourse_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_12 }
+			#has_country_flag = megulu_industry_8
+		}    
+		available = {
+			always = no
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_12
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { Megulu_production_resource_need_factor = -0.1 }
+			add_to_variable = { Megulu_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { Megulu_trade_opinion_factor = -0.25 }
+			add_to_variable = { Megulu_stability = -0.05 tooltip = stability_factor_neutral_tt }
+
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 250
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_resourse_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_13
+				add_to_variable = { 
+					yz_money = -250
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_13 = {		#优先保障军用
+		icon = GFX_decision_steel
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_resourse_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_13 }
+			has_country_flag = megulu_industry_12
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_13
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = {
+				Megulu_local_resources_factor = 0.05
+				tooltip = local_resources_factor_tt
+			}
+			set_temp_variable = { add_steel = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						not = { impassable = yes }
+						or = {
+							has_state_category = town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+					}
+					add_resource = {
+						type = steel
+						amount = 30
+					}
+				}
+			}
+			while_loop_effect = {
+				limit = { check_variable = { add_steel < 6 } }
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						not = { impassable = yes }
+						or = {
+							has_state_category = town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+					}
+					add_resource = {
+						type = steel
+						amount = 30
+					}
+				}
+				add_to_temp_variable = {
+					add_steel = 1
+				}
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 250
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_resourse_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_14
+				add_to_variable = { 
+					yz_money = -250
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_14 = {		#优先保障军用
+		icon = GFX_decision_chromium
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_resourse_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_14 }
+			has_country_flag = megulu_industry_13
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			add_to_variable = { Megulu_artillery_equipment_build_cost_ic = -0.05 }
+			add_to_variable = { Megulu_soft_attack = 0.05 }
+			set_country_flag = megulu_industry_14
+			set_temp_variable = { add_steel = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = chromium
+					amount = 15
+				}
+			}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { add_steel < 6 } }
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						not = { impassable = yes }
+					}
+					add_resource = {
+						type = chromium
+						amount = 15
+					}
+				}
+				add_to_temp_variable = {
+					add_steel = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 250
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_resourse_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_15
+				add_to_variable = { 
+					yz_money = -250
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_15 = {		#优先保障军用
+		icon = GFX_decision_tungsten
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_resourse_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_15 }
+			has_country_flag = megulu_industry_14
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			add_to_variable = { Megulu_hard_attack = 0.05 }
+			set_country_flag = megulu_industry_15
+			set_temp_variable = { add_steel = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					not = { impassable = yes }
+				}
+				add_resource = {
+					type = tungsten
+					amount = 15
+				}
+			}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { add_steel < 6 } }
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						not = { impassable = yes }
+					}
+					add_resource = {
+						type = tungsten
+						amount = 15
+					}
+				}
+				add_to_temp_variable = {
+					add_steel = 1
+				}
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 250
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_resourse_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_16
+				add_to_variable = { 
+					yz_money = -250
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_16 = {		#优先保障军用
+		icon = GFX_decision_oil
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_resourse_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_16 }
+			has_country_flag = megulu_industry_15
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                     
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_16
+			set_technology = { fuel_silos = 1 }
+			set_technology = { fuel_refining = 1 }
+			set_technology = { fuel_refining2 = 1 }
+			set_technology = { synth_oil_experiments = 1 }
+			set_technology = { oil_processing = 1 }
+			if = {
+				limit = {
+					check_variable = {
+						yz_money < 250
+						tooltip = yz_money_tooltip_compare_less
+					}
+				}
+				clr_country_flag = industry_resourse_line
+				country_event = start_event.17
+			}
+			else = {
+				activate_mission = Megulu_industry_17
+				add_to_variable = { 
+					yz_money = -250
+					tooltip = yz_money_tooltip_subtain 
+				}
+			}
+		}
+	}
+
+	Megulu_industry_17 = {		#优先保障军用
+		icon = GFX_decision_oil
+		days_mission_timeout = 30
+		activation = {                
+			has_country_flag = industry_resourse_line
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_17 }
+			has_country_flag = megulu_industry_16
+		}    
+		available = {
+			always = no
+		}
+		days_remove = 30
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		is_good = yes                    
+		timeout_effect = {                    
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			set_country_flag = megulu_industry_17
+			set_temp_variable = { zengjiamingong = 0 }
+			effect_tooltip = {		#显示效果,无实际效果
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+			
+			while_loop_effect = {
+				limit = { check_variable = { zengjiamingong < 5 } }
+				random_controlled_state = {
+					limit = {
+						or = {
+							has_state_category = town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+					}
+					add_to_temp_variable = { zengjiamingong = 1 }
+				}
+			}
+			#country_event = start_event.18
+		}
+	}
+
+	Megulu_industry_18 = {		#御敌于国门之外
+		icon = GFX_decision_generic_tank
+		days_remove = 14
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 500
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_500
+		fire_only_once = yes
+		
+		visible = { 
+			has_country_flag = Megulu_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_18 }
+			not = { has_country_flag = megulu_industry_19 }
+			has_country_flag = megulu_industry_12
+			has_country_flag = megulu_industry_10
+			has_country_flag = megulu_industry_6
+			has_country_flag = megulu_industry_5
+			has_country_flag = megulu_industry_3
+			has_country_flag = megulu_industry_9
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_meigulu
+			}
+			check_variable = {
+				yz_money > 500
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -500 }
+			set_country_flag = megulu_industry_18
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			add_to_variable = {
+				Megulu_min_export = -0.1
+			}
+			add_to_variable = { Megulu_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { Megulu_armor_build_cost_ic = -0.05 }			
+			add_to_variable = { Megulu_war_support_factor = 0.1 tooltip = war_support_factor_tt }
+			add_to_variable = { Megulu_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { Megulu_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { Megulu_offensive_war_stability_factor = 0.1 tooltip = offensive_war_stability_factor_tt}
+		}
+	}
+
+	Megulu_industry_19 = {		#缓称王
+		icon = GFX_decision_hol_draw_up_staff_plans
+		days_remove = 15
+		custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 500
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_500
+		fire_only_once = yes
+		
+		visible = { 
+			has_country_flag = Megulu_industry_five_year_yes
+			not = { has_country_flag = yz_bad_end }
+			not = { has_country_flag = megulu_industry_18 }
+			not = { has_country_flag = megulu_industry_19 }
+			has_country_flag = megulu_industry_12
+			has_country_flag = megulu_industry_10
+			has_country_flag = megulu_industry_6
+			has_country_flag = megulu_industry_5
+			has_country_flag = megulu_industry_3
+			has_country_flag = megulu_industry_9
+		}
+
+		available = {
+			or = {
+				has_country_flag = have_meigulu
+			}
+			check_variable = {
+				yz_money > 500
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			add_to_variable = { yz_money = -500 }
+			set_country_flag = megulu_industry_19
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = Megulu_industry_dynamic_modifier_tt
+			add_to_variable = { num_megulu_industray_completed = 1 }
+			add_to_variable = {
+				Megulu_min_export = -0.1
+			}
+			add_to_variable = { Megulu_consumer_goods_factor = -0.1 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { Megulu_war_support_factor = 0.1 tooltip = war_support_factor_tt}
+			add_to_variable = { Megulu_production_speed_bunker_factor = 0.1 tooltip = production_speed_bunker_factor_tt }
+			add_to_variable = { Megulu_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
+			add_to_variable = { Megulu_industry_air_damage_factor = -0.15 tooltip = industry_air_damage_factor_tt }
+			add_to_variable = { Megulu_defensive_war_stability_factor = 0.1 tooltip = defensive_war_stability_factor_tt }
+		}
+	}
+
+}

@@ -1,0 +1,532 @@
+YzOpreative_level_up = {
+	if = {
+		limit = { has_idea = YzOpreative_boost1 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost1
+			add_idea = YzOpreative_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzOpreative_boost2 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost2
+			add_idea = YzOpreative_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzOpreative_boost3 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost3
+			add_idea = YzOpreative_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzOpreative_boost4 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost4
+			add_idea = YzOpreative_boost5
+		}
+	}
+}
+YzOpreative_level_down = {
+	if = {
+		limit = { has_idea = YzOpreative_boost2 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost2
+			add_idea = YzOpreative_boost1
+		}
+	}
+	if = {
+		limit = { has_idea = YzOpreative_boost3 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost3
+			add_idea = YzOpreative_boost2
+		}
+	}
+	if = {
+		limit = { has_idea = YzOpreative_boost4 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost4
+			add_idea = YzOpreative_boost3
+		}
+	}
+	if = {
+		limit = { has_idea = YzOpreative_boost5 }
+		swap_ideas = {
+			remove_idea = YzOpreative_boost5
+			add_idea = YzOpreative_boost4
+		}
+	}
+}
+
+YzMilitary_fund_level_up = {
+	if = {
+		limit = { has_idea = YzMilitary_fund_boost1 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost1
+			add_idea = YzMilitary_fund_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost2 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost2
+			add_idea = YzMilitary_fund_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost3 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost3
+			add_idea = YzMilitary_fund_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost4 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost4
+			add_idea = YzMilitary_fund_boost5
+		}
+	}
+	else_if = {
+		limit =  { not = { has_idea = YzMilitary_fund_boost5 } }
+		add_ideas = YzMilitary_fund_boost1
+	}
+}
+YzMilitary_fund_level_down = {
+	if = {
+		limit = { has_idea = YzMilitary_fund_boost2 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost2
+			add_idea = YzMilitary_fund_boost1
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost3 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost3
+			add_idea = YzMilitary_fund_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost4 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost4
+			add_idea = YzMilitary_fund_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost5 }
+		swap_ideas = {
+			remove_idea = YzMilitary_fund_boost5
+			add_idea = YzMilitary_fund_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzMilitary_fund_boost1 }
+		remove_ideas = YzMilitary_fund_boost1
+	}
+}
+
+YzEducation_fund_level_up = {
+	if = {
+		limit = { has_idea = YzEducation_fund_boost1 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost1
+			add_idea = YzEducation_fund_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost2 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost2
+			add_idea = YzEducation_fund_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost3 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost3
+			add_idea = YzEducation_fund_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost4 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost4
+			add_idea = YzEducation_fund_boost5
+		}
+	}
+	else_if = {
+		limit =  { not = { has_idea = YzEducation_fund_boost5 } }
+		add_ideas = YzEducation_fund_boost1
+	}
+}
+YzEducation_fund_level_down = {
+	if = {
+		limit = { has_idea = YzEducation_fund_boost2 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost2
+			add_idea = YzEducation_fund_boost1
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost3 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost3
+			add_idea = YzEducation_fund_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost4 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost4
+			add_idea = YzEducation_fund_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost5 }
+		swap_ideas = {
+			remove_idea = YzEducation_fund_boost5
+			add_idea = YzEducation_fund_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzEducation_fund_boost1 }
+		remove_ideas = YzEducation_fund_boost1
+	}
+}
+
+YzAdministration_fund_level_up = {
+	if = {
+		limit = { has_idea = YzAdministration_fund_boost1 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost1
+			add_idea = YzAdministration_fund_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost2 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost2
+			add_idea = YzAdministration_fund_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost3 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost3
+			add_idea = YzAdministration_fund_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost4 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost4
+			add_idea = YzAdministration_fund_boost5
+		}
+	}
+	else_if = {
+		limit =  { not = { has_idea = YzAdministration_fund_boost5 } }
+		add_ideas = YzAdministration_fund_boost1
+	}
+}
+YzAdministration_fund_level_down = {
+	if = {
+		limit = { has_idea = YzAdministration_fund_boost2 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost2
+			add_idea = YzAdministration_fund_boost1
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost3 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost3
+			add_idea = YzAdministration_fund_boost2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost4 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost4
+			add_idea = YzAdministration_fund_boost3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost5 }
+		swap_ideas = {
+			remove_idea = YzAdministration_fund_boost5
+			add_idea = YzAdministration_fund_boost4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YzAdministration_fund_boost1 }
+		remove_ideas = YzAdministration_fund_boost1
+	}
+}
+
+clr_all_YzMoney_effect = {
+	if = {
+		limit = {
+			or = {
+				has_idea = YzEducation_fund_boost1
+				has_idea = YzEducation_fund_boost2
+				has_idea = YzEducation_fund_boost3
+				has_idea = YzEducation_fund_boost4
+				has_idea = YzEducation_fund_boost5
+			}
+		}
+		remove_ideas = YzEducation_fund_boost1
+		remove_ideas = YzEducation_fund_boost2
+		remove_ideas = YzEducation_fund_boost3
+		remove_ideas = YzEducation_fund_boost4
+		remove_ideas = YzEducation_fund_boost5
+	}
+	if = {
+		limit = {
+			or = {
+				has_idea = YzAdministration_fund_boost1
+				has_idea = YzAdministration_fund_boost2
+				has_idea = YzAdministration_fund_boost3
+				has_idea = YzAdministration_fund_boost4
+				has_idea = YzAdministration_fund_boost5
+			}
+		}
+		remove_ideas = YzAdministration_fund_boost1
+		remove_ideas = YzAdministration_fund_boost2
+		remove_ideas = YzAdministration_fund_boost3
+		remove_ideas = YzAdministration_fund_boost4
+		remove_ideas = YzAdministration_fund_boost5
+	}
+	if = {
+		limit = {
+			or = {
+				has_idea = YzMilitary_fund_boost1
+				has_idea = YzMilitary_fund_boost2
+				has_idea = YzMilitary_fund_boost3
+				has_idea = YzMilitary_fund_boost4
+				has_idea = YzMilitary_fund_boost5
+			}
+		}
+		remove_ideas = YzMilitary_fund_boost1
+		remove_ideas = YzMilitary_fund_boost2
+		remove_ideas = YzMilitary_fund_boost3
+		remove_ideas = YzMilitary_fund_boost4
+		remove_ideas = YzMilitary_fund_boost5
+	}
+}
+
+clr_YzCoreGroup = {
+	clr_country_flag = have_YCG_FS
+	clr_country_flag = have_YCG_CM
+	clr_country_flag = have_YCG_VC
+	clr_country_flag = YCG_FS_yoshino
+	clr_country_flag = YCG_CM_yoshino
+	clr_country_flag = YCG_VC_yoshino
+	
+	clr_country_flag = YCG_FS_nanami
+	clr_country_flag = YCG_CM_nanami
+	clr_country_flag = YCG_VC_nanami
+	clr_country_flag = YCG_FS_murasame
+	clr_country_flag = YCG_CM_murasame
+	clr_country_flag = YCG_VC_murasame
+	clr_country_flag = YCG_FS_nene
+	clr_country_flag = YCG_CM_nene
+	clr_country_flag = YCG_VC_nene
+	clr_country_flag = YCG_FS_megulu
+	clr_country_flag = YCG_CM_megulu
+	clr_country_flag = YCG_VC_megulu
+	clr_country_flag = YCG_FS_ayase
+	clr_country_flag = YCG_CM_ayase
+	clr_country_flag = YCG_VC_ayase
+	clr_country_flag = YCG_FS_miu
+	clr_country_flag = YCG_CM_miu
+	clr_country_flag = YCG_VC_miu
+	clr_country_flag = YCG_FS_hazuki
+	clr_country_flag = YCG_CM_hazuki
+	clr_country_flag = YCG_VC_hazuki
+	clr_country_flag = YCG_FS_mayu
+	clr_country_flag = YCG_CM_mayu
+	clr_country_flag = YCG_VC_mayu
+	clr_country_flag = YCG_FS_toko
+	clr_country_flag = YCG_CM_toko
+	clr_country_flag = YCG_VC_toko
+	clr_country_flag = YCG_FS_kanna
+	clr_country_flag = YCG_CM_kanna
+	clr_country_flag = YCG_VC_kanna
+	clr_country_flag = YCG_FS_noa
+	clr_country_flag = YCG_CM_noa
+	clr_country_flag = YCG_VC_noa
+	clr_country_flag = YCG_FS_sana
+	clr_country_flag = YCG_CM_sana
+	clr_country_flag = YCG_VC_sana
+	clr_country_flag = YCG_FS_fumika
+	clr_country_flag = YCG_CM_fumika
+	clr_country_flag = YCG_VC_fumika
+
+}
+
+noa_love_up = {			###noa好感度增加
+	if = {
+		limit = { has_idea = noa_love_level_3 }
+		swap_ideas = {
+			remove_idea = noa_love_level_3
+			add_idea = noa_love_level_4
+		}
+	}
+	if = {
+		limit = { has_idea = noa_love_level_2 }
+		swap_ideas = {
+			remove_idea = noa_love_level_2
+			add_idea = noa_love_level_3
+		}
+	}
+	if = {
+		limit = { has_idea = noa_love_level_1 }
+		swap_ideas = {
+			remove_idea = noa_love_level_1
+			add_idea = noa_love_level_2
+		}
+	}
+	if = {
+		limit = { has_idea = noa_love_level_0 }
+		swap_ideas = {
+			remove_idea = noa_love_level_0
+			add_idea = noa_love_level_1
+		}
+	}
+}
+
+yoshino_love_up = {			###yoshino好感度增加
+	if = {
+		limit = { has_idea = yoshino_love_level_3 }
+		swap_ideas = {
+			remove_idea = yoshino_love_level_3
+			add_idea = yoshino_love_level_4
+		}
+	}
+	if = {
+		limit = { has_idea = yoshino_love_level_2 }
+		swap_ideas = {
+			remove_idea = yoshino_love_level_2
+			add_idea = yoshino_love_level_3
+		}
+	}
+	if = {
+		limit = { has_idea = yoshino_love_level_1 }
+		swap_ideas = {
+			remove_idea = yoshino_love_level_1
+			add_idea = yoshino_love_level_2
+		}
+	}
+	if = {
+		limit = { has_idea = yoshino_love_level_0 }
+		swap_ideas = {
+			remove_idea = yoshino_love_level_0
+			add_idea = yoshino_love_level_1
+		}
+	}
+}
+
+roka_koharu_check = {   #芦花小春触发事件判定 
+	if = {
+		limit = {
+			check_variable = {
+				koharu_favor > 5
+			}
+			check_variable = {
+				roka_favor > 5
+			}
+			check_variable = {
+				roko_intensity > 2
+			}
+			has_country_flag = start_roko
+		}
+		country_event = RoKo_event.1
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				koharu_favor > 4
+			}
+			check_variable = {
+				roka_favor > 4
+			}
+			check_variable = {
+				roko_intensity < roko_peace_factor
+			}
+			has_country_flag = start_roko
+		}
+		country_event = RoKo_event.2
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				roka_favor > 8
+			}
+			has_country_flag = start_roko
+		}
+		country_event = RoKo_event.3
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				koharu_favor > 8
+			}
+			has_country_flag = start_roko
+		}
+		country_event = RoKo_event.4
+	}
+	else = {
+		
+	}
+}
+
+clr_tarot_flags = {		
+	clr_country_flag = tarot_the_chariot
+	clr_country_flag = tarot_the_chariot_down
+	clr_country_flag = tarot_the_sun
+	clr_country_flag = tarot_the_sun_down
+	clr_country_flag = tarot_the_star
+	clr_country_flag = tarot_the_star_down
+	clr_country_flag = tarot_death
+	clr_country_flag = tarot_death_down
+	clr_country_flag = tarot_judgement
+	clr_country_flag = tarot_judgement_down
+	clr_country_flag = tarot_justice
+	clr_country_flag = tarot_justice_down
+	clr_country_flag = tarot_strength
+	clr_country_flag = tarot_strength_down
+	clr_country_flag = tarot_temperrance
+	clr_country_flag = tarot_temperrance_down
+	clr_country_flag = tarot_the_devil
+	clr_country_flag = tarot_the_devil_down
+	clr_country_flag = tarot_the_emperor
+	clr_country_flag = tarot_the_emperor_down
+	clr_country_flag = tarot_the_empress
+	clr_country_flag = tarot_the_empress_down
+	clr_country_flag = tarot_the_fool
+	clr_country_flag = tarot_the_fool_down
+	clr_country_flag = tarot_the_hanged_man
+	clr_country_flag = tarot_the_hanged_man_down
+	clr_country_flag = tarot_the_hermit
+	clr_country_flag = tarot_the_hermit_down
+	clr_country_flag = tarot_the_hierophant
+	clr_country_flag = tarot_the_hierophant_down
+	clr_country_flag = tarot_high_priestess
+	clr_country_flag = tarot_high_priestess_down
+	clr_country_flag = tarot_the_lovers
+	clr_country_flag = tarot_the_lovers_down
+	clr_country_flag = tarot_the_magician
+	clr_country_flag = tarot_the_magician_down
+	clr_country_flag = tarot_the_moon
+	clr_country_flag = tarot_the_moon_down
+	clr_country_flag = tarot_the_tower
+	clr_country_flag = tarot_the_tower_down
+	clr_country_flag = tarot_the_world
+	clr_country_flag = tarot_the_world_down
+	clr_country_flag = tarot_wheel_of_fortune
+	clr_country_flag = tarot_wheel_of_fortune_down       
+}
+

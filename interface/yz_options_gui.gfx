@@ -1,0 +1,41 @@
+spriteTypes = {
+	#框架喵
+	spriteType = {
+		name = "GFX_yuzu_option_ui_bg"
+		texturefile = "gfx/guis/yuzu_option_gui/yuzu_option_ui_bg.png"
+	}
+	spriteType = {
+		name = "GFX_yuzu_dialog_bg"
+		texturefile = "gfx/guis/yuzu_option_gui/yuzu_dialog.png"
+	}
+	spriteType = {
+		name = "GFX_yuzu_option"
+		texturefile = "gfx/guis/yuzu_option_gui/yuzu_option.png"
+	}
+	#背景喵
+	spriteType = {
+		name = "GFX_yoshino_home_bg"
+		texturefile = "gfx/guis/yuzu_option_gui/yoshino_home_bg.png"
+	}
+
+	#人物喵
+	#人物两个图，上面是大图，下面是左下小图
+	#两个基底图
+	spriteType = {
+		name = "GFX_character_bg_big"
+		texturefile = "gfx/guis/yuzu_option_gui/character_bg_big.png"
+	}
+	spriteType = {
+		name = "GFX_character_bg_small"
+		texturefile = "gfx/guis/yuzu_option_gui/character_bg_small.png"
+	}
+	spriteType = {
+		name = "GFX_murasame_01a"
+		texturefile = "gfx/guis/yuzu_option_gui/murasame_01a.png"
+	}
+	spriteType = {
+		name = "GFX_murasame_01b"
+		texturefile = "gfx/guis/yuzu_option_gui/murasame_01b.png"
+	}
+	
+}

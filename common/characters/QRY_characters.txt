@@ -1,0 +1,115 @@
+characters={
+	JCL_changlumozi = {
+		name = changlumozi
+		gender = female
+		portraits={
+			army = {
+				large="gfx\leader\Mako.png"
+			}
+			navy = {
+				small="gfx\leader\Mako2.png"
+			}
+		}
+
+		navy_leader = {
+			visible = { 
+				has_global_flag = have_naval_mozi
+			}
+			traits = { bold air_controller }
+			skill = 4
+			
+			attack_skill = 6
+			defense_skill = 3
+			maneuvering_skill = 7
+			coordination_skill = 8
+			
+		}
+	}
+	STW_lingdiningning = {
+		name = lingdiningning
+		gender = female
+		portraits={
+			army = {
+				large="gfx\leader\Nene.png"
+			}
+			navy = {
+				small="gfx\leader\Nene2.png"
+			}
+		}
+
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { seawolf }
+			skill = 5
+			
+			attack_skill = 7
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 6
+		}
+	}
+	CSS_kanna = {
+		name = kanna
+		gender = female
+		portraits={
+			army = {
+				large="gfx\leader\kanna.png"
+			}
+			navy = {
+				small="gfx\leader\kanna2.png"
+			}
+		}
+
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { superior_tactician }
+			skill = 5
+			
+			attack_skill = 4
+			defense_skill = 8
+			maneuvering_skill = 7
+			coordination_skill = 5
+		}
+	}
+	RGR_zaiyuanqihai = {
+		name = zaiyuanqihai
+		gender = female
+		portraits={
+			army = {
+				large="gfx\leader\Nanami.png"
+			}
+			navy = {
+				small="gfx\leader\Nanami2.png"
+			}
+		}
+
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { spotter }
+			skill = 5
+			
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 5
+			coordination_skill = 5
+		}
+	}
+}

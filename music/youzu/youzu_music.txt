@@ -1,0 +1,374 @@
+
+music_station = "senren_banka"
+
+music = {
+	song = "youzu1"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu2"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu3"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu4"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu5"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu6"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu7"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu8"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu9"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu10"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu11"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu12"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu13"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu14"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu15"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu16"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu17"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu18"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu19"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu20"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu21"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu22"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu23"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu24"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu25"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu26"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu27"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu28"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "youzu29"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+music = {
+	song = "youzu30"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "koto_battle"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+#神秘标记点@@
+music = {
+	song = "youzu_ebihara_minase_song"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}
+	}
+}
+
+
+music = {
+	song = "youzu_elina_owen_song"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+
+music = {
+	song = "youzu_mera_azusa_song"
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}		
+	}
+}

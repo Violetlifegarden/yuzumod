@@ -1,0 +1,28 @@
+ideas = {
+	country = {
+		yuzu_fans_land_ide = {
+			name = yuzu_fans_land_ide
+			picture = idea_yuzu_fans_land_ide
+			modifier = {
+				consumer_goods_factor = -0.3
+				global_building_slots_factor = 0.4
+				production_speed_buildings_factor = 0.3
+				monthly_population = 0.3
+			}
+		}
+		yuzu_super_vip = {
+			name = yuzu_super_vip
+			picture = idea_yuzu_super_vip
+			modifier = {
+				research_speed_factor = 0.15
+				political_power_factor = 0.2
+				monthly_population = 0.3
+			}
+			on_remove = {
+				set_variable = {
+					yuzu_form_yuzu_land_days_basic_require = 180
+				}
+			}
+		}
+	}
+}

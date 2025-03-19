@@ -1,0 +1,211 @@
+sound = 
+{
+	name = "Martial_Law_Interface_yuri_s_Revenge_occupation"
+	file = "menu/ciallo_yoshino.wav"
+}
+sound = 
+{
+	name = "murcoming"
+	file = "menu/murcoming.wav"
+}
+sound = 
+{
+	name = "makcoming"
+	file = "menu/makcoming.wav"
+}
+sound = 
+{
+	name = "yoscoming"
+	file = "menu/yoscoming.wav"
+}
+sound = 
+{
+	name = "murasame_end"
+	file = "menu/murasame_end.wav"
+}
+sound = 
+{
+	name = "murasame_senren"
+	file = "menu/murasame_senren.wav"
+}
+sound = 
+{
+	name = "megcoming"
+	file = "menu/megcoming.wav"
+}
+sound = 
+{
+	name = "nencoming"
+	file = "menu/nencoming.wav"
+}
+sound = 
+{
+	name = "tokcoming"
+	file = "menu/tokcoming.wav"
+}
+sound = 
+{
+	name = "wakcoming"
+	file = "menu/wakcoming.wav"
+}
+sound = 
+{
+	name = "chocoming"
+	file = "menu/chocoming.wav"
+}
+sound = 
+{
+	name = "meg_exit"
+	file = "menu/meg_exit.wav"
+}
+sound = 
+{
+	name = "wak_title"
+	file = "menu/wak_title.wav"
+}
+
+sound = 
+{
+	name = "nancoming"
+	file = "menu/nancoming.wav"
+}
+sound = 
+{
+	name = "ayacoming"
+	file = "menu/ayacoming.wav"
+}
+sound = 
+{
+	name = "hazcoming"
+	file = "menu/hazcoming.wav"
+}
+sound = 
+{
+	name = "maycoming"
+	file = "menu/maycoming.wav"
+}
+sound = 
+{
+	name = "nan_goodbye"
+	file = "menu/nan_goodbye.wav"
+}
+sound = 
+{
+	name = "aya_tittle"
+	file = "menu/aya_tittle.wav"
+}
+sound = 
+{
+	name = "natcoming"
+	file = "menu/natcoming.wav"
+}
+sound = 
+{
+	name = "nat_end"
+	file = "menu/nat_end.wav"
+}
+sound = 
+{
+	name = "nat_yuzu"
+	file = "menu/nat_yuzu.wav"
+}
+sound = 
+{
+	name = "kancoming"
+	file = "menu/kancoming.wav"
+}
+sound = 
+{
+	name = "kan_title"
+	file = "menu/kan_title.wav"
+}
+sound = 
+{
+	name = "kan_yuzu"
+	file = "menu/kan_yuzu.wav"
+}
+sound = 
+{
+	name = "meicoming"
+	file = "menu/meicoming.wav"
+}
+sound = 
+{
+	name = "mei_yuzu"
+	file = "menu/mei_yuzu.wav"
+}
+sound = 
+{
+	name = "nozcoming"
+	file = "menu/nozcoming.wav"
+}
+sound = 
+{
+	name = "noz_yuzu"
+	file = "menu/noz_yuzu.wav"
+}
+sound = 
+{
+	name = "suzcoming"
+	file = "menu/suzcoming.wav"
+}
+sound = 
+{
+	name = "suz_yuzu"
+	file = "menu/suz_yuzu.wav"
+}
+sound = 
+{
+	name = "fumcoming"
+	file = "menu/fumcoming.wav"
+}
+sound = 
+{
+	name = "amacoming"
+	file = "menu/amacoming.wav"
+}
+sound = 
+{
+	name = "kurcoming"
+	file = "menu/kurcoming.wav"
+}
+sound = 
+{
+	name = "noacoming"
+	file = "menu/noacoming.wav"
+}
+sound = 
+{
+	name = "oricoming"
+	file = "menu/oricoming.wav"
+}
+sound = 
+{
+	name = "kagcoming"
+	file = "menu/kagcoming.wav"
+}
+sound = 
+{
+	name = "ama_title"
+	file = "menu/ama_title.wav"
+}
+sound = 
+{
+	name = "noa_goodbye"
+	file = "menu/noa_goodbye.wav"
+}
+sound = 
+{
+	name = "murasame_attention1"
+	file = "menu/murasame_attention1.wav"
+}
+sound = 
+{
+	name = "meg_yuzu"
+	file = "menu/meg_yuzu.wav"
+}
+sound = 
+{
+	name = "rok_kohcoming"
+	file = "menu/rok_kohcoming.wav"
+}

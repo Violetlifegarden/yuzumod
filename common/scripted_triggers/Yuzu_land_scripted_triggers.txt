@@ -1,0 +1,50 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		example_trigger = yes
+#	}
+# 
+#	THIS FILE IS FOR TRIGGERS SPECIFICALLY FOR THE CHI TAG
+Yuzu_has_fund_available = {  
+	custom_trigger_tooltip = {
+		tooltip = Yuzu_has_fund_available_tt
+		ROOT = {   
+			check_variable = {
+				var = Yuzu_fund 
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+	}
+	ROOT = {   
+		check_variable = {
+			var = Yuzu_fund 
+			value = 1
+			compare = greater_than_or_equals
+		}
+	}
+}
+Yuzu_can_form_yuzu_land = {
+	custom_trigger_tooltip = {
+		tooltip = Yuzu_can_form_yuzu_land_tt
+		ROOT = {
+			check_variable = {
+				yuzu_form_yuzu_land_days > yuzu_form_yuzu_land_days_basic_require
+			}
+		}
+	}
+	ROOT = {
+		check_variable = {
+			yuzu_form_yuzu_land_days > yuzu_form_yuzu_land_days_basic_require
+		}
+	}
+}
+

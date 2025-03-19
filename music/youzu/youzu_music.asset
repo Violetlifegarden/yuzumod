@@ -1,0 +1,175 @@
+#Volume 2
+music = {
+	name = "youzu1"
+	file = "youzu1.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu2"
+	file = "youzu2.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu3"
+	file = "youzu3.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu4"
+	file = "youzu4.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu5"
+	file = "youzu5.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu6"
+	file = "youzu6.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu7"
+	file = "youzu7.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu8"
+	file = "youzu8.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu9"
+	file = "youzu9.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu10"
+	file = "youzu10.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu11"
+	file = "youzu11.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu12"
+	file = "youzu12.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu13"
+	file = "youzu13.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu14"
+	file = "youzu14.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu15"
+	file = "youzu15.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu16"
+	file = "youzu16.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu17"
+	file = "youzu17.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu18"
+	file = "youzu18.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu19"
+	file = "youzu19.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu20"
+	file = "youzu20.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu21"
+	file = "youzu21.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu22"
+	file = "youzu22.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu23"
+	file = "youzu23.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu24"
+	file = "youzu24.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu25"
+	file = "youzu25.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu26"
+	file = "youzu26.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu27"
+	file = "youzu27.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu28"
+	file = "youzu28.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu29"
+	file = "youzu29.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu30"
+	file = "youzu30.ogg"
+	volume = 0.65
+}
+#芦花小春事件
+music = {
+	name = "koto_battle"
+	file = "koto_battle.ogg"
+	volume = 0.65
+}
+#神秘标记点@@
+music = {
+	name = "youzu_ebihara_minase_song"
+	file = "youzu_ebihara_minase_song.ogg"
+	volume = 0.65
+}
+
+
+music = {
+	name = "youzu_elina_owen_song"
+	file = "youzu_elina_owen_song.ogg"
+	volume = 0.65
+}
+music = {
+	name = "youzu_mera_azusa_song"
+	file = "youzu_mera_azusa_song.ogg"
+	volume = 0.65
+}

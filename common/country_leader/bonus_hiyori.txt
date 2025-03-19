@@ -1,0 +1,27 @@
+leader_traits = { 
+	super_hiyori_together={
+		random = no
+		political_power_gain = 0.02 #政治点（+0.01/日）
+		political_power_factor = 0.10 #政治点(百分比)
+		surrender_limit = 0.10 #投降界限
+		non_core_manpower = 0.05 #非核心人力
+		army_core_attack_factor = 0.05 #核心攻击
+		army_core_defence_factor = 0.05 #核心防御
+		air_ace_generation_chance_factor = 0.10 #王牌飞行员产生概率
+		consumer_goods_factor = -0.05 #消费品0.05=5％
+		drift_defence_factor = 0.5 #意识形态抵制力度
+		defensive_war_stability_factor = 0.2 #防御战争稳定度修正
+		offensive_war_stability_factor = 0.1 #进攻战争稳定度修正
+		production_speed_arms_factory_factor = 0.05 #兵工厂建造速度
+		production_speed_dockyard_factor = 0.1 #船坞建造速度
+		production_speed_fuel_silo_factor = 0.1 #储油罐建造速度
+		production_speed_supply_node_factor = 0.15 #补给中心建造速度
+		stability_weekly = 0.0005 #每周稳定度增长
+		war_support_weekly = 0.0005 #每周战争支持度增长
+		resistance = -0.05 # 地区抵抗－20%
+		resistance_growth_on_our_occupied_states = 0.20	#我们被敌人占领地区的抵抗增长速度
+		compliance_growth = 0.10	#顺从度增长速度
+		resistance_growth = -0.20 # 抵抗增长－
+	}
+
+}

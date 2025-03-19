@@ -1,0 +1,105 @@
+add_namespace = yuyuan_event
+
+country_event = { 
+	id = yuyuan_event.1
+	title = yuyuan_event.1.t
+	desc = yuyuan_event.1.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		retire_country_leader = yes
+		name = yuyuan_event.1.a
+		trigger = {
+			has_government = communism
+		}
+		set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+					name = "ertiaoyuanyuyue"
+			        picture = GFX_portrait_ADD_yuyue
+					desc = yuyue_desc
+					expire = "2095.1.1"
+				    ideology = marxism
+					 traits = {
+						renminzhihui navy_Yamato_nadeshiko
+				    }
+				}
+		}
+
+		option = {
+		retire_country_leader = yes
+		name = yuyuan_event.2.a
+		trigger = {
+			has_government = democratic
+		}
+		set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+					name = "ertiaoyuanyuyue"
+			        picture = GFX_portrait_ADD_yuyue
+					desc = yuyue_desc
+					expire = "2095.1.1"
+				    ideology = conservatism
+					 traits = {
+						renminzhihui navy_Yamato_nadeshiko
+				    }
+				}
+		}
+
+		option = {
+		retire_country_leader = yes
+		name = yuyuan_event.3.a
+		trigger = {
+			has_government = fascism
+		}
+		set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+					name = "ertiaoyuanyuyue"
+			        picture = GFX_portrait_ADD_yuyue
+					desc = yuyue_desc
+					expire = "2095.1.1"
+				    ideology = fascism_ideology
+					 traits = {
+						renminzhihui navy_Yamato_nadeshiko
+				    }
+				}
+		}
+
+		option = {
+		retire_country_leader = yes
+		name = yuyuan_event.4.a
+		trigger = {
+			has_government = neutrality
+		}
+		set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+					name = "ertiaoyuanyuyue"
+			        picture = GFX_portrait_ADD_yuyue
+					desc = yuyue_desc
+					expire = "2095.1.1"
+				    ideology = despotism
+					 traits = {
+						renminzhihui navy_Yamato_nadeshiko
+				    }
+		        }
+		}
+}

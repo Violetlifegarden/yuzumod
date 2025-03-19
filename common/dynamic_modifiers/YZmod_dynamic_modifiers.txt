@@ -1,0 +1,287 @@
+YZ_love_depth_dynamic_modifier = {
+
+	enable = { always = yes } 
+	
+	political_power_factor = love_political_power
+	stability_factor = love_stability
+	war_support_factor = love_war_support_factor
+	consumer_goods_factor = love_consumer_goods_factor
+}
+
+YZ_CORE_GROUP_dynamic_modifier = {
+	#icon ="GFX_mini_tooltip"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+
+	political_power_gain = YCG_political_power	#pp
+	stability_factor = YCG_stability		#st
+	research_speed_factor = YCG_research_speed_factor
+	war_support_factor = YCG_war_support_factor 	#战争支持度
+	consumer_goods_factor = YCG_consumer_goods_factor	#消费品
+	production_speed_buildings_factor = YCG_production_speed_buildings_factor	#建造
+	industry_repair_factor = YCG_industry_repair_factor		#修复速度
+	production_speed_infrastructure_factor = YCG_production_speed_infrastructure_factor		#基础设施
+	production_speed_industrial_complex_factor = YCG_production_speed_industrial_complex_factor		#民工
+	production_speed_arms_factory_factor = YCG_production_speed_arms_factory_factor #军工速度
+	industry_air_damage_factor = YCG_industry_air_damage_factor #空袭受损	
+	industrial_capacity_factory = YCG_industrial_capacity_factory		#产出
+	production_factory_efficiency_gain_factor = YCG_production_factory_efficiency_gain_factor		#生产效率增长
+	production_factory_max_efficiency_factor = YCG_production_factory_max_efficiency_factor    		#生产效率上限
+	production_factory_start_efficiency_factor = YCG_production_factory_start_efficiency_factor #基础生产
+	line_change_production_efficiency_factor = YCG_line_change_production_efficiency_factor 		#生产保持
+	local_resources_factor = YCG_local_resources_factor		#资源获取
+	army_org_factor = YCG_army_org_factor #组织度
+	army_core_defence_factor = YCG_army_core_defence_factor #核心防御
+	army_core_attack_factor = YCG_army_core_attack_factor #核心攻击
+	mobilization_speed = YCG_mobilization_speed #动员速度
+	recruitable_population_factor = YCG_recruitable_population_factor #适役人口
+	land_night_attack = YCG_land_night_attack
+	army_attack_factor = YCG_army_attack_factor
+	refit_ic_cost = YCG_refit_ic_cost #舰艇改装花费
+	refit_speed = YCG_refit_speed #舰船改造速度
+	repair_speed_factor = YCG_repair_speed_factor #舰船修理速度
+	subversive_activites_upkeep = YCG_subversive_activites_upkeep #情报升级
+	intelligence_agency_defense = YCG_intelligence_agency_defense #反间谍
+	resistance_growth = YCG_resistance_growth #抵抗增长
+	army_bonus_air_superiority_factor = YCG_army_bonus_air_superiority_factor #空优
+	air_superiority_bonus_in_combat = YCG_air_superiority_bonus_in_combat #战斗中空优加成
+	air_accidents_factor = YCG_air_accidents_factor #空军事故概率
+}
+
+Yoshino_industry_dynamic_modifier = {
+	icon = GFX_industry_buliding
+	enable = { always = yes } 
+
+	political_power_gain = Yoshino_political_power	#pp
+	stability_factor = Yoshino_stability		#st
+	consumer_goods_factor = Yoshino_consumer_goods_factor	#消费品
+	production_speed_buildings_factor = Yoshino_production_speed_buildings_factor	#建造
+	industrial_capacity_factory = Yoshino_industrial_capacity_factory		#产出
+	production_speed_infrastructure_factor = Yoshino_production_speed_infrastructure_factor		#基础设施
+	production_speed_industrial_complex_factor = Yoshino_production_speed_industrial_complex_factor		#民工
+	local_resources_factor = Yoshino_local_resources_factor		#资源获取
+	production_factory_efficiency_gain_factor = Yoshino_production_factory_efficiency_gain_factor		#生产效率增长
+	production_factory_max_efficiency_factor = Yoshino_production_factory_max_efficiency_factor    		#生产效率上限
+	production_factory_start_efficiency_factor = Yoshino_production_factory_start_efficiency_factor #基础生产
+	min_export = Yoshino_min_export #可出口资源
+}
+
+Yoshino_industry_finished_dynamic_modifier = {
+	icon = GFX_gloden_ten_years
+	enable = { always = yes } 
+	
+	stability_factor = Yoshino_stability		#st
+	consumer_goods_factor = Yoshino_consumer_goods_factor	#消费品
+	production_speed_buildings_factor = Yoshino_production_speed_buildings_factor	#建造
+	industrial_capacity_factory = Yoshino_industrial_capacity_factory		#产出
+	production_speed_infrastructure_factor = Yoshino_production_speed_infrastructure_factor		#基础设施
+	production_speed_industrial_complex_factor = Yoshino_production_speed_industrial_complex_factor		#民工
+	local_resources_factor = Yoshino_local_resources_factor		#资源获取
+	production_factory_efficiency_gain_factor = Yoshino_production_factory_efficiency_gain_factor		#生产效率增长
+	production_factory_max_efficiency_factor = Yoshino_production_factory_max_efficiency_factor    		#生产效率上限
+	production_factory_start_efficiency_factor = Yoshino_production_factory_start_efficiency_factor #基础生产
+	min_export = Yoshino_min_export #可出口资源
+}
+
+Megulu_industry_dynamic_modifier = {
+	icon =  GFX_industry_buliding
+	enable = { always = yes } 
+	
+	political_power_gain = Megulu_political_power	#pp
+	stability_factor = Megulu_stability		#st
+	war_support_factor = Megulu_war_support_factor 	#战争支持度
+	defensive_war_stability_factor = Megulu_defensive_war_stability_factor #防御稳定修正
+	offensive_war_stability_factor = Megulu_offensive_war_stability_factor #进攻稳定修正
+
+	consumer_goods_factor = Megulu_consumer_goods_factor	#消费品
+	production_speed_buildings_factor = Megulu_production_speed_buildings_factor	#建造
+	production_speed_arms_factory_factor = Megulu_production_speed_arms_factory_factor #军工速度
+	production_speed_bunker_factor = Megulu_production_speed_bunker_factor #堡垒建造速度
+	production_speed_anti_air_building_factor = Megulu_production_speed_anti_air_building_factor  #防空炮速度
+	industry_air_damage_factor = Megulu_industry_air_damage_factor #空袭受损
+	production_speed_supply_node_factor = Megulu_production_speed_supply_node_factor #补给中心速度
+	industry_repair_factor = Megulu_industry_repair_factor		#修复速度
+	
+	industrial_capacity_factory = Megulu_industrial_capacity_factory		#产出
+	production_factory_efficiency_gain_factor = Megulu_production_factory_efficiency_gain_factor		#生产效率增长
+	production_factory_max_efficiency_factor = Megulu_production_factory_max_efficiency_factor    		#生产效率上限
+	production_factory_start_efficiency_factor = Megulu_production_factory_start_efficiency_factor #基础生产
+	line_change_production_efficiency_factor = Megulu_line_change_production_efficiency_factor 		#生产保持
+
+	local_resources_factor = Megulu_local_resources_factor		#资源获取
+	min_export = Megulu_min_export 		#可出口资源
+	production_lack_of_resource_penalty_factor = Megulu_production_resource_need_factor	#缺少资源惩罚
+	trade_opinion_factor = Megulu_trade_opinion_factor		#贸易协定关系修正
+
+	attrition = Megulu_attrition		#损耗
+	equipment_bonus = {		#装甲ic
+		armor = {
+			build_cost_ic = Megulu_armor_build_cost_ic
+			instant = yes
+		}
+	}
+}
+
+Megulu_industry_finished_dynamic_modifier = {
+	icon =  GFX_megulu_finished
+	enable = { always = yes } 
+	
+	war_support_factor = Megulu_war_support_factor 	#战争支持度
+	defensive_war_stability_factor = Megulu_defensive_war_stability_factor #防御稳定修正
+	offensive_war_stability_factor = Megulu_offensive_war_stability_factor #进攻稳定修正
+
+	consumer_goods_factor = Megulu_consumer_goods_factor	#消费品
+	production_speed_buildings_factor = Megulu_production_speed_buildings_factor	#建造
+	production_speed_arms_factory_factor = Megulu_production_speed_arms_factory_factor #军工速度
+	production_speed_bunker_factor = Megulu_production_speed_bunker_factor #堡垒建造速度
+	production_speed_anti_air_building_factor = Megulu_production_speed_anti_air_building_factor  #防空炮速度
+	industry_air_damage_factor = Megulu_industry_air_damage_factor #空袭受损
+	production_speed_supply_node_factor = Megulu_production_speed_supply_node_factor #补给中心速度
+	industry_repair_factor = Megulu_industry_repair_factor		#修复速度
+	
+	industrial_capacity_factory = Megulu_industrial_capacity_factory		#产出
+	production_factory_efficiency_gain_factor = Megulu_production_factory_efficiency_gain_factor		#生产效率增长
+	production_factory_max_efficiency_factor = Megulu_production_factory_max_efficiency_factor    		#生产效率上限
+	production_factory_start_efficiency_factor = Megulu_production_factory_start_efficiency_factor #基础生产
+	line_change_production_efficiency_factor = Megulu_line_change_production_efficiency_factor 		#生产保持
+
+	local_resources_factor = Megulu_local_resources_factor		#资源获取
+	min_export = Megulu_min_export 		#可出口资源
+	production_lack_of_resource_penalty_factor = Megulu_production_resource_need_factor	#缺少资源惩罚
+	trade_opinion_factor = Megulu_trade_opinion_factor		#贸易协定关系修正
+
+	attrition = Megulu_attrition		#损耗
+}
+
+yz_721_research_facility_dynamic_modifier = {
+	icon =  GFX_721_research
+	enable = { always = yes } 
+	remove_trigger = { always = no }
+
+	research_speed_factor = yz_721_research_research_speed_factor
+	consumer_goods_factor = yz_721_research_consumer_goods_factor
+
+}
+youzu_military_dynamic_modifier = {
+	icon = GFX_idea_youzu_military
+	enable = { always = yes } 
+	land_reinforce_rate = youzu_army_land_reinforce_rate #增员率
+	training_time_army_factor = youzu_army_training_time_army_factor #部队训练时间
+	army_org_factor = youzu_army_army_org_factor #组织度
+	army_core_defence_factor = youzu_army_army_core_defence_factor #核心防御
+	army_core_attack_factor = youzu_army_army_core_attack_factor #核心攻击
+	land_doctrine_cost_factor = youzu_army_land_doctrine_cost_factor #陆军学说
+	mobilization_speed = youzu_army_mobilization_speed #动员速度
+	supply_consumption_factor = youzu_army_supply_consumption_factor #补给消耗
+	local_supplies = youzu_army_local_supplies #补给范围
+	promote_cost_factor = youzu_army_promote_cost_factor #晋升花费
+	xp_gain_army_factor = youzu_army_xp_gain_army_factor #陆军经验增长
+	recruitable_population_factor = youzu_army_recruitable_population_factor #适役人口
+	army_org_regain = youzu_army_army_org_regain #组织度恢复
+	command_power_gain = youzu_army_command_power_gain #每日指挥点获得
+	military_leader_cost_factor =  youzu_army_military_leader_cost_factor #指挥官技能花费
+	army_infantry_attack_factor =  youzu_army_army_infantry_attack_factor #步兵师攻击
+	army_infantry_defence_factor =  youzu_army_army_infantry_defence_factor #步兵师防御
+	max_dig_in_factor =  youzu_army_max_dig_in_factor #堑壕上限
+	dig_in_speed_factor = youzu_army_dig_in_speed_factor #堑壕速度
+	unit_infantry_design_cost_factor = youzu_army_unit_infantry_design_cost_factor #步兵单位编辑花费
+	unit_artillery_design_cost_factor = youzu_army_unit_artillery_design_cost_factor #炮兵单位编辑花费 
+	unit_light_armor_design_cost_factor = youzu_army_unit_light_armor_design_cost_factor #轻坦单位编辑花费
+	unit_medium_armor_design_cost_factor = youzu_army_unit_medium_armor_design_cost_factor #中坦单位编辑花费
+	unit_heavy_armor_design_cost_factor = youzu_army_unit_heavy_armor_design_cost_factor #重坦单位编辑花费
+	unit_modern_armor_design_cost_factor = youzu_army_unit_modern_armor_design_cost_factor  #现坦单位编辑花费
+	unit_mechanized_design_cost_factor = youzu_army_unit_mechanized_design_cost_factor #超重坦单位编辑花费
+	cavalry_attack_factor = youzu_army_cavalry_attack_factor #骑兵攻击
+	cavalry_defence_factor = youzu_army_cavalry_defence_factor #骑兵防御
+	army_armor_attack_factor = youzu_army_army_armor_attack_factor #装甲攻击
+	army_armor_defence_factor = youzu_army_army_armor_defence_factor #装甲防御
+	max_planning = youzu_army_max_planning  #计划上限
+	planning_speed = youzu_army_planning_speed #计划速度
+	army_attack_factor = youzu_army_army_attack_factor #陆军攻击
+	army_speed_factor = youzu_army_army_speed_factor #陆军速度
+	org_loss_when_moving = youzu_army_org_loss_when_moving #移动中组织度损失
+	special_forces_attack_factor = youzu_army_special_forces_attack_factor #特种攻击
+	special_forces_defence_factor = youzu_army_special_forces_defence_factor #特种防御
+	special_forces_cap = youzu_army_special_forces_cap #特种上限
+	winter_attrition_factor = youzu_army_winter_attrition_factor #冬季损耗
+	heat_attrition_factor = youzu_army_heat_attrition_factor #炎热损耗
+	experience_loss_factor = youzu_army_experience_loss_factor #老兵损失
+	no_supply_grace = youzu_army_no_supply_grace #携行补给
+	equipment_capture = youzu_army_equipment_capture #装备缴获
+	ground_attack_factor = youzu_army_ground_attack_factor #对地
+}
+youzu_military_finished_dynamic_modifier = {
+	icon =  GFX_idea_youzu_military_finished
+	enable = { always = yes } 
+	land_reinforce_rate = youzu_army_land_reinforce_rate #增员率
+	training_time_army_factor = youzu_army_training_time_army_factor #部队训练时间
+	army_org_factor = youzu_army_army_org_factor #组织度
+	army_core_defence_factor = youzu_army_army_core_defence_factor #核心防御
+	army_core_attack_factor = youzu_army_army_core_attack_factor #核心攻击
+	land_doctrine_cost_factor = youzu_army_land_doctrine_cost_factor #陆军学说
+	mobilization_speed = youzu_army_mobilization_speed #动员速度
+	supply_consumption_factor = youzu_army_supply_consumption_factor #补给消耗
+	local_supplies = youzu_army_local_supplies #补给范围
+	promote_cost_factor = youzu_army_promote_cost_factor #晋升花费
+	xp_gain_army_factor = youzu_army_xp_gain_army_factor #陆军经验增长
+	recruitable_population_factor = youzu_army_recruitable_population_factor #适役人口
+	army_org_regain = youzu_army_army_org_regain #组织度恢复
+	command_power_gain = youzu_army_command_power_gain #每日指挥点获得
+	military_leader_cost_factor =  youzu_army_military_leader_cost_factor #指挥官技能花费
+	army_infantry_attack_factor =  youzu_army_army_infantry_attack_factor #步兵师攻击
+	army_infantry_defence_factor =  youzu_army_army_infantry_defence_factor #步兵师防御
+	max_dig_in_factor =  youzu_army_max_dig_in_factor #堑壕上限
+	dig_in_speed_factor = youzu_army_dig_in_speed_factor #堑壕速度
+	unit_infantry_design_cost_factor = youzu_army_unit_infantry_design_cost_factor #步兵单位编辑花费
+	unit_artillery_design_cost_factor = youzu_army_unit_artillery_design_cost_factor #炮兵单位编辑花费 
+	unit_light_armor_design_cost_factor = youzu_army_unit_light_armor_design_cost_factor #轻坦单位编辑花费
+	unit_medium_armor_design_cost_factor = youzu_army_unit_medium_armor_design_cost_factor #中坦单位编辑花费
+	unit_heavy_armor_design_cost_factor = youzu_army_unit_heavy_armor_design_cost_factor #重坦单位编辑花费
+	unit_modern_armor_design_cost_factor = youzu_army_unit_modern_armor_design_cost_factor  #现坦单位编辑花费
+	unit_mechanized_design_cost_factor = youzu_army_unit_mechanized_design_cost_factor #超重坦单位编辑花费
+	cavalry_attack_factor = youzu_army_cavalry_attack_factor #骑兵攻击
+	cavalry_defence_factor = youzu_army_cavalry_defence_factor #骑兵防御
+	army_armor_attack_factor = youzu_army_army_armor_attack_factor #装甲攻击
+	army_armor_defence_factor = youzu_army_army_armor_defence_factor #装甲防御
+	max_planning = youzu_army_max_planning  #计划上限
+	planning_speed = youzu_army_planning_speed #计划速度
+	army_attack_factor = youzu_army_army_attack_factor #陆军攻击
+	army_speed_factor = youzu_army_army_speed_factor #陆军速度
+	org_loss_when_moving = youzu_army_org_loss_when_moving #移动中组织度损失
+	special_forces_attack_factor = youzu_army_special_forces_attack_factor #特种攻击
+	special_forces_defence_factor = youzu_army_special_forces_defence_factor #特种防御
+	special_forces_cap = youzu_army_special_forces_cap #特种上限
+	winter_attrition_factor = youzu_army_winter_attrition_factor #冬季损耗
+	heat_attrition_factor = youzu_army_heat_attrition_factor #炎热损耗
+	experience_loss_factor = youzu_army_experience_loss_factor #老兵损失
+	no_supply_grace = youzu_army_no_supply_grace #携行补给
+	equipment_capture = youzu_army_equipment_capture #装备缴获
+	ground_attack_factor = youzu_army_ground_attack_factor #对地
+}
+YZ_vampire_modifier = {
+	icon = GFX_vampire
+	enable = { always = yes } 
+	
+	land_night_attack = vampire_attack
+}
+youzu_air_dynamic_modifier = {
+	icon = GFX_youzu_air_dynamic_modifier
+	enable = { always = yes } 
+	air_doctrine_cost_factor = youzu_air_doctrine_cost_factor #空军学说价格
+	experience_gain_air = youzu_air_experience_gain_air #空军经验获取速度
+	experience_gain_air_factor = youzu_experience_gain_air_factor #空军经验获取速度
+	air_agility_factor = youzu_air_agility_factor
+	air_defense_factor = youzu_air_defence_factor
+	air_defence_factor = youzu_air_defence_factor
+	air_speed_factor = youzu_air_speed_factor ###不生效
+	air_speed = youzu_air_speed_factor ###不生效
+	air_cas_present_factor = youzu_air_cas_present_factor #核心攻击
+	air_attack_factor = youzu_air_attack_factor #陆军学说
+	air_range_factor = youzu_air_range_factor #动员速度
+	ground_attack_factor = youzu_ground_attack_factor #补给消耗
+	army_bonus_air_superiority_factor = youzu_army_bonus_air_superiority_factor #补给范围
+	air_superiority_bonus_in_combat = youzu_air_superiority_bonus_in_combat #补给范围
+	air_mission_xp_gain_factor = youzu_air_mission_xp_gain_factor #晋升花费
+	air_strategic_bomber_bombing_factor = youzu_air_strategic_bomber_bombing_factor #陆军经验增长
+	carrier_capacity_penalty_reduction = youzu_carrier_capacity_penalty_reduction #适役人口
+}

@@ -1,0 +1,96 @@
+scripted_gui = {
+	YZ_Tarot_gui = {
+		window_name = "YZ_Tarot"
+		context_type = decision_category
+		visible = {
+			
+		}
+		effects = {
+			tarot_empty_click = {
+				set_country_flag = choued_tarot
+				set_country_flag = tarot_timeout
+				random_list = {
+					10 = { 
+						set_country_flag = tarot_the_chariot 
+						add_ideas = the_chariot 
+					}
+					10 = { set_country_flag = tarot_the_chariot_down add_ideas = the_chariot_down }
+					10 = { set_country_flag = tarot_the_sun add_ideas = the_sun }
+					10 = { set_country_flag = tarot_the_sun_down add_ideas = the_sun_down }
+					10 = { set_country_flag = tarot_the_star add_ideas = the_star }
+					10 = { set_country_flag = tarot_the_star_down add_ideas = the_star_down }
+					10 = { set_country_flag = tarot_death add_ideas = the_death }
+					10 = { set_country_flag = tarot_death_down add_ideas = the_death_down  }
+					10 = { set_country_flag = tarot_judgement add_ideas = judgement  }
+					10 = { set_country_flag = tarot_judgement_down  add_ideas = judgement_down }
+					10 = { set_country_flag = tarot_justice add_ideas = justice }
+					10 = { set_country_flag = tarot_justice_down add_ideas = justice_down }
+					10 = { set_country_flag = tarot_strength add_ideas = the_strength }
+					10 = { set_country_flag = tarot_strength_down add_ideas = the_strength_down }
+					10 = { set_country_flag = tarot_temperrance add_ideas = temperrance }
+					10 = { set_country_flag = tarot_temperrance_down add_ideas = temperrance_down }
+					10 = { set_country_flag = tarot_the_devil add_ideas = the_devil }
+					10 = { set_country_flag = tarot_the_devil_down add_ideas = the_devil_down }
+					10 = { set_country_flag = tarot_the_emperor add_ideas = the_emperor }
+					10 = { set_country_flag = tarot_the_emperor_down add_ideas = the_emperor_down }
+					10 = { set_country_flag = tarot_the_empress add_ideas = the_empress }
+					10 = { set_country_flag = tarot_the_empress_down add_ideas = the_empress_down }
+					10 = { set_country_flag = tarot_the_fool add_ideas = the_fool }
+					10 = { set_country_flag = tarot_the_fool_down add_ideas = the_fool_down }
+					10 = { set_country_flag = tarot_the_hanged_man add_ideas = the_hanged_man }
+					10 = { set_country_flag = tarot_the_hanged_man_down add_ideas = the_hanged_man_down
+				 }
+					10 = { set_country_flag = tarot_the_hermit add_ideas = the_hermit }
+					10 = { set_country_flag = tarot_the_hermit_down add_ideas = the_hermit_down }
+					10 = { set_country_flag = tarot_the_hierophant add_ideas = the_hierophant }
+					10 = { set_country_flag = tarot_the_hierophant_down add_ideas = the_hierophant_down }
+					10 = { set_country_flag = tarot_high_priestess add_ideas = the_high_priestess }
+					10 = { set_country_flag = tarot_high_priestess_down add_ideas = the_high_priestess_down }
+					10 = { set_country_flag = tarot_the_lovers add_ideas = the_lovers }
+					10 = { set_country_flag = tarot_the_lovers_down add_ideas = the_lovers_down }
+					10 = { set_country_flag = tarot_the_magician add_ideas = the_magician }
+					10 = { set_country_flag = tarot_the_magician_down add_ideas = the_magician_down }
+					10 = { set_country_flag = tarot_the_moon add_ideas = the_moon }
+					10 = { set_country_flag = tarot_the_moon_down add_ideas = the_moon_down }
+					10 = { set_country_flag = tarot_the_tower add_ideas = the_tower }
+					10 = { set_country_flag = tarot_the_tower_down add_ideas = the_tower_down }
+					10 = { set_country_flag = tarot_the_world add_ideas = the_world }
+					10 = { set_country_flag = tarot_the_world_down add_ideas = the_world_down }
+					10 = { set_country_flag = tarot_wheel_of_fortune add_ideas = wheel_of_fortune }
+					10 = { set_country_flag = tarot_wheel_of_fortune_down add_ideas = wheel_of_fortune_down }
+					
+				}
+				country_event = { id = start_event.7 days = 15 }
+			}
+			tarot_cards_click = {
+				clr_tarot_flags = yes
+				clr_country_flag = choued_tarot
+
+			}
+		}
+		triggers = {
+			tarot_empty_visible = {
+				not = { has_country_flag = choued_tarot }
+			}
+			tarot_cards_visible = {
+				has_country_flag = choued_tarot
+				not = { has_country_flag = tarot_timeout }
+			}
+			tarot_cards_image_visible = {
+				has_country_flag = choued_tarot
+				has_country_flag = tarot_timeout
+			}
+			
+		}
+		
+		properties = {
+			tarot_cards = {
+				image = "[tarot_picture]"
+			}
+			tarot_cards_image = {
+				image = "[tarot_picture]"
+			}
+		}
+	}
+
+}

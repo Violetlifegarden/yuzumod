@@ -1,0 +1,98 @@
+scripted_gui = {
+	YZ_dialog_gui = {
+		window_name = "YZ_dialog"
+		context_type = player_context
+		visible = {	
+			has_country_flag = open_YZ_dialog
+		}
+		effects = {
+			yuzu_dialog_bg_click = {
+
+			}
+			YZ_dialog_gui_option_1_click = {
+				if = {			#判断是否启用这个选项
+					limit = {
+						has_country_flag = open_dialog_gui_option_1
+					}
+					clr_country_flag = open_YZ_dialog
+					
+					if = {		# if嵌套，effect写这里
+						limit = {
+							
+						}
+
+					}
+				}	
+			}
+			YZ_dialog_gui_option_2_click = {
+				if = {
+					limit = {
+						has_country_flag = open_dialog_gui_option_2
+					}
+					clr_country_flag = open_YZ_dialog
+
+				}
+			}
+			YZ_dialog_gui_option_3_click = {
+				if = {
+					limit = {
+						has_country_flag = open_dialog_gui_option_3
+					}
+					clr_country_flag = open_YZ_dialog
+
+				}
+			}
+		}
+		triggers = {
+			game_name_text_visible = {
+				has_country_flag = open_YZ_dialog
+			}
+			YZ_dialog_bg_visible = {
+				has_country_flag = open_YZ_dialog
+			}
+			character_bg_big_visible = {
+				has_country_flag = open_YZ_dialog
+			}
+			yuzu_dialog_bg_visible = {
+				has_country_flag = open_YZ_dialog
+			}
+			YZ_Dialog_visible = {
+				has_country_flag = open_YZ_dialog
+			}
+			character_bg_small_visible = {
+				has_country_flag = open_YZ_dialog
+			}
+			## 根据需要选择出现选项多少
+			YZ_dialog_gui_option_1_visible = {		
+				has_country_flag = open_dialog_gui_option_1
+			}
+			YZ_dialog_gui_option_1_text = {
+				has_country_flag = open_dialog_gui_option_1_text
+			}
+			YZ_dialog_gui_option_2_visible = {
+				has_country_flag = open_dialog_gui_option_2
+			}
+			YZ_dialog_gui_option_2_text = {
+				has_country_flag = open_dialog_gui_option_2_text
+			}
+			YZ_dialog_gui_option_3_visible = {
+				has_country_flag = open_dialog_gui_option_3
+			}
+			YZ_dialog_gui_option_3_text = {
+				has_country_flag = open_dialog_gui_option_3_text
+			}
+		}
+		properties = {
+			YZ_dialog_bg = {
+				image = "[YZ_dialog_bg_images]"
+			}
+			character_bg_big = {
+				image = "[character_bg_big_images]"
+			}
+			character_bg_small = {
+				image = "[character_bg_small_images]"
+			}
+		}
+		
+	}
+}

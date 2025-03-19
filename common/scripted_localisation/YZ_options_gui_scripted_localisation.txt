@@ -1,0 +1,186 @@
+defined_text = {	# 背景图片
+	name = YZ_dialog_bg_images	
+	text = {
+		trigger = {
+			has_country_flag = mur_1 # 命名随意,最好一个事件包括下面一连串的相关内容都用一个flag
+		}
+		localization_key =  YZ_dialog_bg_images_1
+	}
+}
+
+defined_text = {	# 大立绘
+	name = character_bg_big_images	
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_image_1
+	}
+}
+
+defined_text = {	# 小立绘
+	name = character_bg_small_images	
+	text = {
+		trigger = {
+			has_country_flag = mur_1
+		}
+		localization_key =  mur_image_1_0
+	}
+}
+
+defined_text = {	# 对话内容
+	name = Dialog_text_defined
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_dialog_1
+	}
+}
+#########################################################
+####################   选项部分   #######################
+#########################################################
+defined_text = {	# 首选项文本
+	name = YZ_dialog_gui_option_1_text_defined
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_option_1
+	}
+}
+defined_text = {	# 首选项提示文本
+	name = dialog_gui_option_1_tooltip_text
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_option_tooltip_1
+	}
+}
+defined_text = {	# 第二选项文本
+	name = YZ_dialog_gui_option_2_text_defined
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_option_2
+	}
+}
+defined_text = {	# 第二选项提示文本
+	name = dialog_gui_option_2_tooltip_text
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_option_tooltip_2
+	}
+}
+defined_text = {	# 第三选项文本
+	name = YZ_dialog_gui_option_3_text_defined
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_option_3
+	}
+}
+defined_text = {	# 第三选项提示文本
+	name = dialog_gui_option_3_tooltip_text
+	text = {
+		trigger = {
+			has_country_flag = mur_1 
+		}
+		localization_key =  mur_option_tooltip_3
+	}
+}
+
+
+
+
+
+defined_text = {	# 游戏标题
+	name = YZGalgame_name_text	
+	text = {
+		trigger = {
+			has_country_flag = SR_dialog  # 千恋*万花
+		}
+		localization_key =  SR_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = SW_dialog  # 魔女的夜宴
+		}
+		localization_key = SW_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = RJ_dialog  # RIDDLE JOKER
+		}
+		localization_key = RJ_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = TS_dialog  # 天使纷扰
+		}
+		localization_key = TS_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = CS_dialog  # 星巴克
+		}
+		localization_key = CS_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = DR_dialog  # DRACU-RIOT!
+		}
+		localization_key = DR_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = AI_dialog  # 天色幻想岛
+		}
+		localization_key = AI_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = NW_dialog  # noble☆works
+		}
+		localization_key = NW_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = LU_dialog  # 天神乱漫
+		}
+		localization_key = LU_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = NK_dialog  # 夏之彼方
+		}
+		localization_key = NK_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = EE_dialog  # ExE
+		}
+		localization_key = EE_game_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = BB_dialog  # 管乐恋曲！~The bonds of melody~
+		}
+		localization_key = BB_game_title
+	}
+}
+
+defined_text = {	# 是否显示对话框的“点击进入下一句”
+	name = yuzu_dialog_bg_text	
+	text = {
+		trigger = {
+			has_country_flag = yz_continue_dialog
+		}
+		localization_key =  yuzu_dialog_bg_text_0
+	}
+}

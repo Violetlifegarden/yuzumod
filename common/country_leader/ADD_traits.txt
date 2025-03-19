@@ -1,0 +1,288 @@
+leader_traits = {
+	#穗织の神子
+	SZDWN = {
+		political_power_gain = 0.15
+		min_export = -0.2 
+		stability_factor = 0.2
+		monthly_population = 1.5
+		global_building_slots_factor = 0.1
+		autonomy_gain = 0.35
+	}
+	#穗织人民的巫女大人
+	SZRM = {
+		weekly_manpower = 2000 
+		mobilization_laws_cost_factor = -0.25
+		trade_laws_cost_factor = -0.25
+		economy_cost_factor = -0.25
+		political_advisor_cost_factor = -0.25
+		tank_manufacturer_cost_factor = -0.25
+		naval_manufacturer_cost_factor = -0.25
+		aircraft_manufacturer_cost_factor = -0.25
+		materiel_manufacturer_cost_factor = -0.25
+		industrial_concern_cost_factor = -0.25
+		theorist_cost_factor = -0.25
+		army_chief_cost_factor = -0.25 
+		navy_chief_cost_factor = -0.25
+		air_chief_cost_factor = -0.25
+		high_command_cost_factor = -0.25
+		grant_medal_cost_factor = -0.75
+	}
+	#幕后铁幕
+	mhtm = {
+		operation_rescue_operative_risk = -0.4
+		operation_rescue_operative_outcome = 0.4
+		enemy_operative_detection_chance = 5
+		enemy_operative_detection_chance_factor = 0.5
+		operation_risk = -0.2
+		operation_capture_cipher_outcome = 0.15
+		decryption_power_factor = 1
+		intel_network_gain = 0.5
+		army_intel_factor = 1.0
+		navy_intel_factor = 1.0
+		airforce_intel_factor = 1.0
+		civilian_intel_factor = 1.0
+		boost_ideology_mission_factor = 0.8
+		propaganda_mission_factor = 0.8
+		subversive_activites_upkeep = -0.5
+	}
+	#魔王之母
+	sairi_leader_trait = {
+		justify_war_goal_time = -0.99
+		subversive_activites_upkeep = -0.99
+	}
+	#"钢铁之人"
+	gtzr = {
+		political_power_factor = 0.1
+        party_popularity_stability_factor = 0.2
+		war_support_weekly = 0.002
+		command_power_gain = 0.35
+        own_operative_detection_chance_factor = -0.1
+    	enemy_operative_detection_chance_factor = 0.15  
+		command_abilities_cost_factor = -0.2 
+        research_time_factor = -0.1
+        annex_cost_factor = -0.25
+		send_volunteer_divisions_required = -0.3
+		subjects_autonomy_gain = -0.25
+		unit_light_armor_design_cost_factor = -0.5
+		unit_medium_armor_design_cost_factor = -0.5
+		unit_heavy_armor_design_cost_factor = -0.5
+		unit_modern_armor_design_cost_factor = -0.5
+		unit_mechanized_design_cost_factor = -0.5
+	}
+	#欧派偏执
+	oppz = {
+		custom_modifier_tooltip = SOV_paranoia_advance_modifier_increase_effect_tt
+		experience_gain_army = 0.25
+		production_speed_arms_factory_factor = 0.25
+		production_speed_dockyard_factor = -0.2
+		industrial_capacity_factory = 0.25
+		industrial_capacity_dockyard = -0.2
+		experience_gain_navy_unit_factor = -0.25
+	}
+	#超自然研究员
+	CZRYJZ = {
+		political_power_factor = 0.1
+		research_speed_factor = 0.15
+		equipment_capture = 0.2
+		equipment_upgrade_xp_cost = -0.15
+		encryption_factor = 0.1
+		decryption_factor = 0.15
+		local_resources_factor = 0.15
+		line_change_production_efficiency_factor = 0.25
+		production_factory_efficiency_gain_factor = 0.05
+		air_accidents = -0.15
+	}
+	#彩蛋特质
+	0721 = {
+		army_artillery_defence_factor = 0.007
+		army_artillery_attack_factor = 0.021
+		unit_artillery_brigade_design_cost_factor = -0.5
+		unit_artillery_design_cost_factor = -0.5
+        unit_mot_artillery_brigade_design_cost_factor = -0.5
+		experience_gain_artillery_combat_factor = 0.25
+	}
+	#纪律严明
+	JLYM = {
+		political_power_factor = 0.1
+		stability_factor = 0.15
+		war_support_factor = 0.15
+		enemy_justify_war_goal_time	= 0.1
+		drift_defence_factor = 0.15
+		production_speed_buildings_factor = 0.05
+		surrender_limit = 0.15
+	    xp_gain_factor = 0.1
+		recruitable_population_factor = 0.15
+	}
+	#人民之力
+	RMZL = {
+		production_factory_max_efficiency_factor = 0.1
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.15
+		army_core_defence_factor = 0.1
+		army_core_attack_factor	= 0.1
+		combat_width_factor = -0.05
+		communism_drift	= 0.1
+        experience_loss_factor = 0.1
+	}
+	#科学，自由，博爱
+	KZB = {
+		decryption_factor = 0.1
+		opinion_gain_monthly_factor = 0.2
+		research_speed_factor = 0.05
+		production_speed_industrial_complex_factor = 0.15
+		research_time_factor = 0.2
+		compliance_gain = 0.1
+		propaganda_mission_factor = 0.2
+		democratic_drift = 0.1
+		army_intel_to_others = 10
+	}
+	#军国一体
+	JGYT = {
+		war_support_weekly = 0.01
+		experience_gain_army = 0.15
+		army_attack_factor = 0.08								
+        army_defence_factor = 0.08								
+        training_time_army_factor = -0.1
+		army_org_factor = 0.1
+		fascism_drift = 0.1
+		industry_repair_factor = -0.1
+	}
+	#秩序至上
+	ZXZS = {
+		stability_factor = 0.1
+		max_planning = 0.1
+		max_dig_in_factor = 0.1								
+        army_intel_to_others = -5								
+        intelligence_agency_defense = 3
+		building_convertion = 0.1
+		neutrality_drift = 0.1
+		military_leader_cost_factor = 0.1
+	}
+	#久经考验的领导者
+	JJKYDLDZ = {
+		political_power_factor = 0.25
+		monthly_population = 1
+		surrender_limit = 0.05
+		production_speed_industrial_complex_factor = 0.2
+		production_speed_infrastructure_factor = 0.15
+		army_org_factor = 0.05
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+		offensive_war_stability_factor = 0.15
+		experience_gain_army_unit_factor = 0.2
+
+	}
+	#8620国铁创建者
+	GTCJ = {
+		industrial_concern_cost_factor = -0.35
+		production_speed_rail_way_factor = 0.2
+		global_building_slots_factor = 0.15
+		production_speed_supply_node_factor = 0.45	
+		army_speed_factor = 0.1
+	}
+	#蓝水海军の大和抚子
+	navy_Yamato_nadeshiko = {
+		consumer_goods_factor = 0.075
+		naval_strike = 0.2
+		invasion_preparation = -0.25
+		naval_detection = 0.2
+		navy_anti_air_attack_factor = 0.15
+		navy_max_range_factor = 0.15
+		experience_gain_navy_factor = 0.2
+		industrial_capacity_dockyard = 0.2
+		unit_marine_design_cost_factor = -0.5
+		industrial_capacity_dockyard = 0.25
+		naval_invasion_capacity = 10
+		 equipment_bonus = {
+          carrier = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+          submarine = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+          light_cruiser = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+          destroyer = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+          battleship = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+          heavy_cruiser = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+		  capital_ship = {
+            instant = yes
+                build_cost_ic = -0.05
+          }
+          sh_battleship = {
+            instant = yes
+                build_cost_ic = -0.075
+          }
+		} 
+	}
+	#人民之辉
+	renminzhihui = {
+		party_popularity_stability_factor = 0.3
+		political_power_factor = 0.15
+		send_volunteer_size = 5
+		non_core_manpower = 0.15
+		conscription = 0.02
+	}
+	#穗织の刀灵
+	SZDDL = {
+		justify_war_goal_time = -0.75
+		war_support_factor = 0.2
+		army_attack_factor = 0.15
+		army_morale_factor = 0.1
+		max_dig_in_factor = 0.15
+		industrial_capacity_factory = 0.05
+		conscription_total_factor = 0.1
+		land_reinforce_rate = 0.02
+		non_core_manpower = 0.1
+		resistance_growth_on_our_occupied_states = 0.35
+		compliance_growth = 0.25
+	}
+	#小飞机场
+	XFJC = {
+		stability_weekly = -0.001
+		army_defence_factor = -0.1
+		army_org_factor = -0.05
+		production_speed_buildings_factor = -0.05
+		experience_gain_air = 0.1
+		ground_attack_factor = 0.1
+		paradrop_organization_factor = 0.1
+		air_mission_efficiency = 0.15
+		air_accidents_factor = 0.05
+	}
+	#阴阳局的剑与盾（美羽特质）
+	MY = {
+		political_power_factor = 0.15 # 政治点数+15%
+		stability_factor = 0.15 # 稳定度+15%
+		stability_weekly = 0.02 # 每周稳定度增加+2%
+		war_support_factor = 0.15 # 战争支持度40%
+		offensive_war_stability_factor = 0.20 # 侵略战争对稳定度修正+20%
+		defensive_war_stability_factor = 0.20 # 防御战争对稳定度修正+20%
+		resistance = -0.20 # 地区抵抗－20%
+		resistance_growth_on_our_occupied_states = 0.35	#我们被敌人占领地区的抵抗增长速度
+		compliance_growth = 0.155	#顺从度增长速度
+		resistance_growth = -0.255 # 抵抗增长－60%
+		local_factory_sabotage = -0.755 # 抵抗破坏建设几率－80%
+		drift_defence_factor = 0.40 # 意识形态变化抵制力度+40%
+		local_intel_to_enemies = -0.40 # 对敌情报+40%
+		encryption_factor = 0.2 # 加密+20%
+		decryption_factor = 0.1 # 解密+10%
+		intel_network_gain = 0.25 # 情报网增长+20%
+		intelligence_agency_defense = 5 # 情报机构防御+100%
+		agency_upgrade_time = -0.40 # 情报机构升级时间－40%
+		subjects_autonomy_gain = -0.25 # 附属国自治度增长-25%
+		industry_air_damage_factor = -0.25	#工厂受轰炸易损性 -
+	}
+}

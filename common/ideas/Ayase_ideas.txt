@@ -1,0 +1,33 @@
+ideas = {
+	country = {
+		ayase_love_0 = {
+			picture = ayase_love_0
+			modifier = {
+				political_power_factor = 0.1
+			}
+		}
+	}
+
+
+	country = {
+		ayase_love_1 = {
+			picture = ayase_love_1
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+				send_volunteer_size = 5                                 #为了我们的理想去塔塔开
+			}
+		}
+	}
+	country = {
+		ayase_love_2 = {
+			picture = ayase_love_2
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1		    #生产效率上限
+				production_factory_efficiency_gain_factor = -0.1		#生产效率增长
+				resistance_growth = -0.15								#抵抗增长速度                       
+				industrial_factory_donations = 2                        #绫濑的私房钱喵
+
+			}
+		}
+	}
+}

@@ -1,0 +1,144 @@
+add_namespace = airi_event     
+country_event= {        
+    id = airi_event.1      #跟爱莉讨论一下今后的规划
+    #picture = GFX_airi_event1
+    title = airi_event.1.t
+    desc = airi_event.1.d	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {
+        name = airi_event.1.a	
+        country_event = { id = airi_event.2 days = 3 }
+    }
+}
+
+country_event= {        
+    id = airi_event.2      #对不上的电波，对得上的社恐
+    picture = GFX_airi_event1
+    title = airi_event.2.t
+    desc = airi_event.2.d	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {
+        name = airi_event.2.a	
+		remove_advisor_role = {
+			slot = political_advisor
+			character = Airi_advisor
+		}
+		custom_effect_tooltip = get_airi_high_command
+		meta_effect = {
+			text = {
+				generate_character = {
+					token_base = airi_cheif
+					name = "白鹿爱莉"
+					gender = female
+					nationality = JAP
+					portraits = {
+						civilian = {
+							large = "gfx\leader\airi_cheif.png"
+							small = "gfx\leader\airi_cheif2.png"
+						}
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					advisor = {  
+						slot = high_command
+						cost = 1
+						idea_token = airi_cheif
+						ledger = army
+						traits = { trait_sub_Airi_army }
+						on_add = 	{
+							owner = {
+								custom_effect_tooltip = airi_90days
+								country_event = { id = airi_event.3 days = 90 }
+							}
+						}
+						ai_will_do = {
+							factor = 0
+						}
+					}
+				}
+			}
+		}
+    }
+}
+
+country_event= {        
+    id = airi_event.3      #小小的勇气
+    picture = GFX_airi_event2
+    title = airi_event.3.t
+    desc = airi_event.3.d	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {
+        name = airi_event.3.a	
+		remove_advisor_role = {
+			slot = high_command
+			character = airi_cheif
+		}
+		custom_effect_tooltip = get_airi_unit_leader
+		meta_effect = {
+			text = {
+				generate_character = {
+					token_base = Shiraga_Airi
+					name = "白鹿爱莉"
+					gender = female
+					nationality = JAP
+					portraits = {
+						civilian = {
+							large = "gfx\leader\Airi_unit_leader.png"
+							small = "gfx\leader\Airi_unit_leader2.png"
+						}
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					corps_commander = {
+					traits={
+						yz_airi_trait
+						trait_reckless
+						trait_cautious
+						brilliant_strategist
+						infantry_leader
+					}
+					skill=3
+					attack_skill=4
+					defense_skill=2
+					planning_skill=4
+					logistics_skill=6
+					}
+				}
+			}
+		}
+		set_country_flag = Airi_Crystal_Support_Company
+		unlock_decision_tooltip = {
+			decision = Airi_Crystal_Support_Company
+		}
+    }
+}
+
+country_event= {        
+    id = airi_event.4      #与爱莉的奇妙发现
+    picture = GFX_airi_event3
+    title = airi_event.4.t
+    desc = airi_event.4.d	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+    option = {
+        name = airi_event.4.a	
+        set_technology = {
+			tech_airi_crystal_support = 1
+		}
+		set_technology = {
+			tech_airi_crystal_support_equipment_1 = 1
+		}
+		set_country_flag = unlock_airi_marry
+		unlock_decision_tooltip = get_married_27
+    }
+}
+

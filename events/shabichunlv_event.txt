@@ -1,0 +1,47 @@
+add_namespace = shabichunlv_event     #蠢驴木琴被界徐盛酒古锭刀火杀了
+country_event= {        
+    id = shabichunlv_event.1
+    title = shabichunlv_event.1.t
+    desc = shabichunlv_event.1.d	
+    is_triggered_only = yes
+
+    option = {
+        name = shabichunlv_event.1.a	
+		if = {
+			limit = {
+				or = {
+					tag = prc
+					tag = yun
+					tag = gxc
+					tag = man
+					tag = men
+					tag = shx
+					tag = sik
+					tag = xsm
+					tag = chi
+				}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = tib
+				}
+				add_core_of = prc
+				add_core_of = yun
+				add_core_of = gxc
+				add_core_of = man
+				add_core_of = men
+				add_core_of = shx
+				add_core_of = sik
+				add_core_of = xsm
+				add_core_of = chi
+			}
+		}
+		every_state = {
+			limit = {
+				is_controlled_by = tib
+			}
+			remove_core_of = tib
+		}
+    }
+    
+}

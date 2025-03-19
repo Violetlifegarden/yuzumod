@@ -1,0 +1,903 @@
+general_married_decision_category = {
+
+	###结婚
+	get_married_1 = {			#0d00
+		icon = GFX_ningning
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_ningning
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.3 }
+		}
+		
+	}
+
+	
+	get_married_2 = {		##noa
+		icon = GFX_noa
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				has_idea = noa_love_level_4
+				}
+				has_country_flag = have_noa
+				not = { has_idea = chose_noa }
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.4 }
+		}
+		
+	}
+
+	get_married_3 = {		##meigulu
+		cost = 10
+		icon = GFX_meigulu
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_meigulu
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.5 }
+		}
+		
+	}
+
+	get_married_4 = {		##murasame
+		cost = 10
+		icon = GFX_murasame
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_murasame
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.6 }
+		}
+		
+	}
+
+	get_married_5 = {		##chou
+		cost = 10
+		icon = GFX_chou
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_chou
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.7 }
+		}
+		
+	}
+
+	get_married_6 = {		##mako
+		cost = 10
+		icon = GFX_mako
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_mako
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.8 }
+		}
+		
+	}
+
+	get_married_7 = {		##yoshino
+		cost = 10
+		icon = GFX_yoshino
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_yoshino
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.9 }
+		}
+		
+	}
+
+	get_married_8 = {		##cuodao
+		cost = 10
+		icon = GFX_lingnai
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_0nai
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.10 }
+		}
+		
+	}
+
+	get_married_9 = {		##nanami
+		cost = 10
+		icon = GFX_qihai
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_nanami
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.11 }
+		}
+		
+	}
+
+	get_married_10 = {		##kanna
+		cost = 10
+		icon = GFX_kanna
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_kanna
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.12 }
+		}
+		
+	}
+
+	get_married_11 = {		##sana
+		cost = 10
+		icon = GFX_zuonai
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_sana
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.13 }
+		}
+		
+	}
+
+	get_married_12 = {		##zaozi
+		cost = 10
+		icon = GFX_zaozi
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_zaozi
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.14 }
+		}
+		
+	}
+
+	get_married_13 = {		##gongping
+		cost = 10
+		icon = GFX_gongping
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = woyaogongping
+
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.15 }
+		}
+		
+	}
+
+	get_married_14 = {		##chihaya
+		cost = 10
+		icon = GFX_maoyuye
+		days_remove = 7
+		fire_only_once = yes
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_chihaya
+				has_country_flag = chihaya_love
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.16 }
+		}
+		
+	}
+
+	get_married_15 = {		##hazuki
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_yuyuan
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_hazuki
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.17 }
+		}
+		
+	}
+
+	get_married_16 = {		##风实花
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_fengshihua
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_fumika
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.18 }
+		}
+		
+	}
+
+	get_married_17 = {		##石墨烯
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_coms
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_nozomi
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.19 }
+		}
+		
+	}
+
+	get_married_19 = {		##和奏
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_hezou
+
+		visible = {
+			and = {
+				or = {	
+				check_variable = { love_depth > 150 }
+				}
+				has_country_flag = have_wakana
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.21 }
+		}
+		
+	}
+
+	get_married_20 = {		##魔宴学姐
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_toko
+
+		visible = {
+			and = {
+					
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_toko
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.22 }
+		}
+		
+	}
+	get_married_21 = {		##真咲
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_masaki
+
+		visible = {
+			and = {
+					
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_masaki
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.23 }
+		}
+		
+	}
+	get_married_22 = {		##美羽
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_miu
+
+		visible = {
+			and = {
+					
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_miu
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.24 }
+		}
+		
+	}
+	get_married_23 = {		##茉优
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_Mayu
+
+		visible = {
+			and = {
+					
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_Mayu
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.25 }
+		}
+		
+	}
+	get_married_24 = {		##凉音
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_liangyin
+
+		visible = {
+			and = {
+					
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_suzune
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.27 }
+		}
+		
+	}
+	get_married_25 = {		##夏莉
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_shirley  
+
+		visible = {
+			and = {
+					
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_shirley
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.28 }
+		}
+		
+	}
+	get_married_26 = {		##来海
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_laihai 
+
+		visible = {
+			and = {	
+				check_variable = { love_depth > 150 }
+				has_country_flag = have_kurumi
+				not = { has_country_flag = havent_married }
+			}
+		}
+		available = {
+			if = {
+				limit = {
+					has_country_flag = kurumi_line
+				}
+				any_unit_leader = {
+					has_trait = yz_amane_trait_2
+				}
+			}
+		}
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.29 }
+		}
+		
+	}
+
+	get_married_27 = {		##爱莉
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_airi 
+
+		visible = {
+			and = {	
+				check_variable = { love_depth > 150 }
+				has_country_flag = have_airi
+				not = { has_country_flag = havent_married }
+			}
+		}
+		available = {
+			has_country_flag = unlock_airi_marry
+		}
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.30 }
+		}
+		
+	}
+
+	get_married_28 = {		##芦花(双飞结局)
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_roka 
+
+		visible = {
+			has_country_flag = have_roka
+			has_country_flag = roko_all_marry
+		}
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.31 }
+		}
+		
+	}
+
+	get_married_29 = {		##小春(双飞结局)
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_koharu
+		visible = {
+			has_country_flag = have_koharu
+			has_country_flag = roko_all_marry
+		}
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.32 }
+		}
+		
+	}
+
+	get_married_30 = {		##芦花
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_roka 
+
+		visible = {
+			has_country_flag = have_roka
+			not = { has_country_flag = havent_married }
+		}
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.31 }
+		}
+		
+	}
+
+	get_married_31 = {		##小春
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_koharu
+		visible = {
+			has_country_flag = have_koharu
+			not = { has_country_flag = havent_married }
+		}
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.32 }
+		}
+		
+	}
+#神秘标记点@@
+	get_married_ebihara_minase = {		
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_ebihara_minase  
+
+		visible = {
+			and = {
+
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_ebihara_minase
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.11304845 }
+		}
+		
+	}
+	
+
+	get_married_elina_owen = {		#
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_elina_owen  
+
+		visible = {
+			and = {
+
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_elina_owen
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.78375704 }
+		}
+		
+	}
+	
+
+	get_married_mera_azusa = {		#布良梓
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		icon = GFX_mera_azusa  
+
+		visible = {
+			and = {
+
+				check_variable = { love_depth > 150 }
+				
+				has_country_flag = have_mera_azusa
+				not = { has_country_flag = havent_married }
+			}
+			
+		}
+
+		complete_effect = {
+			country_event = { id = tongyong_event.2 }
+			set_country_flag = havent_married
+		}
+
+		remove_effect = {
+			country_event = { id = tongyong_event.50183671 }
+		}
+		
+	}
+}

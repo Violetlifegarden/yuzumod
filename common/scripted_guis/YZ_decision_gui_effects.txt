@@ -1,0 +1,472 @@
+scripted_gui = {
+	Yz_leader_gui = {	#核心圈
+		window_name = "Yz_leader"
+		context_type = decision_category
+		visible = {	
+			has_country_flag = YzCoreGroup_visible
+		}
+		effects = {
+			open_yz_money_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = show_yz_money_window
+					}
+					clr_country_flag = show_yz_money_window
+				}
+				else = {
+					set_country_flag = show_yz_money_window
+				}
+			}
+			open_YzStore_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = show_YzStore_window
+					}
+					clr_country_flag = show_YzStore_window
+				}
+				else = {
+					set_country_flag = show_YzStore_window
+				}
+			}
+		}
+		triggers = {
+			Yzleader_unknown1_visible = {
+				not = { has_country_flag = have_YCG_FS }
+			}
+			Yzleader_unknown2_visible = {
+				not = { has_country_flag = have_YCG_CM }
+			}
+			Yzleader_unknown3_visible = {
+				not = { has_country_flag = have_YCG_VC }
+			}
+		}
+		properties = {
+			Yzleader_portrait1 = {
+				image = "[Yzleader_portrait1_images]"
+			}
+			Yzleader_portrait2 = {
+				image = "[Yzleader_portrait2_images]"
+			}
+			Yzleader_portrait3 = {
+				image = "[Yzleader_portrait3_images]"
+			}
+		}
+		
+	}
+
+	yz_money_window_gui = {	#经济界面
+		window_name = "yz_money_window"
+		context_type = player_context
+		visible = {	 
+			has_country_flag = show_yz_money_window
+		}
+	
+		triggers = {
+			yz_economic_policy_1_btn_click_enabled = { ## 上三个
+				check_variable = { yz_economic_policy_1_var = 0 }
+				check_variable = { 
+					yz_money < 5000 
+					tooltip = yz_money_tooltip_compare_less
+				}
+				check_variable = { 
+					yz_money < 5000 
+					tooltip = yz_money_tooltip_compare_less
+				}
+			}
+			yz_economic_policy_2_btn_click_enabled = {
+				check_variable = { yz_economic_policy_2_var = 0 }
+				check_variable = { 
+					yz_money < 5000 
+					tooltip = yz_money_tooltip_compare_less
+				}
+			}
+			yz_economic_policy_3_btn_click_enabled = {
+				check_variable = { yz_economic_policy_3_var = 0 }
+				check_variable = { 
+					yz_money < 5000 
+					tooltip = yz_money_tooltip_compare_less
+				}
+			}
+			YzMonthlyFund_fund_down_button_click_enabled = {	
+				check_variable = { YzMonthlyFund_var > 0 }
+			}
+			YzMonthlyFund_fund_up_button_click_enabled = {
+				check_variable = { YzMonthlyFund_var < 5 }
+			}
+			YzEducation_fund_down_button_click_enabled = {
+				check_variable = { YzEducation_fund_var > 0 }
+			}
+			YzEducation_fund_up_button_click_enabled = {
+				check_variable = { YzEducation_fund_var < 5 }
+			}
+			YzAdministration_fund_down_button_click_enabled = {
+				check_variable = { YzAdministration_fund_var > 0 }
+			}
+			YzAdministration_fund_up_button_click_enabled = {
+				check_variable = { YzAdministration_fund_var < 5 }
+			}
+			YzMilitary_fund_down_button_click_enabled = {
+				check_variable = { YzMilitary_fund_var > 0 }
+			}
+			YzMilitary_fund_up_button_click_enabled = {
+				check_variable = { YzMilitary_fund_var < 5 }
+			}
+		}
+		effects = {
+			yz_money_button_close_click = {
+				clr_country_flag = show_yz_money_window
+			}
+			yz_economic_policy_1_btn_click = { ## 上三个
+				add_to_variable = { 	#国债
+					yz_money = 1000
+					tooltip = add_to_yz_money
+				}
+				clamp_variable = {		#范围
+					var = yz_money
+					#min = 0
+					max = 5000
+				}
+				set_country_flag = StratTreasuryBonds
+				add_political_power = -25
+				add_to_variable = { yz_economic_policy_1_var = 365 }
+				add_timed_idea = {
+					idea = yzguozhai
+					days = 365
+				}
+			}
+			yz_economic_policy_2_btn_click = {
+				add_to_variable = { 	#就业
+					yz_money = 750
+					tooltip = add_to_yz_money
+				}
+				clamp_variable = {		#范围
+					var = yz_money
+					#min = 0
+					max = 5000
+				}
+				set_country_flag = StratForeignInvestment 
+				add_political_power = -20
+				add_to_variable = { yz_economic_policy_2_var = 60 }
+				add_timed_idea = {
+					idea = yzjiuye
+					days = 60
+				}
+			}
+			yz_economic_policy_3_btn_click = {
+				add_to_variable = { 	#建设
+					yz_money = 500
+					tooltip = add_to_yz_money
+				}
+				clamp_variable = {		#范围
+					var = yz_money
+					#min = 0
+					max = 5000
+				}
+				set_country_flag = StratConstructionInvestment 
+				add_political_power = -30
+				add_to_variable = { yz_economic_policy_3_var = 45 }
+				add_timed_idea = {
+					idea = yzjianshe
+					days = 45
+				}
+			}
+			YzMonthlyFund_fund_down_button_click = {	
+				add_to_variable = { YzMonthlyFund_var = -1 }
+				custom_effect_tooltip = YzMonthlyFund_fund_down_tt
+			}
+			YzMonthlyFund_fund_up_button_click = {
+				add_to_variable = { YzMonthlyFund_var = 1 }
+				custom_effect_tooltip = YzMonthlyFund_fund_up_tt
+			}
+			YzEducation_fund_down_button_click = {
+				add_to_variable = { YzEducation_fund_var = -1 }
+				add_to_variable = { YzMoneyOutcome_var = -100 }
+				YzEducation_fund_level_down = yes
+			}
+			YzEducation_fund_up_button_click = {
+				add_to_variable = { YzEducation_fund_var = 1 }
+				add_to_variable = { YzMoneyOutcome_var = 100 }
+				YzEducation_fund_level_up = yes
+			}
+			YzAdministration_fund_down_button_click = {
+				add_to_variable = { YzAdministration_fund_var = -1 }
+				add_to_variable = { YzMoneyOutcome_var = -100 }
+				YzAdministration_fund_level_down = yes
+			}
+			YzAdministration_fund_up_button_click = {
+				add_to_variable = { YzAdministration_fund_var = 1 }
+				add_to_variable = { YzMoneyOutcome_var = 100 }
+				YzAdministration_fund_level_up = yes
+			}
+			YzMilitary_fund_down_button_click = {
+				add_to_variable = { YzMilitary_fund_var = -1 }
+				add_to_variable = { YzMoneyOutcome_var = -100 }
+				YzMilitary_fund_level_down = yes
+			}
+			YzMilitary_fund_up_button_click = {
+				add_to_variable = { YzMilitary_fund_var = 1 }
+				add_to_variable = { YzMoneyOutcome_var = 100 }
+				YzMilitary_fund_level_up = yes
+			}
+		}
+	}
+
+	YzStore_window_gui = {	###商店界面
+		window_name = "YzStore_window"
+		context_type = player_context
+		visible = {	 
+			has_country_flag = show_YzStore_window
+		}
+	
+		triggers = {
+			#点数
+			YzStore_1_btn_click_enabled = {
+				check_variable = { yz_money_pp > 0 }
+				check_variable = { yz_money > 250 }
+			}
+			YzStore_2_btn_click_enabled = {
+				check_variable = { yz_money_cp > 0 }
+				check_variable = { yz_money > 150 }
+			}
+			YzStore_3_btn_click_enabled = {
+				check_variable = { yz_money_xp1 > 0 }
+				check_variable = { yz_money > 150 }
+			}
+			YzStore_4_btn_click_enabled = {
+				check_variable = { yz_money_xp2 > 0 }
+				check_variable = { yz_money > 150 }
+			}
+			YzStore_9_btn_click_enabled = {
+				check_variable = { yz_money_xp3 > 0 }
+				check_variable = { yz_money > 150 }
+			}
+			###小超市
+			YzStore_5_btn_click_enabled = {
+				check_variable = { YzStore_5_var > 0 }
+				check_variable = { yz_money > 15 }
+			}
+			YzStore_6_btn_click_enabled = {
+				check_variable = { YzStore_6_var > 0 }
+				check_variable = { yz_money > 30  }
+			}
+			YzStore_7_btn_click_enabled = {
+				check_variable = { yz_money > 19.9 }
+			}
+			YzStore_8_btn_click_enabled = {
+				check_variable = { YzStore_8_var > 0 }
+				check_variable = { yz_money > 100 }
+			}
+			YzStore_10_btn_click_enabled = {    #这里我改了一点-2025.3.25
+				#check_variable = { YzStore_10_var > 0 }
+				NOT = {
+					has_idea = yuzu_super_vip
+				}
+				check_variable = { yz_money > 3600 }
+			}
+			YzStore_11_btn_click_enabled = {
+				check_variable = {
+					YzStore_11_var > 0
+				}
+				check_variable = {
+					yz_money > 720
+				}
+			}
+		}
+		effects = {
+			YzStore_button_close_click = {
+				clr_country_flag = show_YzStore_window
+			}
+			#点数
+			YzStore_1_btn_click = {
+				add_political_power = 50
+				add_to_variable = { yz_money_pp = -1 }
+				subtract_from_variable = { 	
+					yz_money = 250
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_pp_less_than_tt
+			}
+			YzStore_2_btn_click = {
+				add_command_power = 25
+				add_to_variable = { yz_money_cp = -1 }
+				subtract_from_variable = { 	
+					yz_money = 150
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_cp_less_than_tt
+			}
+			YzStore_3_btn_click = {
+				army_experience = 25
+				add_to_variable = { yz_money_xp1 = -1 }
+				subtract_from_variable = { 	
+					yz_money = 150
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_xp1_less_than_tt
+			}
+			YzStore_4_btn_click = {
+				air_experience = 25
+				add_to_variable = { yz_money_xp2 = -1 }
+				subtract_from_variable = { 	
+					yz_money = 150
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_xp2_less_than_tt
+			}
+			YzStore_9_btn_click = {
+				navy_experience = 25
+				add_to_variable = { yz_money_xp3 = -1 }
+				subtract_from_variable = { 	
+					yz_money = 150
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_xp3_less_than_tt
+			}
+			###小超市
+			YzStore_5_btn_click = {
+				add_to_variable = { YzStore_5_var = -1 }
+				add_to_variable = {
+					love_depth = 3
+					tooltip = love_depth_tooltip
+				}
+				clamp_variable = {		#范围
+					var = love_depth
+					min = -100
+					max = 200
+				}
+				subtract_from_variable = { 	
+					yz_money = 15
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_5_less_than_tt
+			}
+			YzStore_6_btn_click = {
+				add_to_variable = { YzStore_6_var = -1 }
+				add_to_variable = {
+					love_depth = 5
+					tooltip = love_depth_tooltip
+				}
+				clamp_variable = {		#范围
+					var = love_depth
+					min = -100
+					max = 200
+				}
+				subtract_from_variable = { 	
+					yz_money = 30
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_6_less_than_tt
+			}
+			YzStore_7_btn_click = {
+				add_to_variable = { YzStore_LuckyDarw_var = 1 }
+				add_to_variable = {
+					love_depth = 1
+				}
+				clamp_variable = {		#范围
+					var = love_depth
+					min = -100
+					max = 200
+				}
+				effect_tooltip = {
+					random_list = {
+						96 = { }
+						1.25 = { country_event = start_event.13 }
+						1.25 = { country_event = start_event.15 }
+						1.5 = { country_event = start_event.14 }
+					}
+				}
+				hidden_effect = {
+					random_list = {
+						99 = { }
+						0.5 = { country_event = start_event.13 }
+						0.5 = { country_event = start_event.15 }
+					}
+				}
+				subtract_from_variable = { 	
+					yz_money = 19.9
+					tooltip = yz_money_tooltip_subtain
+				}
+				if = {
+					limit = {
+						check_variable = {
+							YzStore_LuckyDarw_var = 250
+						}
+					}
+					country_event = start_event.16
+				}
+			}
+			YzStore_8_btn_click = {
+				add_to_variable = { YzStore_8_var = -1 }
+				add_to_variable = {
+					love_depth = 7
+					tooltip = love_depth_tooltip
+				}
+				clamp_variable = {		#范围
+					var = love_depth
+					min = -100
+					max = 200
+				}
+				random_unit_leader = {
+					limit = {
+						yz_general = yes
+					}
+					add_unit_leader_trait = maid_noa3_trait
+				}
+				subtract_from_variable = { 	
+					yz_money = 100
+					tooltip = yz_money_tooltip_subtain
+				}
+				custom_effect_tooltip = YzStore_8_less_than_tt
+			}
+			YzStore_10_btn_click = {     #2025.3.6添加内容,柚子超级会员
+				add_timed_idea = {
+					idea = yuzu_super_vip
+					days = 365
+				}
+				subtract_from_variable = { 	
+					yz_money = 3600
+					tooltip = yz_money_tooltip_subtain
+				}
+				set_variable = {
+					yuzu_form_yuzu_land_days_basic_require = 30
+					tooltip = yuzu_form_yuzu_land_days_basic_require_change_tt
+				}
+				custom_effect_tooltip = YzStore_10_less_than_tt
+			}
+			YzStore_11_btn_click = {      #2025.3.6添加内容，柚子基金
+			   	add_to_variable = {
+				Yuzu_fund  = 1
+				tooltip = yuzu_fund_add
+			  	 }
+			   	subtract_from_variable = {
+				YzStore_11_var = 1
+			   	}
+			   	subtract_from_variable = {
+				    yz_money = 721
+					tooltip = yz_money_tooltip_subtain
+			   	}
+			   	custom_effect_tooltip = YzStore_11_less_than_tt
+			}
+		}
+	}
+
+	yz_money_visible_gui = {
+		window_name = "yz_money_ui"
+		context_type = player_context
+		visible = {
+			has_country_flag = yz_money_visible
+		}
+
+		triggers = {
+			yz_money_ui_bg_visible = {
+				has_country_flag = yz_money_visible
+			}
+			yz_money_ui_icon_visible = {
+				has_country_flag = yz_money_visible
+			}
+			yz_money_ui_value_visible = {
+				has_country_flag = yz_money_visible
+			}
+		}
+	}
+}

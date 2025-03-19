@@ -1,0 +1,228 @@
+add_namespace = LY_event
+
+country_event = { 		##
+	id = LY_event.101
+	title = LY_event.101.t
+	desc = LY_event.101.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = LY_event.101.a
+        set_country_flag = have_suzune
+		create_corps_commander = {
+            name = "汐山凉音"
+            gender = female
+            nationality = JAP
+            traits = { maid_suzune_trait organisational_leader adaptable logistics_wizard }
+            portrait_path = "gfx\leader\suzune.png"
+            id = 12345
+            attack_skill = 3
+            defense_skill = 3
+            planning_skill = 3
+            logistics_skill = 9
+            skill = 5
+        }
+	}
+}
+
+country_event = { 		##
+	id = LY_event.102
+	title = LY_event.102.t
+	desc = LY_event.102.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = LY_event.102.a
+        set_country_flag = have_suzune
+		create_corps_commander = {
+            name = "汐山凉音"
+            gender = female
+            nationality = JAP
+            traits = { maid_suzune_trait organisational_leader adaptable }
+            portrait_path = "gfx\leader\suzune.png"
+            id = 12345
+            attack_skill = 3
+            defense_skill = 3
+            planning_skill = 3
+            logistics_skill = 9
+            skill = 5
+        }
+		random_army_leader = {
+            limit = {
+                has_trait = maid_kanna_trait
+				has_trait = maid_zaozi_trait
+            }
+            add_logistics = 1
+        }
+	}
+}
+
+country_event = { 		##
+	id = LY_event.103
+	title = LY_event.103.t
+	desc = LY_event.103.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+			not = { has_idea = fruit_cake }
+		}
+	}
+	
+	option = {
+		name = LY_event.103.a
+		add_timed_idea = {
+        idea = fruit_cake		
+		days = 70
+		}
+		add_political_power = 15
+	}
+}
+
+country_event = { 		##
+	id = LY_event.104
+	title = LY_event.104.t
+	desc = LY_event.104.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+			not = { has_idea = chocolate_donuts }
+		}
+	}
+	
+	option = {
+		name = LY_event.104.a
+		add_timed_idea = {
+        idea = chocolate_donuts
+		days = 70
+		}
+		add_political_power = 15
+				
+	}
+}
+
+country_event = { 		##
+	id = LY_event.105
+	title = LY_event.105.t
+	desc = LY_event.105.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+			not = { has_idea = cream_pudding }
+		}
+	}
+	
+	option = {
+		name = LY_event.105.a
+		add_timed_idea = {
+        idea = cream_pudding	
+		days = 70
+		}	
+		add_political_power = 15
+	}
+}
+
+country_event = { 		##
+	id = LY_event.106
+	title = LY_event.106.t
+	desc = LY_event.106.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+			not = { has_idea = xiangcaosongbing }
+		}
+	}
+	
+	option = {
+		name = LY_event.106.a
+		add_timed_idea = {
+        idea = xiangcaosongbing	
+		days = 70
+		}
+		add_political_power = 15	
+	}
+}
+
+country_event = { 		##
+	id = LY_event.107
+	title = LY_event.107.t
+	desc = LY_event.107.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+			not = { has_idea = mengbulang }
+		}
+	}
+	
+	option = {
+		name = LY_event.107.a
+		add_timed_idea = {
+        idea = mengbulang
+		days = 75
+		}	
+		add_political_power = 15	
+	}
+}
+
+country_event = { 		##
+	id = LY_event.108
+	title = LY_event.108.t
+	desc = LY_event.108.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+			not = { has_idea = tilamisu }
+		}
+	}
+	
+	option = {
+		name = LY_event.108.a
+	add_timed_idea = {
+        idea = tilamisu	
+		days = 70	
+	    }
+	}
+}
+
+country_event = { 		##
+	id = LY_event.109
+	title = LY_event.109.t
+	desc = LY_event.109.d
+	picture = GFX_LY_event
+	
+	is_triggered_only = yes
+	visible = {
+		and = {
+			has_country_flag = have_suzune
+		}
+	}
+	
+	option = {
+		name = LY_event.109.a
+        add_political_power = 30
+	}
+}
+
+
+

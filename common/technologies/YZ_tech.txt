@@ -1,0 +1,79 @@
+technologies = {
+
+	tech_YZ_engineer = { 
+
+		enable_subunits = {
+			YZ_engineer
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		allow = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tech_YZ_field_hospital = { 
+
+		enable_subunits = {
+			YZ_field_hospital
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		allow = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	tech_airi_crystal_support_equipment_1 = { 
+
+		enable_equipments = {
+			airi_crystal_support_equipment_1
+		}
+
+		research_cost = 1
+		start_year = 2013	
+		allow = {
+			always = no
+		}
+	}
+	tech_airi_crystal_support = { 
+
+		enable_subunits = {
+			airi_crystal_signal_company
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		allow = {
+			always = no
+		}
+	}
+	tech_YZ_0721_detonator = { 
+		enable_equipments = {
+			YZ_0721_detonator_equipment_1
+		}
+		enable_subunits = {
+			YZ_0721_detonator_company
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		allow = {
+			always = no
+		}
+	}
+}

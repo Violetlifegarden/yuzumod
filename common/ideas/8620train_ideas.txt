@@ -1,0 +1,81 @@
+ideas = {
+
+	industrial_concern = {
+		#a1铁路企业
+		#8620型铁路
+		aishanghuoche_train = {
+			cost = 200
+			equipment_bonus = {
+				train_equipment = {
+					build_cost_ic = -0.35
+				}
+				railway_gun_equipment = {
+					build_cost_ic = -0.65
+				}
+            }
+			modifier = {
+				army_speed_factor = 0.05
+				mobilization_speed = 0.25
+				production_speed_rail_way_factor = 0.3
+				production_speed_supply_node_factor = 0.2
+				railway_gun_bombardment_factor = 0.25
+				production_speed_infrastructure_factor = 0.15
+				production_speed_buildings_factor = 0.05
+				local_supplies = 0.2
+				supply_node_range = 0.3
+			}
+			traits = {多功能铁路组织}
+			research_bonus = {
+                train_tech = 0.4
+			}
+            visible = {
+                has_country_flag = have_ningning
+				has_country_flag = have_Mayu 
+                has_country_flag = qiyong_youzi_2
+				}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+    }
+	country = {
+		
+		xiufuhuoche = {
+			picture = BLU_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = -0.01
+				production_speed_industrial_complex_factor = -0.01
+				production_speed_rail_way_factor = 3
+			}
+		}
+		xiufuhuoche1 = {
+			picture = BLU_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.01
+			}
+		}
+		keyanfenxi = {
+			picture = BLU_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.02
+			}
+		}
+	}
+
+}

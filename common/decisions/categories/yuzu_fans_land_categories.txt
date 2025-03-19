@@ -1,0 +1,7 @@
+yuzu_cultural_department_category = {
+	visible = {
+		has_country_flag = qiyong_youzi_2
+		has_country_flag = qiyong_yuzu_culture_department
+	}
+	priority = 10
+}

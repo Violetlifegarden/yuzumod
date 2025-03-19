@@ -1,0 +1,30 @@
+spriteTypes = {
+	###选人底面和框
+	spriteType = {
+		name = "GFX_yzleader_unknown"
+		texturefile = "gfx/guis/add_yz_leader.png"
+	}
+	spriteType = {
+		name = "GFX_yzleader_box"
+		texturefile = "gfx/guis/add_yz_leader_1.png"
+	}
+	spriteType = {
+		name = "GFX_yzleader_bg"
+		texturefile = "gfx/leader/portrait_leader_background.png"
+	}
+
+	spriteType = {
+		name = "GFX_yz_button_long"
+		texturefile = "gfx/guis/14673.png"
+	}
+	spriteType = {
+		name = "GFX_yz_button_short"
+		texturefile = "gfx/guis/15166.png"
+	}
+	spriteType = {
+		name = "GFX_yz_confirm_button"
+		texturefile = "gfx/guis/QL_confirm_button.png"
+		noOfFrames = 3
+		transparencecheck = yes
+	}
+}

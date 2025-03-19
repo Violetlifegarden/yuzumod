@@ -1,0 +1,3336 @@
+YZS_military_academy_category = {
+	remove_training = {
+		visible = {
+			is_debug = yes
+		}
+
+		complete_effect = {
+			every_army_leader = {
+				limit = {
+					has_trait = yz_training_trait
+				}
+				remove_trait = {
+					trait = yz_training_trait
+				}
+			}
+		}
+	}
+
+	close_YZS_military_academy = {
+		priority = 9
+		visible = {
+			has_country_flag = qiyong_youzi_2
+		   	not = { has_country_flag = yz_bad_end }
+		   	has_yz_general = yes
+			has_country_flag = open_YZS_military_academy
+		}
+
+		complete_effect = {
+			clr_country_flag = open_YZS_military_academy
+		}
+	}
+
+	choose_general = {		#选将领
+		priority = 9
+	   	cost = 0
+	   	days_remove = 0
+
+	   	visible = { 
+		   	has_country_flag = qiyong_youzi_2
+		   	not = { has_country_flag = yz_bad_end }
+		   	has_yz_general = yes
+			has_country_flag = open_YZS_military_academy
+		   	not = { 
+				has_country_flag = is_choosing_general
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+				} 
+			}
+	   	}
+
+		available = {
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				}
+			}
+		}
+
+	   	complete_effect = {
+		   	set_country_flag = is_choosing_general
+	   	}
+   	}
+
+	cancel_choose_general = {		#不选将领
+	   	priority = 9
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			has_country_flag = open_YZS_military_academy
+
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+		}
+
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			hidden_effect = {
+				every_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					clr_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	add_infantry_officer = {		#步兵
+		icon = GFX_trait_infantry_expert
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 15
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = infantry_officer }
+					not = { has_trait = infantry_leader }
+					# 
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = infantry_officer }
+					add_trait = { trait = infantry_leader }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = infantry_officer }
+					add_trait = { trait = infantry_leader }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_armor_officer = {		#装甲
+		icon = GFX_trait_panzer_expert
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 20
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = armor_officer }
+					not = { has_trait = panzer_leader }
+					# 
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = armor_officer }
+					add_trait = { trait = panzer_leader }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = armor_officer }
+					add_trait = { trait = panzer_leader }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_bearer_of_artillery = {		#炮兵
+		icon = GFX_trait_bearer_of_artillery
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 15
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = bearer_of_artillery }
+					#
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = bearer_of_artillery }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = bearer_of_artillery }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = bearer_of_artillery }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = bearer_of_artillery }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_trait_engineer = {		#工兵
+		icon = GFX_trait_officer_engineer
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 20
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = trait_engineer }
+					#
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = trait_engineer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = trait_engineer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = trait_engineer }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = trait_engineer }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_organizer = {		#组织
+		icon = GFX_trait_organizer
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 25
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = organizer }
+					#
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = organizer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = organizer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = organizer }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = organizer }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_trickster = {		#鬼谋指挥
+		icon = GFX_trait_trickster
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 25
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = trickster }
+					#
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = trickster }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = trickster }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = trickster }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = trickster }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_commando = {		#特种
+		icon = GFX_trait_commando
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 35
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = commando }
+				}
+			}
+			has_army_experience  > 19.99
+		}
+
+		complete_effect = {
+			army_experience = -20
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = commando }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = commando }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = commando }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = commando }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_naval_invader = {		#登录
+		icon = GFX_trait_invader_ii
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 30
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = naval_invader }
+					#
+				}
+			}
+			has_army_experience  > 9.99
+			has_navy_experience > 14.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			navy_experience = -15
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = naval_invader }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = naval_invader }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = naval_invader }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = naval_invader }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_skilled_staffer = {		#参谋
+		icon = GFX_trait_skilled_staffer
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 25
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = skilled_staffer }
+					#
+				}
+			}
+			has_army_experience  > 9.99
+		}
+
+		complete_effect = {
+			army_experience = -10
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = skilled_staffer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = skilled_staffer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = skilled_staffer }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = skilled_staffer }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_trait_mountaineer = {		#山地
+		icon = GFX_trait_trait_mountaineer
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 20
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = trait_mountaineer }
+					#
+				}
+			}
+			has_army_experience  > 14.99
+		}
+
+		complete_effect = {
+			army_experience = -15
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = trait_mountaineer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = trait_mountaineer }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = trait_mountaineer }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = trait_mountaineer }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_winter_specialist = {		#冬季
+		icon = GFX_trait_winter_specialist
+		custom_cost_trigger = {	
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 20
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = winter_specialist }
+					# 
+				}
+			}
+			has_army_experience  > 14.99
+		}
+
+		complete_effect = {
+			army_experience = -15
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait =  winter_specialist }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait =  winter_specialist }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = winter_specialist }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = winter_specialist }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	add_urban_assault_specialist = {		#巷战
+		icon = GFX_trait_urban_assault_specialist
+		 custom_cost_trigger = {
+			check_variable = {
+				var = yz_money
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = YM_100
+		days_remove = 20
+
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			not = { has_country_flag = yz_bad_end }
+			has_yz_general = yes
+			not = { 
+				any_army_leader = {
+					has_trait = yz_training_trait
+				} 
+			}
+			any_army_leader = {
+				has_character_flag = have_been_chosen
+			} 
+			has_country_flag = open_YZS_military_academy
+		}
+
+		available = {
+			hidden_trigger = {
+				any_army_leader = {
+					yz_general = yes
+					#
+					not = { has_trait = urban_assault_specialist }
+					#
+				}
+			}
+			has_army_experience  > 14.99
+		}
+
+		complete_effect = {
+			army_experience = -15
+			add_to_variable = { yz_money = -100 }
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = urban_assault_specialist }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						not = { has_trait = yz_training_trait }
+						#
+						not = { has_trait = urban_assault_specialist }
+						#
+					}
+					add_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_character_flag = have_been_chosen
+						has_trait = yz_training_trait 
+					}
+				}
+				random_army_leader = {
+					limit = {
+						has_character_flag = have_been_chosen
+					}
+					#
+					add_trait = { trait = urban_assault_specialist }
+					#
+					remove_trait = { trait = yz_training_trait }
+					clr_character_flag = have_been_chosen
+				}
+			}
+			else_if = {
+				limit = { }
+				random_army_leader = {
+					limit = {
+						yz_general = yes
+						has_trait = yz_training_trait
+					}
+					#
+					add_trait = { trait = urban_assault_specialist }
+					#
+					remove_trait = { trait = yz_training_trait }
+				}
+			}
+		}
+	}
+
+	###################################
+	###################################
+	##############选择将领#############
+	###################################
+	###################################
+ 
+	choose_cuodao = {	
+		priority = 9
+		icon = GFX_lingnai 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_0nai
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_cuodao_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_cuodao_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_chihaya = {		#选茅羽耶
+	priority = 9
+		icon = GFX_maoyuye
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_chihaya
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					chihaya_trait = yes
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						chihaya_trait = yes
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_kanna = {		#选栞那
+	priority = 9
+		icon = GFX_kanna
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_kanna
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_kanna_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_kanna_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_megulu = {		#选美咕噜
+	priority = 9
+		icon = GFX_meigulu
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_meigulu
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_meigulu_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_meigulu_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_murasame = {		 
+		priority = 9
+		icon = GFX_murasame
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_murasame
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_congyu_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_congyu_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_nanami = {	
+		priority = 9	
+		icon = GFX_qihai 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_nanami
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_qihai_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_qihai_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_ningning = {		 
+		priority = 9
+		icon = GFX_ningning
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_ningning
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_ninging_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_ninging_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_noa = {		 
+		priority = 9
+		icon = GFX_noa
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_noa
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_noa_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_noa_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_nozomi = {	
+		priority = 9
+		icon = GFX_coms	 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_nozomi
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_nozomi_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_nozomi_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_rio = {		 
+		priority = 9
+		icon = GFX_liyin
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_rio
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					or = {
+						has_trait = maid_rio_trait_1
+						has_trait = maid_rio_trait_2
+					}
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						or = {
+							has_trait = maid_rio_trait_1
+							has_trait = maid_rio_trait_2
+						}
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_suzune = {	
+		priority = 9
+		icon = GFX_liangyin	 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_suzune
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_suzune_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_suzune_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_yoshino = {	
+		priority = 9
+		icon = GFX_yoshino	 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_yoshino
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_fangnai_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_fangnai_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_roka = {
+		priority = 9
+		icon = GFX_roka
+		cost = 0
+		visible = {
+			has_country_flag = have_roka
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_roka_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_roka_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+
+	choose_koharu = {
+		priority = 9
+		icon = GFX_koharu
+		cost = 0
+		visible = {
+			has_country_flag = have_koharu
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_koharu_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_koharu_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+
+	choose_zaozi = {	
+		priority = 9
+		icon = GFX_zaozi	 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_zaozi
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_zaozi_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_zaozi_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_chou = {		
+		priority = 9
+		icon = GFX_chou 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_chou
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_chou_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_chou_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_amane = {	
+		priority = 9	
+		icon = GFX_tianyin 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_amane
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_amane_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_amane_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_fumika = {		
+		priority = 9
+		icon = GFX_fengshihua 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_fumika
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_fumika_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_fumika_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_gongping = {		 
+		priority = 9
+		icon = GFX_gongping
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_gongping
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_gongping_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_gongping_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_hazuki = {	
+		priority = 9
+		icon = GFX_yuyuan	 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_hazuki
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_hazuki_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_hazuki_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_kurumi = {	
+		priority = 9
+		icon = GFX_laihai	 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_kurumi
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					or = {
+						has_trait = yz_kurumi_trait
+						has_trait = yz_kurumi_trait0
+						has_trait = yz_kurumi_trait01
+					}
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_kurumi_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_mako = {		
+		priority = 9
+		icon = GFX_mako 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_mako
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_mozi_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_mozi_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_sana = {		 
+		priority = 9
+		icon = GFX_zuonai
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_sana
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_sana_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_sana_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_toko = {		
+		priority = 9
+		icon = GFX_toko 
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_toko
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_toko_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_toko_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_wakana = {		
+		priority = 9 
+		icon = GFX_hezou
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_wakana
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_wakana_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_wakana_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+
+	choose_sairi = {	
+		priority = 9
+		icon = GFX_caili	
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_sairi
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_sairi_trait_2
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_sairi_trait_2
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+	choose_Masaki = {	
+		priority = 9
+		icon = GFX_masaki	
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_Masaki
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_masaki_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_masaki_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+	choose_miu = {	
+		priority = 9
+		icon = GFX_miu	
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_miu
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_miu_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_miu_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+	choose_Mayu = {	
+		priority = 9
+		icon = GFX_Mayu	
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_Mayu
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_Mayu_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_Mayu_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+	choose_kotori = {	
+		priority = 9
+		icon = GFX_kotori	
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_kotori
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_kotori_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_kotori_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+	choose_shirley = {	
+		priority = 9
+		icon = GFX_shirley	
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			has_country_flag = have_shirley
+			has_country_flag = is_choosing_general 
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = maid_shirley_trait
+				}	
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = is_choosing_general
+				random_army_leader = {
+					limit = {
+						has_trait = maid_shirley_trait
+					}
+					set_character_flag = have_been_chosen
+				}
+			}
+		}
+	}
+#神秘标记点@@
+	choose_ebihara_minase = {
+		priority = 9
+		icon = GFX_ebihara_minase
+		cost = 0
+		visible = {
+			has_country_flag = have_ebihara_minase
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_ebihara_minase_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_ebihara_minase_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+
+
+	choose_elina_owen = {
+		priority = 9
+		icon = GFX_elina_owen
+		cost = 0
+		visible = {
+			has_country_flag = have_elina_owen
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_elina_owen_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_elina_owen_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_mera_azusa = {
+		priority = 9
+		icon = GFX_mera_azusa
+		cost = 0
+		visible = {
+			has_country_flag = have_mera_azusa
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_mera_azusa_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_mera_azusa_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_airi = {
+		priority = 9
+		icon = GFX_airi
+		cost = 0
+		visible = {
+			has_country_flag = have_airi
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_airi_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_airi_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_sakuyahime = {
+		priority = 9
+		icon = GFX_sakuyahime
+		cost = 0
+		visible = {
+			has_country_flag = have_sakuyahime
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_sakuyahime_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_sakuyahime_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_ruri = {
+		priority = 9
+		icon = GFX_ruri
+		cost = 0
+		visible = {
+			has_country_flag = have_ruri
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_ruri_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_ruri_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_aoi = {
+		priority = 9
+		icon = GFX_aoi
+		cost = 0
+		visible = {
+			has_country_flag = have_aoi
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_aoi_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_aoi_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_yuiko = {
+		priority = 9
+		icon = GFX_yuiko
+		cost = 0
+		visible = {
+			has_country_flag = have_yuiko
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_yuiko_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_yuiko_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_sasara = {
+		priority = 9
+		icon = GFX_sasara
+		cost = 0
+		visible = {
+			has_country_flag = have_sasara
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_sasara_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_sasara_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_yune = {
+		priority = 9
+		icon = GFX_yune
+		cost = 0
+		visible = {
+			has_country_flag = have_yune
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_yune_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_yune_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_hinata = {
+		priority = 9
+		icon = GFX_hinata
+		cost = 0
+		visible = {
+			has_country_flag = have_hinata
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_hinata_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_hinata_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_maya = {
+		priority = 9
+		icon = GFX_maya
+		cost = 0
+		visible = {
+			has_country_flag = have_maya
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_maya_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_maya_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_sena = {
+		priority = 9
+		icon = GFX_sena
+		cost = 0
+		visible = {
+			has_country_flag = have_sena
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_sena_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_sena_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_akari = {
+		priority = 9
+		icon = GFX_akari
+		cost = 0
+		visible = {
+			has_country_flag = have_akari
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_akari_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_akari_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+	choose_shizuru = {
+		priority = 9
+		icon = GFX_shizuru
+		cost = 0
+		visible = {
+			has_country_flag = have_shizuru
+			has_country_flag = is_choosing_general
+			not = {
+				any_army_leader = {
+					has_character_flag = have_been_chosen
+					has_trait = yz_shizuru_trait
+				}
+			}
+		}
+		complete_effect = {
+			clr_country_flag = is_choosing_general
+			random_army_leader = {
+				limit = {has_trait = yz_shizuru_trait}
+				set_character_flag = have_been_chosen
+			}
+		}
+	}
+
+##    ## ##     ## ######## ##     ##       ###    ########  ##     ## ##    ## 
+ ##  ##  ##     ##      ##  ##     ##      ## ##   ##     ## ###   ###  ##  ##  
+  ####   ##     ##     ##   ##     ##     ##   ##  ##     ## #### ####   ####   
+   ##    ##     ##    ##    ##     ##    ##     ## ########  ## ### ##    ##    
+   ##    ##     ##   ##     ##     ##    ######### ##   ##   ##     ##    ##    
+   ##    ##     ##  ##      ##     ##    ##     ## ##    ##  ##     ##    ##    
+   ##     #######  ########  #######     ##     ## ##     ## ##     ##    ##    
+	youzu_army_1 = {  
+		priority = 1 
+		icon = GFX_lingnai
+		fire_only_once = yes
+		days_remove = 15
+		cost = 100  
+		visible = {
+            and = {
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = have_youzu_army_1 }
+			}
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_0nai
+			}
+		}
+		complete_effect = {
+			add_command_power = -15
+		}
+		remove_effect = {
+			set_country_flag = have_youzu_army_1  
+			add_dynamic_modifier = {
+				modifier = youzu_military_dynamic_modifier
+			}
+			force_update_dynamic_modifier = yes
+		}
+    }
+	youzu_army_2 = {  
+		priority = 1 
+		icon = GFX_fengshihua
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		visible = {
+            is_ai = no
+			has_country_flag = have_youzu_army_1
+            and = { 
+					 
+				has_country_flag = qiyong_youzi_2
+				not = { has_country_flag = have_youzu_army_2 }
+			}
+        }
+		available = {
+			or = {
+				has_country_flag = have_fumika
+			}
+			command_power > 14.99
+			check_variable = {
+				yz_money > 500
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_command_power = -15
+			add_to_variable = { yz_money = -500 }
+		}
+		remove_effect = {
+			set_country_flag = have_youzu_army_2  
+			if = {
+				limit = { }
+				custom_effect_tooltip = youzu_military_finished_dynamic_modifier_tt
+				add_to_variable = { youzu_army_land_reinforce_rate = 0.01 }
+				add_to_variable = { youzu_army_training_time_army_factor = -0.05 tooltip = training_time_factor_tt }
+				add_to_variable = { youzu_army_army_org_factor = 0.02 tooltip = army_org_factor_tt }
+				add_to_variable = { youzu_army_land_doctrine_cost_factor = -0.03 }
+				add_to_variable = { youzu_army_mobilization_speed = 0.05 tooltip = mobilization_speed_tt }
+				add_to_variable = { youzu_army_promote_cost_factor = -0.05 }
+				add_to_variable = { youzu_army_army_org_regain = 0.03  }
+				add_to_variable = { youzu_army_recruitable_population_factor = 0.01 tooltip = recruitable_population_factor_tt }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+	youzu_army_3 = {  
+		priority = 1 
+		icon = GFX_toko
+		fire_only_once = yes
+		days_remove = 45
+		cost = 50
+		visible = {
+			has_country_flag = have_youzu_army_2
+            is_ai = no
+            and = {
+					 
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = have_youzu_army_3 }
+				}
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_toko
+			}
+					has_army_experience > 14.99
+					command_power > 14.99
+			check_variable = {
+				yz_money > 500
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_command_power = -15
+			add_to_variable = { yz_money = -500 }
+			army_experience = -15
+		}
+		remove_effect = {
+			set_country_flag = have_youzu_army_3  
+			if = {
+				limit = { }
+				custom_effect_tooltip = youzu_military_finished_dynamic_modifier_tt
+				add_to_variable = { youzu_army_land_doctrine_cost_factor = -0.07 }
+				add_to_variable = { youzu_army_command_power_gain = 0.15 tooltip = command_power_gain_mult_tt }
+				add_to_variable = { youzu_army_military_leader_cost_factor = -0.1  }
+				add_to_variable = { youzu_army_army_core_defence_factor = 0.02 tooltip = army_core_defence_factor_tt }
+				add_to_variable = { youzu_army_army_core_attack_factor = 0.03 tooltip = army_core_attack_factor_tt }
+				add_to_variable = { youzu_army_xp_gain_army_factor = 0.1 tooltip = experience_gain_army_factor_tt }
+				add_to_variable = { youzu_army_army_org_regain = 0.02 }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+	youzu_army_4 = {  
+		priority = 1 
+		icon = GFX_chou
+		fire_only_once = yes
+		days_remove = 45
+		cost = 100
+		visible = {
+            is_ai = no
+			has_country_flag = have_youzu_army_3
+            and = {
+					 
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = have_youzu_army_4 }
+				}
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_chou
+			}
+					has_army_experience > 29.99
+			check_variable = {
+				yz_money > 750
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_to_variable = { yz_money = -750 }
+			army_experience = -30
+		}
+		remove_effect = {
+			set_country_flag = have_youzu_army_4 
+			if = {
+				limit = { }
+				custom_effect_tooltip = youzu_military_finished_dynamic_modifier_tt
+				add_to_variable = { youzu_army_recruitable_population_factor = 0.01 tooltip = recruitable_population_factor_tt }
+				add_to_variable = { youzu_army_army_infantry_attack_factor = 0.05 tooltip = army_infantry_attack_factor_tt }
+				add_to_variable = { youzu_army_army_infantry_defence_factor = 0.1 tooltip = army_infantry_defence_factor_tt }
+				add_to_variable = { youzu_army_max_dig_in_factor = 0.05 tooltip = max_dig_in_factor_tt }
+				add_to_variable = { youzu_army_dig_in_speed_factor = 0.1 tooltip = dig_in_speed_factor_tt }
+				add_to_variable = { youzu_army_land_reinforce_rate = 0.02 }
+				add_to_variable = { youzu_army_unit_infantry_design_cost_factor = -0.25  }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+	youzu_army_5 = {  
+		priority = 1 
+		icon = GFX_liangyin
+		fire_only_once = yes
+		days_remove = 30
+		cost = 100
+		visible = {
+			has_country_flag = have_youzu_army_4
+            is_ai = no
+            and = {
+					 
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = have_youzu_army_5 }
+				}
+
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_suzune
+				
+			}
+					command_power > 19.99
+			check_variable = {
+				yz_money > 750
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_to_variable = { yz_money = -750 }
+			add_command_power = -20
+		}
+		remove_effect = {
+			set_country_flag = have_youzu_army_5 
+			
+			if = {
+				limit = { }
+				add_to_variable = { youzu_army_supply_consumption_factor = -0.1 tooltip = supply_consumption_factor_tt }
+				add_to_variable = { youzu_army_local_supplies = 0.1 tooltip = local_supplies_tt }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+	youzu_army_6 = {  
+		priority = 1 
+		icon = GFX_mako
+		fire_only_once = yes
+		cost = 150
+		days_remove = 45
+		visible = {
+			has_country_flag = have_youzu_army_5
+            is_ai = no
+            and = {
+					 
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = have_youzu_army_6 }
+				}
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_mako
+				
+			}
+					has_command_power > 9.99
+					has_army_experience > 49.99
+			check_variable = {
+				yz_money > 750
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_to_variable = { yz_money = -750 }
+			add_command_power = -10
+			army_experience = -50
+		}
+		remove_effect = {
+			set_country_flag = have_youzu_army_6 
+	
+			if = {
+				limit = { }
+				custom_effect_tooltip = youzu_military_finished_dynamic_modifier_tt
+				add_to_variable = { youzu_army_supply_consumption_factor = -0.05 tooltip = supply_consumption_factor_tt }
+				add_to_variable = { youzu_army_local_supplies = 0.05 tooltip = local_supplies_tt }
+				add_to_variable = { youzu_army_special_forces_attack_factor = 0.1 tooltip = special_forces_attack_factor_tt }
+				add_to_variable = { youzu_army_special_forces_defence_factor = 0.1 tooltip = special_forces_defence_factor_tt }
+				add_to_variable = { youzu_army_special_forces_cap = 0.15 tooltip = special_forces_cap_tt }
+				add_to_variable = { youzu_army_winter_attrition_factor = -0.05 tooltip = winter_attrition_factor_tt }
+				add_to_variable = { youzu_army_heat_attrition_factor = -0.05 tooltip = heat_attrition_factor_tt }
+				add_to_variable = { youzu_army_experience_loss_factor = -0.15 tooltip = experience_loss_factor_tt }
+				add_to_variable = { youzu_army_no_supply_grace = 12 }
+				add_to_variable = { youzu_army_equipment_capture = 0.1 tooltip = equipment_capture_tt }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+	youzu_army_7 = {  
+		priority = 1 
+		icon = GFX_murasame
+		fire_only_once = yes
+		days_remove = 60
+		cost = 150
+		visible = {
+			has_country_flag = have_youzu_army_6
+            is_ai = no
+            and = {
+					 
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = youzu_army_7 }
+			        not = { has_country_flag = youzu_army_8 }
+					not = { has_country_flag = yz_bad_end }
+				}
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_murasame
+				
+			}
+					has_command_power > 9.99
+					has_army_experience > 79.99
+			check_variable = {
+				yz_money > 1000
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_to_variable = { yz_money = -1000 }
+			add_command_power = -40
+			army_experience = -80
+			set_country_flag = youzu_army_7
+		}
+		remove_effect = {
+			
+			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = youzu_military_dynamic_modifier
+				}
+				add_dynamic_modifier = {
+					modifier = youzu_military_finished_dynamic_modifier
+				}
+			}
+			
+			if = {
+				limit = { }
+				custom_effect_tooltip = youzu_military_finished_dynamic_modifier_tt
+				add_to_variable = { youzu_army_army_org_factor = 0.08 }
+				add_to_variable = { youzu_army_army_core_attack_factor = 0.02 tooltip = army_core_attack_factor_tt }
+				add_to_variable = { youzu_army_land_doctrine_cost_factor = -0.05 }
+				add_to_variable = { youzu_army_army_infantry_defence_factor = 0.05 tooltip = army_infantry_defence_factor_tt }
+				add_to_variable = { youzu_army_army_infantry_attack_factor = 0.05 tooltip = army_infantry_attack_factor_tt }
+				add_to_variable = { youzu_army_max_dig_in_factor = 0.075 tooltip = max_dig_in_factor_tt }
+				add_to_variable = { youzu_army_dig_in_speed_factor = 0.15 tooltip = dig_in_speed_factor_tt }
+				add_to_variable = { youzu_army_land_reinforce_rate = 0.02 }
+				add_to_variable = { youzu_army_cavalry_attack_factor = 0.1 tooltip = cavalry_attack_factor_tt }
+				add_to_variable = { youzu_army_cavalry_defence_factor = 0.1 tooltip = cavalry_defence_factor_tt }
+				add_to_variable = { youzu_army_max_planning = 0.1 tooltip = max_planning_factor_tt }
+                add_to_variable = { youzu_army_planning_speed = 0.1 tooltip = planning_speed_factor_tt }
+				add_to_variable = { youzu_army_unit_infantry_design_cost_factor = -0.25 tooltip = modifier_unit_infantry_design_cost_factor }
+				add_to_variable = { youzu_army_unit_artillery_design_cost_factor = -0.5 tooltip = modifier_unit_artillery_design_cost_factor }
+				add_to_variable = { youzu_army_army_org_factor = 0.08 tooltip = army_org_factor_tt }
+				add_to_variable = { youzu_army_mobilization_speed = 0.05 tooltip = mobilization_speed_tt }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+	youzu_army_8 = {  
+		priority = 1 
+		icon = GFX_meigulu
+		fire_only_once = yes
+		days_remove = 60
+		cost = 150
+		visible = {
+			has_country_flag = have_youzu_army_6
+            is_ai = no
+            and = {
+					 
+					has_country_flag = qiyong_youzi_2
+					not = { has_country_flag = youzu_army_7 }
+			        not = { has_country_flag = youzu_army_8 }
+					not = { has_country_flag = yz_bad_end }
+				}
+			 
+        }
+		available = {
+			or = {
+				has_country_flag = have_meigulu
+				
+			}
+					has_command_power > 9.99
+					has_army_experience > 79.99
+			check_variable = {
+				yz_money > 1000
+				tooltip = yz_money_tooltip_compare
+			}
+		}
+		complete_effect = {
+			add_to_variable = { yz_money = -1000 }
+			add_command_power = -40
+			set_country_flag = youzu_army_8
+			army_experience = -80
+		}
+		remove_effect = {
+			
+			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = youzu_military_dynamic_modifier
+				}
+				add_dynamic_modifier = {
+					modifier = youzu_military_finished_dynamic_modifier
+				}
+			}
+			
+			if = {
+				limit = { }
+				add_to_variable = { youzu_army_army_org_factor = 0.03 tooltip = army_org_factor_tt }
+				add_to_variable = { youzu_army_army_core_attack_factor = 0.02  tooltip = army_core_attack_factor_tt }
+				add_to_variable = { youzu_army_land_doctrine_cost_factor = -0.05  tooltip = land_doctrine_cost_factor_tt }
+				add_to_variable = { youzu_army_army_armor_attack_factor = 0.15  tooltip = army_armor_attack_factor_tt }
+				add_to_variable = { youzu_army_army_armor_defence_factor = 0.1 tooltip = army_armor_defence_factor_tt  }
+				add_to_variable = { youzu_army_army_attack_factor = 0.05 tooltip = army_attack_speed_factor_tt }
+				add_to_variable = { youzu_army_army_speed_factor = 0.1 tooltip = army_speed_factor_tt }
+				add_to_variable = { youzu_army_land_reinforce_rate = 0.02 }
+				add_to_variable = { youzu_army_org_loss_when_moving = -0.15 tooltip = org_loss_when_moving_tt }
+				add_to_variable = { youzu_army_ground_attack_factor = 0.15 tooltip = ground_attack_factor_tt }
+				add_to_variable = { youzu_army_max_planning = 0.05 tooltip = max_planning_factor_tt }
+                add_to_variable = { youzu_army_planning_speed = 0.15 tooltip = planning_speed_factor_tt }
+				add_to_variable = { youzu_army_unit_light_armor_design_cost_factor = -0.5  }
+				add_to_variable = { youzu_army_unit_medium_armor_design_cost_factor = -0.5 }
+				add_to_variable = { youzu_army_unit_heavy_armor_design_cost_factor = -0.5  }
+				add_to_variable = { youzu_army_unit_modern_armor_design_cost_factor = -0.5 }
+				add_to_variable = { youzu_army_unit_mechanized_design_cost_factor = -0.5  }
+				add_to_variable = { youzu_army_mobilization_speed = 0.1 tooltip = mobilization_speed_tt }
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+
+	create_yzc_units = {
+		#icon = GFX_
+		 
+		cost = 25
+		days_remove = 7
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			or = {
+				has_country_flag = yzc_units_boost_1
+				has_country_flag = yzc_units_boost_2
+				has_country_flag = yzc_units_boost_3
+			}
+			check_variable = {
+				yzc_unit_recruit < 5
+			}
+		}
+		available = {
+
+		}
+		complete_effect = {
+			add_manpower = -50000
+			add_to_variable = {
+				yzc_unit_recruit = 1
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = yzc_units_boost_1
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					create_unit = {
+						division = "name = \"柚子厨0721近卫军\" division_template = \"柚子厨0721近卫军\" start_experience_factor = 0.9 start_equipment_factor = 0.1" 
+						owner = FROM
+						count = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = yzc_units_boost_3
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					create_unit = {
+						division = "name = \"柚子厨0721现代机械化近卫军\" division_template = \"柚子厨0721现代机械化近卫军\" start_experience_factor = 0.9" 
+						owner = FROM
+						count = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = yzc_units_boost_2
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					create_unit = {
+						division = "name = \"柚子厨0721机械化近卫军\" division_template = \"柚子厨0721机械化近卫军\" start_experience_factor = 0.9" 
+						owner = FROM
+						count = 3
+					}
+				}
+			}
+		}
+	}
+	change_yzc_units_template = {
+		 
+		cost = 5
+		days_remove = 0
+		visible = {
+			or = {
+				has_country_flag = yzc_units_boost_2
+				has_country_flag = yzc_units_boost_3
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = change_yzc_units_template_tt
+			if = {
+				limit = {
+					has_country_flag = yzc_mechanized_units
+				}
+				every_country_division = {
+					limit = {
+						division_has_battalion_in_template = yzc_infantry
+					}
+					change_division_template = {
+						division_template = "柚子厨0721机械化近卫军"
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = yzc_modern_mechanized_units
+				}
+				every_country_division = {
+					limit = {
+						division_has_battalion_in_template = yzc_mechanized
+					}
+					change_division_template = {
+						division_template = "柚子厨0721现代机械化近卫军"
+					}
+				}
+			}
+		}
+	}
+	yzc_units_1 = {
+		#icon = GFX_
+		 
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		visible = {
+			has_country_flag = qiyong_youzi_2
+		}
+		available = {
+			has_country_flag = has_YZ_0721_detonator_tech
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			set_country_flag = yzc_units_boost_1
+			division_template = {
+				name = "柚子厨0721近卫军"
+				is_locked = yes
+				regiments = {
+					yzc_infantry = { x = 0 y = 0 }
+					yzc_infantry = { x = 0 y = 1 }
+					yzc_infantry = { x = 0 y = 2 }
+					yzc_infantry = { x = 0 y = 3 }
+					yzc_infantry = { x = 1 y = 0 }
+					yzc_infantry = { x = 1 y = 1 }
+					yzc_infantry = { x = 1 y = 2 }
+					yzc_artillery_brigade = { x = 2 y = 0 }
+					yzc_artillery_brigade = { x = 2 y = 1 }
+					yzc_artillery_brigade = { x = 2 y = 2 }
+					yzc_medium_armor_aa = { x = 3 y = 0 }
+				}
+				support = {
+					YZ_engineer = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 2 }
+					recon = { x = 0 y = 1 }
+					YZ_0721_detonator_company = { x = 0 y = 3 }
+					signal_company = { x = 0 y = 4 }
+				}
+			}
+			custom_effect_tooltip = yzc_units_1_tt
+		}
+	}
+	yzc_units_2 = {
+		#icon = GFX_
+		 
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			has_country_flag = yzc_units_boost_1
+		}
+		available = {
+			has_tech = basic_medium_tank_chassis
+			has_tech = mechanised_infantry
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			clr_country_flag = yzc_units_boost_1
+			set_country_flag = yzc_units_boost_2
+			set_country_flag = yzc_mechanized_units
+			division_template = {
+				name = "柚子厨0721机械化近卫军"
+				is_locked = yes
+				regiments = {
+					yzc_mechanized = { x = 0 y = 0 }
+					yzc_mechanized = { x = 0 y = 1 }
+					yzc_mechanized = { x = 0 y = 2 }
+					yzc_mechanized = { x = 0 y = 3 }
+					yzc_mechanized = { x = 1 y = 0 }
+					yzc_mechanized = { x = 1 y = 1 }
+					yzc_mechanized = { x = 1 y = 2 }
+					yzc_self_propelled_artillery_brigade = { x = 2 y = 0 }
+					yzc_self_propelled_artillery_brigade = { x = 2 y = 1 }
+					yzc_self_propelled_artillery_brigade = { x = 2 y = 2 }
+					yzc_medium_armor_aa = { x = 3 y = 0 }
+				}
+				support = {
+					YZ_engineer = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 2 }
+					light_tank_recon = { x = 0 y = 1 }
+					YZ_0721_detonator_company = { x = 0 y = 3 }
+					signal_company = { x = 0 y = 4 }
+				}
+			}
+			custom_effect_tooltip = yzc_units_2_tt
+		}
+	}
+	yzc_units_3 = {
+		#icon = GFX_
+		 
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		visible = {
+			has_country_flag = qiyong_youzi_2
+			has_country_flag = yzc_units_boost_2
+		}
+		available = {
+			has_tech = main_battle_tank_chassis
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			clr_country_flag = yzc_units_boost_2
+			set_country_flag = yzc_units_boost_3
+			set_country_flag = yzc_modern_mechanized_units
+			division_template = {
+				name = "柚子厨0721现代机械化近卫军"
+				
+				is_locked = yes
+				regiments = {
+					yzc_modern_mechanized = { x = 0 y = 0 }
+					yzc_modern_mechanized = { x = 0 y = 1 }
+					yzc_modern_mechanized = { x = 0 y = 2 }
+					yzc_modern_mechanized = { x = 0 y = 3 }
+					yzc_modern_mechanized = { x = 1 y = 0 }
+					yzc_modern_mechanized = { x = 1 y = 1 }
+					yzc_modern_mechanized = { x = 1 y = 2 }
+					yzc_self_propelled_artillery_brigade = { x = 2 y = 0 }
+					yzc_self_propelled_artillery_brigade = { x = 2 y = 1 }
+					yzc_self_propelled_artillery_brigade = { x = 2 y = 2 }
+					yzc_modern_armor = { x = 3 y = 0 }
+				}
+				support = {
+					YZ_engineer = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 2 }
+					light_tank_recon = { x = 0 y = 1 }
+					YZ_0721_detonator_company = { x = 0 y = 3 }
+					signal_company = { x = 0 y = 4 }
+				}
+			}
+			custom_effect_tooltip = yzc_units_3_tt
+		}
+	}
+}
+
+
+
+
+
+
+

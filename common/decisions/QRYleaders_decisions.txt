@@ -1,0 +1,18 @@
+QRYleaders_category = {
+	JCLleaders_decision_JCL = {
+		icon = generic_construction
+		visible = {
+			or = {
+                has_country_flag = qiyong_youzi_1
+                has_country_flag = qiyong_youzi_2
+            }
+		}
+		available = {
+			is_ai = no
+			NOT = { has_character = JCL_changlumozi }
+		}
+		complete_effect = {
+			country_event = { id = YZHJ_event.1 }
+		}
+	}
+}

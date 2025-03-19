@@ -1,0 +1,458 @@
+ideas = {
+	country = {
+		the_fool = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_speed_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_fool }
+			}
+		}
+		
+		the_fool_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_speed_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_fool_down }
+			}
+		}
+
+		the_chariot = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_armor_attack_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_chariot }
+			}
+		}
+		
+		the_chariot_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_armor_attack_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_chariot_down }
+			}
+		}
+
+		the_sun = {
+			picture = GFX_idea_tarot
+			modifier = {
+				research_speed_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_sun }
+			}
+		}
+		
+		the_sun_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				research_speed_factor = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_sun_down }
+			}
+		}
+
+		the_death = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_attack_factor = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_death }
+			}
+		}
+		
+		the_death_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_attack_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_death_down }
+			}
+		}
+
+		judgement = {
+			picture = GFX_idea_tarot
+			modifier = {
+				war_support_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_judgement }
+			}
+		}
+		
+		judgement_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				war_support_factor = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_judgement_down }
+			}
+		}
+
+		justice = {
+			picture = GFX_idea_tarot
+			modifier = {
+				send_volunteer_size = 4
+			}
+			cancel = {
+				not = { has_country_flag = tarot_justice }
+			}
+		}
+		
+		justice_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				send_volunteer_size = -2
+			}
+			cancel = {
+				not = { has_country_flag = tarot_justice_down }
+			}
+		}
+
+		the_strength = {
+			picture = GFX_idea_tarot
+			modifier = {
+				breakthrough_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_strength }
+			}
+		}
+		
+		the_strength_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				breakthrough_factor = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_strength_down }
+			}
+		}
+
+		temperrance = {
+			picture = GFX_idea_tarot
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+			cancel = {
+				not = { has_country_flag = tarot_temperrance }
+			}
+		}
+		
+		temperrance_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_temperrance_down }
+			}
+		}
+
+		the_devil = {
+			picture = GFX_idea_tarot
+			modifier = {
+				compliance_growth = 0.1
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_devil }
+			}
+		}
+		
+		the_devil_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				compliance_growth = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_devil_down }
+			}
+		}
+
+		the_emperor = {
+			picture = GFX_idea_tarot
+			modifier = {
+				political_power_factor = 0.075
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_emperor }
+			}
+		}
+		
+		the_emperor_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				political_power_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_emperor_down }
+			}
+		}
+
+		the_empress = {
+			picture = GFX_idea_tarot
+			modifier = {
+				conscription = 0.015
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_empress }
+			}
+		}
+		
+		the_empress_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				conscription = -0.005
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_empress_down }
+			}
+		}
+
+		the_hanged_man = {
+			picture = GFX_idea_tarot
+			modifier = {
+				experience_gain_army = 0.02
+				experience_gain_navy = 0.02
+				experience_gain_air = 0.02
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_hanged_man }
+			}
+		}
+		
+		the_hanged_man_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				experience_gain_army = -0.01
+				experience_gain_navy = -0.01
+				experience_gain_air = -0.01
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_hanged_man_down }
+			}
+		}
+
+		the_hermit = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_intel_factor = 0.05
+				navy_intel_factor = 0.05
+				airforce_intel_factor = 0.05
+				civilian_intel_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_hermit }
+			}
+		}
+		
+		the_hermit_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_intel_factor = -0.05
+				navy_intel_factor = -0.05
+				airforce_intel_factor = -0.05
+				civilian_intel_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_hermit_down }
+			}
+		}
+
+		the_hierophant = {
+			picture = GFX_idea_tarot
+			modifier = {
+				stability_factor = 0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_hierophant }
+			}
+		}
+		
+		the_hierophant_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				stability_factor = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_hierophant_down }
+			}
+		}
+
+		the_high_priestess = {
+			picture = GFX_idea_tarot
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_high_priestess }
+			}
+		}
+		
+		the_high_priestess_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				production_speed_buildings_factor = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_high_priestess_down }
+			}
+		}
+
+		the_lovers = {
+			picture = GFX_idea_tarot
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_lovers }
+			}
+		}
+		
+		the_lovers_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				consumer_goods_factor = 0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_lovers_down }
+			}
+		}
+
+		the_magician = {
+			picture = GFX_idea_tarot
+			modifier = {
+				local_resources_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_magician }
+			}
+		}
+		
+		the_magician_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				local_resources_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_magician_down }
+			}
+		}
+
+		the_moon = {
+			picture = GFX_idea_tarot
+			modifier = {
+				land_night_attack = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_moon }
+			}
+		}
+		
+		the_moon_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				land_night_attack = 0.1
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_moon_down }
+			}
+		}
+
+		the_star = {
+			picture = GFX_idea_tarot
+			modifier = {
+				mobilization_speed = 0.1
+				stability_weekly = 0.002
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_star }
+			}
+		}
+		
+		the_star_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				mobilization_speed = -0.05
+				stability_weekly = -0.001
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_star_down }
+			}
+		}
+
+		the_tower = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_defence_factor = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_tower }
+			}
+		}
+		
+		the_tower_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				army_defence_factor = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_tower_down }
+			}
+		}
+
+		the_world = {
+			picture = GFX_idea_tarot
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_world }
+			}
+		}
+		
+		the_world_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				industrial_capacity_factory = -0.025
+			}
+			cancel = {
+				not = { has_country_flag = tarot_the_world_down }
+			}
+		}
+
+		wheel_of_fortune = {
+			picture = GFX_idea_tarot
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+			}
+			cancel = {
+				not = { has_country_flag = tarot_wheel_of_fortune }
+			}
+		}
+		
+		wheel_of_fortune_down = {
+			picture = GFX_idea_tarot
+			modifier = {
+				planning_speed = -0.05
+				max_planning = -0.05
+			}
+			cancel = {
+				not = { has_country_flag = tarot_wheel_of_fortune_down }
+			}
+		}
+
+	}
+}

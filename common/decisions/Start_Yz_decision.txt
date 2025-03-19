@@ -1,0 +1,139 @@
+qiyong_youzi_general_category = {
+	
+	qiyong_youzijiang_1 = {		#仅将领
+		icon = GFX_congyu
+		fire_only_once = yes
+		visible = {
+			NOT = {
+				has_country_flag = qiyong_youzi_2
+			}
+			is_ai = no
+		}
+		complete_effect = {
+			set_country_flag = qiyong_youzi_1
+		}
+	}
+
+	qiyong_youzijiang_2 = {		#全部
+		icon = GFX_congyu
+		days_remove = 1
+		fire_only_once = yes 
+		visible = {
+			NOT = {
+				has_country_flag = qiyong_youzi_1
+			}
+			is_ai = no
+		}
+		complete_effect = {
+			set_country_flag = qiyong_youzi_2
+			set_country_flag = open_traot
+			country_event = start_event.1
+			set_country_flag = open_YZS_military_academy
+			set_country_flag = open_industry_money
+			set_country_flag = qiyong_yuzu_culture_department   #2025.3.7
+			hidden_effect = {
+				set_variable = {
+					var = yz_money
+					value = 500
+				}
+				set_variable = { 
+					var = love_depth
+					tooltip = love_depth_desc
+				}
+				add_to_variable = { love_depth = num_core_states }
+				add_to_variable = { love_depth = num_of_factories }
+				multiply_variable = { love_depth = 0.1 }
+				round_variable = love_depth
+				round_variable = num_YZ_general
+				set_variable = { num_YZ_general = 0 }
+				# 军校
+				add_to_variable = { youzu_army_land_reinforce_rate = -0.01 }
+				add_to_variable = { youzu_army_training_time_army_factor = 0.1 }
+				add_to_variable = { youzu_army_army_org_factor = -0.05 }
+				add_to_variable = { youzu_army_army_core_defence_factor = 0.03 }
+				add_to_variable = { youzu_army_land_doctrine_cost_factor = 0.05 }
+				add_to_variable = { youzu_army_mobilization_speed = -0.1 }
+				add_to_variable = { youzu_army_supply_consumption_factor = 0.05 }
+				add_to_variable = { youzu_army_local_supplies = -0.05 }
+				add_to_variable = { youzu_army_promote_cost_factor = -0.05 }
+				###金圆券兑换限制
+				set_variable = { yz_money_pp = 5 }
+				set_variable = { yz_money_cp = 5 }
+				set_variable = { yz_money_xp1 = 5 }
+				set_variable = { yz_money_xp2 = 5 }
+				set_variable = { yz_money_xp3 = 5 }
+				set_variable = { YzStore_5_var = 15 }
+				set_variable = { YzStore_6_var = 10 }
+				set_variable = { YzStore_8_var = 3 }
+				set_variable = { YzStore_10_var = 5 }
+				set_variable = { YzStore_11_var = 1 }
+				set_variable = { YzStore_LuckyDarw_var = 0 }
+				set_variable = { neko_click  = 0 }
+				###经济
+				set_variable = { YzMilitary_fund_var = 0 }
+				set_variable = { YzEducation_fund_var = 0 }
+				set_variable = { YzMonthlyFund_var = 0 }
+				set_variable = { YzAdministration_fund_var = 0 }
+				set_variable = { YzMoneyOutcome_var = 0 }
+				set_variable = { YzMoneyIncome_var = 0 }
+				###柚子国相关
+				set_variable = {
+					Yuzu_fund = 0
+				}
+				set_variable = {
+					yuzu_form_yuzu_land_days = 181
+				}
+				set_variable = {
+					yuzu_form_yuzu_land_days_basic_require = 180
+				}
+				###柚子厨单位
+				set_variable = {
+					yzc_unit_recruit = 0
+				}
+			}
+		}
+		
+	}
+
+	update_sth = {
+		priority = 10000
+		icon = GFX_congyu
+		days_remove = 1
+		fire_only_once = yes
+		visible = {
+			NOT = {
+				has_country_flag = qiyong_youzi_1
+			}
+			is_ai = no
+		}
+		complete_effect = {
+			country_event = start_event.8
+		}
+	}
+
+}
+Tarot_category = {
+
+	close_traot = {	
+		icon = GFX_tarot_icon
+		priority = 1000
+		cost = 0
+		days_remove = 0
+
+		visible = {
+			or = {
+				has_country_flag = have_toko
+				has_country_flag = have_wakana
+				has_country_flag = have_meigulu
+				has_country_flag = have_ningning
+				has_country_flag = have_chou
+			}
+			has_country_flag = qiyong_youzi_2
+			has_country_flag = open_traot
+		}
+
+		complete_effect = {
+			clr_country_flag = open_traot
+		}
+	}
+}

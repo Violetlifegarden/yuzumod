@@ -1,0 +1,22 @@
+#百科链接https://hoi4.paradoxwikis.com/Sound_modding
+#完整的asset文件应当包括catergoty,sound_effect/music,sound/song三个条目
+category = {
+    name = "ebi_voices"
+    soundeffects = {
+        ebi_practice
+    }
+}
+#sound_effect
+soundeffect = {
+    name = ebi_practice
+    volume = 0.6
+    sounds = {
+        sound = ebi_practice
+    }
+}
+
+    sound = 
+    {
+        name = "ebi_practice"
+        file = "ebi_sound/ebi_practice.wav"
+    }

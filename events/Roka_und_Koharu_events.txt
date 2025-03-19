@@ -1,0 +1,283 @@
+add_namespace = RoKo_event
+
+country_event = { 
+	id = RoKo_event.1 	#好船
+	title = RoKo_event.1.t
+	desc = RoKo_event.1.d
+	picture = GFX_roko_event1
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			play_song = koto_battle	#向着悲伤的彼岸
+		}
+		clr_country_flag = start_roko 
+	}
+	option = {
+		name = RoKo_event.1.a	#芦花
+		custom_effect_tooltip = get_roka_tt #小字
+		set_country_flag = have_roka
+
+		meta_effect = {
+			text = {
+				generate_character = {
+				token_base = Kurama_Roka
+				name = "马庭芦花"
+				gender = female
+				nationality = JAP
+					portraits = {
+						civilian = {
+                            large = "gfx\leader\Roka.png"
+                            small = "gfx\leader\Roka2.png"
+                        }
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					corps_commander = {
+						traits={
+							yz_roka_trait
+						}
+						skill=5
+						attack_skill=5
+						defense_skill=5
+						planning_skill=5
+						logistics_skill=5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RoKo_event.1.b	#小春
+		custom_effect_tooltip = get_koharu_tt #小字
+		set_country_flag = have_koharu
+		clr_country_flag = start_roko
+		meta_effect = {
+			text = {
+				generate_character = {
+				token_base = Kurama_Koharu
+				name = "鞍马小春"
+				gender = female
+				nationality = JAP
+					portraits = {
+						civilian = {
+                            large = "gfx\leader\Koharu.png"
+                            small = "gfx\leader\Koharu2.png"
+                        }
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					corps_commander = {
+						traits={
+							yz_koharu_trait
+						}
+						skill=5
+						attack_skill=5
+						defense_skill=5
+						planning_skill=5
+						logistics_skill=5
+					}
+				}
+			}
+		}
+	}
+}	
+
+country_event = { 
+	id = RoKo_event.2   #暂时的和平
+	title = RoKo_event.2.t
+	desc = RoKo_event.2.d
+	picture = GFX_roko_event2
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = start_roko
+	}
+	
+	option = {
+		name = RoKo_event.2.a
+		if = {
+			limit = {
+				not = { has_country_flag = havent_married }
+			}
+			set_country_flag = roko_all_marry
+		}
+		custom_effect_tooltip = roko_peace_tt
+		set_country_flag = have_roka
+		clr_country_flag = start_roko
+		meta_effect = {
+			text = {
+				generate_character = {
+				token_base = Kurama_Roka
+				name = "马庭芦花"
+				gender = female
+				nationality = JAP
+					portraits = {
+						civilian = {
+                            large = "gfx\leader\Roka.png"
+                            small = "gfx\leader\Roka2.png"
+                        }
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					corps_commander = {
+						traits={
+							yz_roka_trait
+						}
+						skill=5
+						attack_skill=5
+						defense_skill=5
+						planning_skill=5
+						logistics_skill=5
+					}
+				}
+			}
+		}
+		set_country_flag = have_koharu
+		meta_effect = {
+			text = {
+				generate_character = {
+				token_base = Kurama_Koharu
+				name = "鞍马小春"
+				gender = female
+				nationality = JAP
+					portraits = {
+						civilian = {
+                            large = "gfx\leader\Koharu.png"
+                            small = "gfx\leader\Koharu2.png"
+                        }
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					corps_commander = {
+						traits={
+							yz_koharu_trait
+						}
+						skill=5
+						attack_skill=5
+						defense_skill=5
+						planning_skill=5
+						logistics_skill=5
+					}
+				}
+			}
+		}
+    } 
+}
+
+country_event = { 
+	id = RoKo_event.3  #直接获得芦花
+	title =  RoKo_event.3.t
+	desc =  RoKo_event.3.d
+	picture = GFX_roka_event1
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = start_roko
+	}
+	option = {
+		name = RoKo_event.3.a
+        custom_effect_tooltip = get_roka_tt #小字
+		set_country_flag = have_roka
+		clr_country_flag = start_roko
+		meta_effect = {
+			text = {
+				generate_character = {
+				token_base = Kurama_Roka
+				name = "马庭芦花"
+				gender = female
+				nationality = JAP
+					portraits = {
+						civilian = {
+                            large = "gfx\leader\Roka.png"
+                            small = "gfx\leader\Roka2.png"
+                        }
+					}
+					allowed_civil_war = {
+						is_ai = no
+					} 
+					corps_commander = {
+						traits={
+							yz_roka_trait
+						}
+						skill=5
+						attack_skill=5
+						defense_skill=5
+						planning_skill=5
+						logistics_skill=5
+					}
+				}
+			}
+		}
+    } 
+}
+
+country_event = { 
+	id = RoKo_event.4  #直接获得小春
+	title =  RoKo_event.4.t
+	desc =  RoKo_event.4.d
+	picture = GFX_koharu_event1
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = start_roko
+	}
+	
+	option = {
+		name = RoKo_event.4.a
+        custom_effect_tooltip = get_koharu_tt #小字
+		set_country_flag = have_koharu
+		clr_country_flag = start_roko
+		meta_effect = {
+			text = {
+				generate_character = {
+				token_base = Kurama_Koharu
+				name = "鞍马小春"
+				gender = female
+				nationality = JAP
+					portraits = {
+						civilian = {
+                            large = "gfx\leader\Koharu.png"
+                            small = "gfx\leader\Koharu2.png"
+                        }
+					}
+					allowed_civil_war = {
+						is_ai = no
+					}
+					corps_commander = {
+						traits={
+							yz_koharu_trait
+						}
+						skill=5
+						attack_skill=5
+						defense_skill=5
+						planning_skill=5
+						logistics_skill=5
+					}
+				}
+			}
+		}
+    } 
+}
+
+country_event = { 
+	id = RoKo_event.101  #你是旮旯废物
+	title =  RoKo_event.101.t 
+	desc =  RoKo_event.101.d
+	picture = GFX_failed_event
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		clr_country_flag = start_roko
+	}
+	option = {
+		name = RoKo_event.101.a
+        custom_effect_tooltip = gal_feiwu_tt
+		clr_country_flag = start_roko
+    } 
+}
+
+

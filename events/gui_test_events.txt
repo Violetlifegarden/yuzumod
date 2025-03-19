@@ -1,0 +1,20 @@
+add_namespace = TEST_event     #GUI测试事件
+
+country_event= {           
+    id = TEST_event.1           
+    title = TEST_event.1.t
+    desc = TEST_event.1.d	
+    is_triggered_only = yes
+    hidden = yes
+    trigger = {
+        has_country_flag = test_mur_event_1
+    }
+    immediate = {
+        set_country_flag = open_YZ_dialog   # 打开界面
+        set_country_flag = open_dialog_gui_option_1 # 开启第一个选项
+        set_country_flag = open_dialog_gui_option_2 # 开启第二个选项
+        set_country_flag = open_dialog_gui_option_3 # 开启第三个选项
+        set_country_flag = mur_1 # 此次事件的flag，在scripted_localisation里面起作用
+        set_country_flag = SR_dialog # 千恋万花标题
+    }
+}

@@ -1,0 +1,828 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "Yz_leader"
+		position = { x = 0 y = -50 }
+		size = { width = 510 height = 350 } 
+		clipping = no
+
+		background = {
+			name = "Yz_leader_bg"
+			#quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+		instantTextBoxType = {
+			name = "Yzleader_title"
+			position = { x = 150 y = -10 }
+			font = "hoi_36header"
+			text = "柚子社核心圈子"
+			maxWidth = 200
+			maxHeight = 40
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {
+			name = "open_YzModule"
+			position = { x = 420 y = -8 }
+			size = { width = 180 height = 230 }
+			scale = 0.6		###缩放
+			quadTextureSprite = "GFX_murasame_3"
+			#pdx_tooltip = "open_YzModule_tt"
+		} 
+		#instantTextBoxType = {
+		#	name = "open_YzModule_text"
+		#	position = { x = 280 y = 20 }
+		#	font = "hoi_16mbs"
+		#	text = "open_YzModule_text"
+		#	maxWidth = 200
+		#	maxHeight = 40
+		#	alwaystransparent = yes
+		#	format = center 
+		#}
+		buttonType = {
+			name = "Yzleader_portrait1"
+			position = { x = 74 y = 73 }
+			size = { width = 180 height = 230 }
+			scale = 0.51		###缩放
+			quadTextureSprite = "GFX_yzleader_bg"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+		} 
+		iconType = { 
+			name = "Yzleader_box1"
+			position = { x = 64 y = 63 }
+			size = { width = 180 height = 230 }
+			scale = 0.55		###缩放
+			quadTextureSprite = "GFX_yzleader_box"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+			alwaystransparent = yes
+		} 
+		iconType = { 
+			name = "Yzleader_unknown1"
+			position = { x = 64 y = 60 }
+			size = { width = 180 height = 230 }
+			scale = 0.55		###缩放
+			quadTextureSprite = "GFX_yzleader_unknown"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+		} 
+		 
+		buttonType = {
+			name = "Yzleader_portrait2"
+			position = { x = 210 y = 44 } 
+			size = { width = 180 height = 220 }
+			scale = 0.52		###缩放
+			quadTextureSprite = "GFX_yzleader_bg"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+		} 
+		iconType = { 
+			name = "Yzleader_box2"
+			position = { x = 201 y = 35 }
+			size = { width = 180 height = 210 }
+			scale = 0.55		###缩放
+			quadTextureSprite = "GFX_yzleader_box"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+			alwaystransparent = yes
+		}
+		buttonType = { 
+			name = "Yzleader_unknown2"
+			position = { x = 201 y = 35 } 
+			size = { width = 180 height = 210 }
+			scale = 0.55		###缩放
+			quadTextureSprite = "GFX_yzleader_unknown"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+		} 
+		
+		buttonType = {
+			name = "Yzleader_portrait3"
+			position = { x = 348 y = 69 } 
+			size = { width = 180 height = 230 }
+			scale = 0.51		###缩放
+			quadTextureSprite = "GFX_yzleader_bg"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+		} 
+		iconType = { 
+			name = "Yzleader_box3"
+			position = { x = 338 y = 60 } 
+			size = { width = 180 height = 230 }
+			scale = 0.55		###缩放
+			quadTextureSprite = "GFX_yzleader_box"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+			alwaystransparent = yes
+		} 
+		buttonType = { 
+			name = "Yzleader_unknown3"
+			position = { x = 338 y = 60 } 
+			size = { width = 180 height = 230 }
+			scale = 0.55		###缩放
+			quadTextureSprite = "GFX_yzleader_unknown"
+			pdx_tooltip = " "
+			#clicksound = clicksound
+		} 
+		
+		instantTextBoxType = {
+			name = "Yzleader_title1"
+			position = { x = 175 y = 160 }
+			font = "hoi_24header"
+			text = "柚子社主席"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		instantTextBoxType = {
+			name = "Yzleader_title2"
+			position = { x = 52 y = 188 }
+			font = "hoi_24header"
+			text = "柚子社副主席"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes
+			format = middle
+		}
+		instantTextBoxType = {
+			name = "Yzleader_title3"
+			position = { x = 312 y = 188 }
+			font = "hoi_24header"
+			text = "柚子社第一书记"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+
+		containerWindowType = {
+			name = "yz_money_gui"
+			position = { x = 15 y = 225 }
+			size = { width = 500 height = 200 } 
+			clipping = no
+
+			background = {
+				name = "ym_bg"
+				quadTextureSprite = GFX_tiled_window_transparent
+			}
+			
+			buttonType = {
+				name = "open_yz_money_btn"
+				position = { x = 240 y = 80 } 
+				size = { width = 70 height = 30 }
+				quadTextureSprite = "GFX_yz_button_long"
+				scale = 0.55
+				pdx_tooltip = yz_money_desc_tt	
+			}
+			instantTextBoxType = {
+				name = "open_yz_money_btn_text"
+				position = { x = 266 y = 88 } 
+				font = "hoi_18mbs"
+				text = "yz_money_btn_text"
+				maxWidth = 120
+				maxHeight = 30
+				alwaystransparent = yes
+				format = center 
+			}
+			buttonType = {
+				name = "open_YzStore_btn"
+				position = { x = 30 y = 80 } 
+				size = { width = 70 height = 30 }
+				quadTextureSprite = "GFX_yz_button_long"
+				scale = 0.55
+				pdx_tooltip = open_YzStore_btn_tt
+			}
+			instantTextBoxType = {
+				name = "open_YzStore_btn_text"
+				position = { x = 62 y = 88 } 
+				font = "hoi_18mbs"
+				text = "YzStore_btn_text"
+				maxWidth = 100
+				maxHeight = 30
+				alwaystransparent = yes
+				format = center 
+			}
+			
+			instantTextBoxType = {
+				name = "yz_money_title"
+				position = { x = 230 y = -0 }
+				font = "hoi_20bs"
+				text = "industry_money_category"
+				maxWidth = 150
+				maxHeight = 30
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "yz_money_desc"
+				position = { x = 230 y = 24 }
+				font = "hoi_16mbs"
+				text = "industry_money_category_desc"
+				maxWidth = 245
+				maxHeight = 30
+				alwaystransparent = yes
+				pdx_tooltip = yz_money_desc_tt
+			}
+			instantTextBoxType = {
+				name = "yz_LD_title"
+				position = { x = 0 y = 0 }
+				font = "hoi_20bs"
+				text = "love_LD_title"
+				maxWidth = 150
+				maxHeight = 30
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "yz_LD_desc"
+				position = { x = 0 y = 24 }
+				font = "hoi_16mbs"
+				text = "love_depth_localisation_text"
+				maxWidth = 245
+				maxHeight = 30
+				alwaystransparent = yes
+			}
+		}
+		
+	}
+
+	containerWindowType = {
+		name = "yz_money_window"
+		position = { x = 535 y = 200 }
+		size = { width = 230 height = 430 } 
+		show_position = { x = 535 y = 200 }
+		hide_position = { x = 535 y = 200 }
+		animation_time = 100
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		moveable = yes
+		click_to_front = yes
+		background = {
+			name = "yz_store_bg"
+			quadTextureSprite = GFX_tiled_window2_1b_border
+		}
+		buttonType = {
+			name = "yz_money_button_close"
+			position = {x = -44 y = 4 }
+			spriteType = "GFX_NV_btn_close"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+			shortcut = "ESCAPE"
+			orientation = UPPER_RIGHT
+		}
+		###拨款
+		instantTextBoxType = {
+			name = "yz_economic_policy_title"
+			position = { x = 20 y = 28 }
+			font = "hoi_24header"
+			text = "yz_economic_policy"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes 
+		}
+		buttonType = {
+			name = "yz_economic_policy_1_btn"
+			position = { x = 18 y = 60 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = yz_economic_policy_1_btn_tt
+		}
+		instantTextBoxType = {
+			name = "yz_economic_policy_title_1_text"
+			position = { x = 68 y = 68 }  
+			font = "hoi_18mbs"
+			text = "yz_economic_policy_title_1_text"
+			maxWidth = 70
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {
+			name = "yz_economic_policy_2_btn"
+			position = { x = 18 y = 100 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = yz_economic_policy_2_btn_tt
+		}
+		instantTextBoxType = {
+			name = "yz_economic_policy_title_2_text"
+			position = { x = 68 y = 108 } 
+			font = "hoi_18mbs"
+			text = "yz_economic_policy_title_2_text"
+			maxWidth = 70
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {
+			name = "yz_economic_policy_3_btn"
+			position = { x = 18 y = 140 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = yz_economic_policy_3_btn_tt
+		}
+		instantTextBoxType = {
+			name = "yz_economic_policy_title_3_text"
+			position = { x = 55 y = 148 } 
+			font = "hoi_18mbs"
+			text = "yz_economic_policy_title_3_text"
+			maxWidth = 100
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		###每月拨款
+		instantTextBoxType = {
+			name ="YzMonthlyFund_fund_title"
+			position = { x = 20 y = 185 }
+			font = "hoi_18mbs"
+			text = "YzMonthlyFund_fund_title"
+		}
+		buttonType = {
+			name = "YzMonthlyFund_fund_down_button"
+			position = { x = 120 y = 182 }
+			quadTextureSprite = "GFX_subtract_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzMonthlyFund_fund_down_button_desc
+		}
+		instantTextBoxType = {
+			name ="YzMonthlyFund_fund_level"
+			position = { x = 150 y = 185 }
+			font = "hoi_18mbs"
+			text = "YzMonthlyFund_fund_level"
+		}
+		buttonType = {
+			name = "YzMonthlyFund_fund_up_button"
+			position = { x = 180 y = 181}
+			quadTextureSprite = "GFX_add_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzMonthlyFund_fund_up_button_desc
+		}
+		###支出调整
+		instantTextBoxType = {
+			name = "yz_outcome_policy_title"
+			position = { x = 20 y = 215 }
+			font = "hoi_24header"
+			text = "yz_outcome_policy_title"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes
+		}
+		###教育资金
+		instantTextBoxType = {
+			name ="YzEducation_fund_title"
+			position = { x = 20 y = 245 }
+			font = "hoi_18mbs"
+			text = "YzEducation_fund_title"
+		}
+		buttonType = {
+			name = "YzEducation_fund_down_button"
+			position = { x = 120 y = 245 }
+			quadTextureSprite = "GFX_subtract_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzEducation_fund_down_button_desc
+		}
+		instantTextBoxType = {
+			name ="YzEducation_fund_level"
+			position = { x = 150 y = 247 }
+			font = "hoi_18mbs"
+			text = "YzEducation_fund_level"
+		}
+		buttonType = {
+			name = "YzEducation_fund_up_button"
+			position = { x = 180 y = 244 }
+			quadTextureSprite = "GFX_add_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzEducation_fund_up_button_desc
+		}
+		###行政资金
+		instantTextBoxType = {
+			name ="YzAdministration_fund_title"
+			position = { x = 20 y = 275 }
+			font = "hoi_18mbs"
+			text = "YzAdministration_fund_title"
+		}
+		buttonType = {
+			name = "YzAdministration_fund_down_button"
+			position = { x = 120 y = 275 }
+			quadTextureSprite = "GFX_subtract_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzAdministration_fund_down_button_desc
+		}
+		instantTextBoxType = {
+			name ="YzAdministration_fund_level"
+			position = { x = 150 y = 277 }
+			font = "hoi_18mbs"
+			text = "YzAdministration_fund_level"
+		}
+		buttonType = {
+			name = "YzAdministration_fund_up_button"
+			position = { x = 180 y = 275 }
+			quadTextureSprite = "GFX_add_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzAdministration_fund_up_button_desc
+		}
+		###军事
+		instantTextBoxType = {
+			name ="YzMilitary_fund_title"
+			position = { x = 20 y = 305 }
+			font = "hoi_18mbs"
+			text = "YzMilitary_fund_title"
+		}
+		buttonType = {
+			name = "YzMilitary_fund_down_button"
+			position = { x = 120 y = 305 }
+			quadTextureSprite = "GFX_subtract_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzMilitary_fund_down_button_desc
+		}
+		instantTextBoxType = {
+			name ="YzMilitary_fund_level"
+			position = { x = 150 y = 307 }
+			font = "hoi_18mbs"
+			text = "YzMilitary_fund_level"
+		}
+		buttonType = {
+			name = "YzMilitary_fund_up_button"
+			position = { x = 180 y = 304 }
+			quadTextureSprite = "GFX_add_one"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = YzMilitary_fund_up_button_desc
+		}
+		###收支详情
+		instantTextBoxType = {
+			name ="YzMoneyIncome"
+			position = { x = 20 y = 340 }
+			font = "hoi_18mbs"
+			text = "YzMoneyIncome"
+		}
+		instantTextBoxType = {
+			name ="YzMoneyOutcome"
+			position = { x = 20 y = 365 }
+			font = "hoi_18mbs"
+			text = "YzMoneyOutcome"
+		}
+		instantTextBoxType = {
+			name ="YzMoneyNetIcome"
+			position = { x = 20 y = 390 }
+			font = "hoi_18mbs"
+			text = "YzMoneyNetIcome"
+		}
+	}
+
+	containerWindowType = {
+		name = "YzStore_window"
+		position = { x = 535 y = 200 }
+		size = { width = 450 height = 380 } 
+		show_position = { x = 535 y = 200 }
+		hide_position = { x = 535 y = 200 }
+		animation_time = 100
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		moveable = yes
+		click_to_front = yes
+		background = {
+			name = "yz_store_bg"
+			quadTextureSprite = GFX_tiled_window2_1b_border
+		}
+		buttonType = {
+			name = "YzStore_button_close"
+			position = {x = -30 y = 4 }
+			spriteType = "GFX_NV_btn_close"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+			shortcut = "ESCAPE"
+			orientation = UPPER_RIGHT
+		}
+		iconType = {
+			name = "YzStore_icon_murasame"
+			position = {x = 50 y = 260 }
+			spriteType = "GFX_murasame_3"
+			scale = 1
+
+		}
+		instantTextBoxType = {
+			name = "YzStore_window_title"
+			position = { x = 20 y = 15 }
+			font = "hoi_30header"
+			text = "YzStore_window_title"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "YzStore_window_title1"
+			position = { x = 25 y = 50 }
+			text = "YzStore_window_title2"
+			font = "hoi_24header"
+			maxWidth = 150
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###pp
+			name = "YzStore_1_btn"
+			position = { x = 18 y = 80 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_1_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_1_text"
+			position = { x = 18 y = 88 }  
+			font = "hoi_18mbs"
+			text = "YzStore_title_1_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###cp
+			name = "YzStore_2_btn"
+			position = { x = 18 y = 120 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_2_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_2_text"
+			position = { x = 20 y = 128 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_2_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###xp陆军
+			name = "YzStore_3_btn"
+			position = { x = 18 y = 160 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_3_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_3_text"
+			position = { x = 18 y = 168 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_3_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###空军xp
+			name = "YzStore_4_btn"
+			position = { x = 18 y = 200 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_4_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_4_text"
+			position = { x = 18 y = 208 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_4_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###海军xp
+			name = "YzStore_9_btn"
+			position = { x = 18 y = 240 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_9_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_9_text"
+			position = { x = 18 y = 248 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_9_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		###小超市
+		instantTextBoxType = {
+			name = "YzStore_window_title2"
+			position = { x = 240 y = 50 }
+			font = "hoi_24header"
+			text = "YzStore_window_title1"
+			maxWidth = 160
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###冰
+			name = "YzStore_5_btn"
+			position = { x = 238 y = 80 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_5_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_5_text"
+			position = { x = 238 y = 88 }  
+			font = "hoi_18mbs"
+			text = "YzStore_title_5_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###粽子
+			name = "YzStore_6_btn"
+			position = { x = 238 y = 120 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_6_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_6_text"
+			position = { x = 238 y = 128 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_6_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###收藏
+			name = "YzStore_7_btn"
+			position = { x = 238 y = 160 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_7_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_7_text"
+			position = { x = 238 y = 168 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_7_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {	###起爆器
+			name = "YzStore_8_btn"
+			position = { x = 238 y = 200 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_8_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_8_text"
+			position = { x = 238 y = 208 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_8_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {    #柚子超级会员
+			name = "YzStore_10_btn"
+			position = { x = 238 y = 240 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_10_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_10_text"
+			position = { x = 238 y = 248 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_10_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+		buttonType = {
+			name = "YzStore_11_btn"     #柚子基金
+			position = { x = 238 y = 280 } 
+			size = { width = 70 height = 30 }
+			quadTextureSprite = "GFX_yz_button_long"
+			scale = 0.55
+			pdx_tooltip = YzStore_11_btn_tt
+		}
+		instantTextBoxType = {
+			name = "YzStore_title_11_text"
+			position = { x = 238 y = 288 } 
+			font = "hoi_18mbs"
+			text = "YzStore_title_11_text"
+			maxWidth = 170
+			maxHeight = 30
+			alwaystransparent = yes
+			format = center 
+		}
+	}
+
+	containerWindowType = {
+		name = "YZ_Tarot"
+		position = { x = 0 y = -20 }
+		size = { width = 500 height = 500 } 
+
+		buttonType = { 
+			name = "tarot_cards"
+			position = { x = 120 y = -10 } 
+			size = { width = 500 height = 500 }
+			quadTextureSprite = "GFX_meigulu"
+			pdx_tooltip = "all_tarot_name"
+			pdx_tooltip_delayed = "all_tarot_desc"
+			clicksound = clicksound
+		} 
+		iconType = {
+			name = "tarot_cards_image"
+			position = { x = 120 y = -10 } 
+			size = { width = 500 height = 500 }
+			spriteType = "GFX_meigulu"		
+			
+			pdx_tooltip = "all_tarot_name"
+			pdx_tooltip_delayed = "all_tarot_desc"
+		}
+		buttonType = { 
+			name = "tarot_empty"
+			position = { x = 120 y = -10 } 
+
+			quadTextureSprite = "GFX_tarot_empty"
+
+			pdx_tooltip = "tarot_empty_desc"
+			clicksound = clicksound
+		} 
+	}
+
+	containerWindowType = {
+		name = "yz_money_ui"
+		position = { x= 966 y = -400}
+		clipping = no
+		size = { width=76 height=30 }
+		Orientation = UPPER_LEFT
+		show_position = { x= 966 y = 4}
+		hide_position = { x= 966 y = -400}
+		animation_time = 1
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		moveable = yes
+
+		background = {
+			name = "yz_money_ui_bg"
+			quadTextureSprite ="GFX_mini_tooltip"
+			pdx_tooltip = "yz_money_desc"
+			pdx_tooltip_delayed = "yz_money_delayed_desc"
+			
+		}
+
+		iconType = {
+			name ="yz_money_ui_icon"
+			spriteType = "GFX_yz_money"
+			position = { x= 5 y = 6 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name ="yz_money_ui_value"
+			position = { x= 25 y = 5 }
+			font = "hoi_18mbs"
+			text = "yz_money_visible"
+			format = center 
+			maxWidth = 50
+			maxHeight = 24
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+
+}

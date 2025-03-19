@@ -1,0 +1,121 @@
+guiTypes = {
+	containerWindowType = {		## 对话选项ui
+		name = "YZ_dialog"
+		position = { x = 0 y = 0 }
+		orientation = CENTER
+		size = { width = 960 height = 600 }  
+		show_position = { x= -280 y = -350}
+		hide_position = { x= -280 y = -350}
+		animation_time = 1
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		moveable = yes
+
+		background = {
+			name = "yuzu_option_ui_bg"
+			quadTextureSprite = "GFX_yuzu_option_ui_bg"
+		}
+
+		iconType = {			# 背景图片
+			name = "YZ_dialog_bg"
+			position = { x = 0 y = 37 } 
+			size = { width = 100% height = 100% } 
+			quadTextureSprite = "GFX_yoshino_home_bg"
+			alwaystransparent = yes
+		}
+		iconType = {			# 中央大立绘
+			name = "character_bg_big"
+			position = { x = 216 y = 95 } 
+			size = { width = 100% height = 100% } 
+			quadTextureSprite = "GFX_character_bg_big"
+			alwaystransparent = yes
+		}
+		buttonType = { 			# 对话框黑背景
+			name = "yuzu_dialog_bg"
+			position = { x = 0 y = 433 } 
+			size = { width = 960 height = 144 } 
+			quadTextureSprite = "GFX_yuzu_dialog_bg"
+			pdx_tooltip = "yuzu_dialog_bg"
+			clicksound = click_ok
+		} 
+		instantTextboxType = {	# 对话框内容
+			name = "YZ_Dialog"
+			position = { x = 213 y = 446 }
+			font = "hoi_24header"
+			text = "Dialog_text"
+			maxWidth = 680
+			maxHeight = 120
+			alwaystransparent = yes
+			format = left
+		}	
+		iconType = {		# 左下立绘
+			name = "character_bg_small"
+			position = { x = 8 y = 438 } 
+			size = { width = 100% height = 100% } 
+			quadTextureSprite = "GFX_character_bg_small"
+			alwaystransparent = yes
+		}
+		buttonType = { 		# 选项1
+			name = "YZ_dialog_gui_option_1"
+			position = { x = 356 y = 159 } 
+			size = { width = 100% height = 100% } 
+			quadTextureSprite = "GFX_yuzu_option"
+			pdx_tooltip = "dialog_gui_option_1_tooltip"
+		} 
+		instantTextboxType = {	# 选项文本
+			name = "YZ_dialog_gui_option_1_text"
+			position = { x = 361 y = 169 }
+			font = "hoi_18mbs"
+			text = "YZ_dialog_gui_option_1_text"
+			maxWidth = 235
+			maxHeight = 26
+			alwaystransparent = yes
+			format = left
+		}
+		buttonType = { 		# 选项2
+			name = "YZ_dialog_gui_option_2"
+			position = { x = 356 y = 225 }  
+			size = { width = 100% height = 100% } 
+			quadTextureSprite = "GFX_yuzu_option"
+			pdx_tooltip = "dialog_gui_option_2_tooltip"
+		} 
+		instantTextboxType = {
+			name = "YZ_dialog_gui_option_2_text"
+			position = { x = 361 y = 234 }
+			font = "hoi_18mbs"
+			text = "YZ_dialog_gui_option_2_text"
+			maxWidth = 235
+			maxHeight = 26
+			alwaystransparent = yes
+			format = left
+		}
+		buttonType = { 		# 选项3
+			name = "YZ_dialog_gui_option_3"
+			position = { x = 356 y = 289 }  
+			size = { width = 100% height = 100% } 
+			quadTextureSprite = "GFX_yuzu_option"
+			pdx_tooltip = "dialog_gui_option_3_tooltip"
+		} 
+		instantTextboxType = {
+			name = "YZ_dialog_gui_option_3_text"
+			position = { x = 361 y = 299 }
+			font = "hoi_18mbs"
+			text = "YZ_dialog_gui_option_3_text"
+			maxWidth = 235
+			maxHeight = 26
+			alwaystransparent = yes
+			format = left
+		}
+		instantTextboxType = {	# 左上角游戏名
+			name = "game_name_text"
+			position = { x = 39 y = 9 }
+			font = "hoi4_typewriter16"
+			text = "YZGalgame_name"
+			maxWidth = 600
+			maxHeight = 20
+			format = left
+			alwaystransparent = yes
+		}
+	}
+
+}

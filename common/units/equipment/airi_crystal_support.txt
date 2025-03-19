@@ -1,0 +1,39 @@
+equipments = {
+
+	airi_crystal_support_equipment = {
+		year = 2013
+
+		is_archetype = yes
+		picture = GFX_airi_crystal_support_equipment_medium
+		is_buildable = no
+		type = {
+			infantry
+			motorized
+			support
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		upgrades = {
+			tank_reliability_upgrade
+			mech_cost_upgrade
+		}
+		reliability = 1
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 20
+		resources = {
+			
+		}
+	}
+
+	airi_crystal_support_equipment_1 = {
+		year = 2013
+
+		archetype = airi_crystal_support_equipment
+		priority = 20	
+	}
+
+}

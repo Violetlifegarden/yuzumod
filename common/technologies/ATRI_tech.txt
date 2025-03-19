@@ -1,0 +1,105 @@
+technologies = {
+
+	tech_ATRI_equipment_0 = { 
+
+		
+		enable_equipments = {
+			ATRI_equipment_0
+		}	
+		
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tech_ATRI_equipment_1 = { 
+
+		
+		enable_equipments = {
+			ATRI_equipment_1
+		}	
+		
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	tech_atri_engineer = { 
+
+		enable_subunits = {
+			atri_engineer
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tech_atri_heavy_armor = { 
+
+		enable_subunits = {
+			atri_heavy_armor
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tech_atri_infantry = { 
+
+		enable_subunits = {
+			atri_infantry
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tech_atri_medium_tank = { 
+
+		enable_subunits = {
+			atri_medium_armor
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tech_atri_recon_icon = { 
+
+		enable_subunits = {
+			atri_recon
+		}
+
+		research_cost = 1.5
+		start_year = 1936
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

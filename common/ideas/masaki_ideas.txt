@@ -1,0 +1,35 @@
+ideas = {
+	
+	country = {
+		
+		masaki_supply_node_construction = {
+			picture = SOV_the_road_of_life
+			allowed_civil_war = {
+				is_ai = no
+			}
+			modifier = {
+				production_speed_supply_node_factor = 50
+				consumer_goods_factor = 0.15
+			}
+		}
+		chocolate_donuts_weeken = {
+
+			picture = chocolate_donuts ###试试
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				supply_consumption_factor = -0.05
+				army_org_factor = 0.05
+			}
+		}
+	}
+
+
+
+}
+

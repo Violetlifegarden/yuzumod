@@ -1,0 +1,477 @@
+add_namespace = ASHC_event
+
+country_event = { 
+	id = ASHC_event.1
+	title = ASHC_event.1.t
+	desc = ASHC_event.1.d
+	picture = GFX_ASHC_event
+	is_triggered_only = yes
+	
+	option = {
+		name = ASHC_event.1.a
+        country_event = { id = ASHC_event.8 days = 4 }
+		hidden_effect = {
+            add_ideas = chose_baliu
+        }
+    } 
+}
+country_event = {
+    id = ASHC_event.8   #苏醒后的八六
+    picture = GFX_ASHC_event8
+    title = ASHC_event.8.t
+    desc = ASHC_event.8.d
+    is_triggered_only = yes
+
+    option = {            
+        name = ASHC_event.8.a
+        add_political_power = 5
+        army_experience = -2
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide
+        hidden_effect = {
+            country_event = { id = ASHC_event.10 days = 15 }
+        }
+        add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 1
+			producer = JAP
+		}	
+        meta_effect = {
+            text = {
+                generate_character = {
+                    token_base = baliu
+                    name = "baliu"
+                    gender = female
+                    nationality = JAP
+                    portraits = {
+                        civilian = {
+                            large = "gfx\leader\baliu.png"
+                            small = "gfx\leader\BALIUERLING2.png"
+                        }
+                    }
+                    allowed_civil_war = {
+                        is_ai = no
+                    }
+                    field_marshal = {
+                    traits={
+                        tielurenou
+					    JAP_communist_sympathizer
+					    logistics_wizard
+                    }
+                    attack_skill = 1
+                    defense_skill = 1
+                    planning_skill = 2
+                    logistics_skill = 3
+                    skill = 3
+                   }
+               }
+           }
+       }
+    }
+    option = {
+        name = ASHC_event.9.a
+        add_political_power = 5
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide1
+        add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 1
+			producer = JAP
+		}	
+        meta_effect = {
+            text = {
+                generate_character = {
+                    token_base = baliu_1
+                    name = "八六"
+                    gender = female
+                    nationality = JAP
+                    portraits = {
+                        civilian = {
+                            large = "gfx\leader\baliu.png"
+                            small = "gfx\leader\BALIUERLING2.png"
+                        }
+                    }
+                    allowed_civil_war = {
+                        is_ai = no
+                    }
+                    field_marshal = {
+                    traits={
+                        tielurenou
+					    JAP_communist_sympathizer
+					    logistics_wizard
+                    }
+                    attack_skill = 4
+                    defense_skill = 3
+                    planning_skill = 5
+                    logistics_skill = 7
+                    skill = 5
+                   }
+                }
+            }
+        }
+    }
+}
+country_event = {
+    id = ASHC_event.10   #修复8620
+    picture = GFX_ASHC_event10
+    title = ASHC_event.10.t
+    desc = ASHC_event.10.d
+    is_triggered_only = yes
+
+    option = {            #专注火车，不惜一切代价以最快的速度修好它！
+        name = ASHC_event.10.a
+        add_political_power = -2
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide2
+        add_timed_idea = {
+        idea = xiufuhuoche	
+		days = 4
+		}
+        random_army_leader = {
+            limit = {
+                has_trait = tielurenou
+            }
+            add_unit_leader_trait = maid_tielurenou1_trait
+        }
+        hidden_effect = {
+            country_event = { id = ASHC_event.12 days = 8 }
+        }	
+    }
+    option = {            #手头资源不是很多，还要建设别的东西，慢慢来吧
+        name = ASHC_event.11.a
+        add_political_power = 1
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide3
+        add_timed_idea = {
+        idea = xiufuhuoche1	
+		days = 20
+		}
+        random_army_leader = {
+            limit = {
+                has_trait = tielurenou
+            }
+            add_unit_leader_trait = maid_tielurenou1_trait
+        }
+        hidden_effect = {
+            country_event = { id = ASHC_event.12 days = 20 }
+        }	
+    }
+}
+country_event = {
+    id = ASHC_event.12   #技术瓶颈
+    picture = GFX_ASHC_event12
+    title = ASHC_event.12.t
+    desc = ASHC_event.12.d
+    is_triggered_only = yes
+
+    option = {            #从宁宁茉优那里调几名科学家过来！
+        name = ASHC_event.12.a
+        add_political_power = -2
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide4
+        add_timed_idea = {
+        idea = keyanfenxi	
+		days = 10
+		}
+        random_army_leader = {
+            limit = {
+                has_trait = tielurenou
+            }
+            add_skill_level = 2
+            add_logistics = 1
+            add_planning = 1
+            add_attack = 1
+            add_defense = 1
+        }
+        hidden_effect = {
+            country_event = { id = ASHC_event.14 days = 8 }
+        }	
+    }
+    option = {            #修一辆火车这么麻烦？要不算了吧……
+        name = ASHC_event.13.a
+        add_political_power = 1
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide5
+    }
+}
+country_event = {
+    id = ASHC_event.14   #出发！8620！
+    picture = GFX_ASHC_event14
+    title = ASHC_event.14.t
+    desc = ASHC_event.14.d
+    is_triggered_only = yes
+
+    option = {            #去总参谋部
+        name = ASHC_event.14.a
+        add_political_power = -2
+        hidden_effect = {                                         #2025.3.10
+            play_song = youzu26
+        }
+        custom_effect_tooltip = {
+            localization_key = play_the_song_of_hachiroku_effect_tooltip
+        }
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide6
+        random_army_leader = {
+            limit = {
+                has_trait = tielurenou
+            }
+            add_skill_level = 1
+            add_logistics = 2
+            add_planning = 2
+        }
+        meta_effect = {
+           		text = {
+                	generate_character = {
+                    	token_base = hachiroko_high_command
+                    	name = "八六"
+                    	gender = female
+                    	nationality = JAP
+                    	portraits = {
+                        	civilian = {
+                            	large = "gfx\leader\baliu.png"
+                            	small = "gfx\leader\BALIUERLING2.png"
+                        	}
+                    	}
+                    	allowed_civil_war = {
+                        	is_ai = no
+                    	}
+						advisor = {  
+							slot = high_command
+							cost = 125
+							idea_token = hachiroko_high_command
+							traits = { trait_sub_baliu }
+							research_bonus = {
+							}
+							ai_will_do = {
+								factor = 0
+							}
+						}
+              		}
+           		}
+       		}
+        hidden_effect = {
+            country_event = { id = ASHC_event.17 days = 20 }
+        }	
+    }
+     option = {            #支持就够了
+        name = ASHC_event.15.a
+        add_political_power = 200
+        army_experience = 75
+        hidden_effect = {
+            play_song = youzu26
+        }
+        custom_effect_tooltip = {
+            localization_key = play_the_song_of_hachiroku_effect_tooltip
+        }
+        add_political_power = -2
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide7
+        random_army_leader = {
+            limit = {
+                has_trait = tielurenou
+            }
+            add_skill_level = 1
+            add_logistics = 2
+            add_planning = 2
+        }
+        hidden_effect = {
+            country_event = { id = ASHC_event.17 days = 20 }
+        }	
+    }
+    option = {            #去外交部
+        name = ASHC_event.16.a
+        add_political_power = -2
+        set_country_flag = allow_baliu
+        hidden_effect = {
+            play_song = youzu26
+        }
+        custom_effect_tooltip = {
+            localization_key = play_the_song_of_hachiroku_effect_tooltip
+        }
+        custom_effect_tooltip = baliu_hide8
+        random_army_leader = {
+            limit = {
+                has_trait = tielurenou
+            }
+            add_skill_level = 1
+            add_logistics = 2
+            add_planning = 2
+        }
+        meta_effect = {
+           		text = {
+                	generate_character = {
+                    	token_base = baliu_advisor
+                    	name = "baliu_1"
+                    	gender = female
+                    	nationality = JAP
+                    	portraits = {
+                        	civilian = {
+                            	large = "gfx\leader\baliu.png"
+                            	small = "gfx\leader\BALIUERLING2.png"
+                        	}
+                    	}
+                    	allowed_civil_war = {
+                        	is_ai = no
+                    	}
+						advisor = {  
+							slot = theorist
+							cost = 125
+							idea_token = baliu_advisor
+							traits = { trait_baliu_leader }
+							research_bonus = {
+							}
+							ai_will_do = {
+								factor = 0
+							}
+						}
+              		}
+           		}
+       		}
+        hidden_effect = {
+            country_event = { id = ASHC_event.17 days = 20 }
+        }	
+    }
+}
+country_event = {
+    id = ASHC_event.17   #向未来前进！
+    picture = GFX_ASHC_event17
+    title = ASHC_event.17.t
+    desc = ASHC_event.17.d
+    is_triggered_only = yes
+
+    option = {            #成为国家领导人
+        name = ASHC_event.17.a
+        add_political_power = -2
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide9
+        hidden_effect = {
+            country_event = { id = ASHC_event.19 days = 4 }
+        }	
+    }
+    option = {            #保持现状就好
+        name = ASHC_event.18.a
+        add_political_power = 1
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide10
+        hidden_effect = {
+            country_event = { id = ASHC_event.17 days = 365 }
+        }	
+    }
+    option = {            #还是算了吧
+        name = ASHC_event.30.a
+        add_political_power = 5
+        set_country_flag = allow_baliu
+        custom_effect_tooltip = baliu_hide11
+        hidden_effect = {
+        }	
+    }
+}
+country_event = { 
+	id = ASHC_event.19
+	title = ASHC_event.19.t
+	desc = ASHC_event.19.d
+	picture = GFX_ASHC_event19
+	
+	is_triggered_only = yes
+	
+	option = {
+		retire_country_leader = yes
+		name = ASHC_event.20.a
+		trigger = {
+			has_government = communism
+		}
+        set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+			name = "baliu"
+			picture = "GFX_portrait_LTR_baliu"
+			desc = baliu_desc
+			expire = "2095.1.1"
+			ideology = marxism
+			traits = {
+				JJKYDLDZ
+                GTCJ
+			}
+		}
+	}
+
+	option = {
+		retire_country_leader = yes
+		name = ASHC_event.21.a
+		trigger = {
+			has_government = democratic
+		}
+        set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+			name = "baliu"
+			picture = "GFX_portrait_LTR_baliu"
+			desc = baliu_desc
+			expire = "2095.1.1"
+			ideology = conservatism
+			traits = {
+				JJKYDLDZ
+                GTCJ
+			}
+		}
+    }
+
+	option = {
+		retire_country_leader = yes
+		name = ASHC_event.22.a
+		trigger = {
+			has_government = fascism
+		}
+        set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+			name = "baliu"
+			picture = "GFX_portrait_LTR_baliu"
+			desc = baliu_desc
+			expire = "2095.1.1"
+			ideology = fascism_ideology
+			traits = {
+				JJKYDLDZ
+                GTCJ
+			}
+		}
+	}
+
+	option = {
+		retire_country_leader = yes
+		name = ASHC_event.23.a
+		trigger = {
+			has_government = neutrality
+		}
+        set_rule = {
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		hidden_effect = {
+		}
+		create_country_leader = {
+			name = "baliu"
+			picture = "GFX_portrait_LTR_baliu"
+			desc = baliu_desc
+			expire = "2095.1.1"
+			ideology = despotism
+			traits = {
+				JJKYDLDZ
+                GTCJ
+			}
+		}
+	}
+}

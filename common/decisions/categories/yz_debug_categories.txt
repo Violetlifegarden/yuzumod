@@ -1,0 +1,4 @@
+debug_yuzu_they_will_know_fear = {
+	icon = GFX_Category_decision
+	priority = 100
+}

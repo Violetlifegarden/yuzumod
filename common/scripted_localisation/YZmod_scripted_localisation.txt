@@ -1,0 +1,325 @@
+defined_text = {
+
+	name = love_depth_localisation		#决议组描述
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+		}
+		localization_key = love_depth_localisation_text
+	}
+}
+
+defined_text = {		#支出
+	name = YzMonthlyFund_fund_maxorminup
+	text = {
+		trigger = {
+			check_variable = { YzMonthlyFund_var = 5 }
+		}
+		localization_key = YzMonthlyFund_fund_max_tt
+	}
+}
+defined_text = {		#支出
+	name = YzMonthlyFund_fund_maxormindown
+	text = {
+		trigger = {
+			check_variable = { YzMonthlyFund_var = 0 }
+		}
+		localization_key = YzMonthlyFund_fund_min_tt
+	}
+}
+defined_text = {
+	name = YzEducation_fund_maxormindown
+	text = {
+		trigger = {
+			check_variable = { YzEducation_fund_var = 0 }
+		}
+		localization_key = YzEducation_fund_min_tt
+	}
+}
+defined_text = {
+	name = YzEducation_fund_maxorminup
+	text = {
+		trigger = {
+			check_variable = { YzEducation_fund_var = 5 }
+		}
+		localization_key = YzEducation_fund_max_tt
+	}
+}
+defined_text = {
+	name = YzMilitary_fund_maxormindown
+	text = {
+		trigger = {
+			check_variable = { YzMilitary_fund_var = 0 }
+		}
+		localization_key = YzMilitary_fund_min_tt
+	}
+}
+defined_text = {
+	name = YzMilitary_fund_maxorminup
+	text = {
+		trigger = {
+			check_variable = { YzMilitary_fund_var = 5 }
+		}
+		localization_key = YzMilitary_fund_max_tt
+	}
+}
+defined_text = {
+	name = YzAdministration_fund_maxorminup
+	text = {
+		trigger = {
+			check_variable = { YzAdministration_fund_var = 5 }
+		}
+		localization_key = YzAdministration_fund_max_tt
+	}
+}
+defined_text = {
+	name = YzAdministration_fund_maxormindown
+	text = {
+		trigger = {
+			check_variable = { YzAdministration_fund_var = 0 }
+		}
+		localization_key = YzAdministration_fund_min_tt
+	}
+}
+#倒计时提醒
+defined_text = {
+	name = yz_economic_policy_1_timeout_text
+	text = {
+		trigger = {
+			check_variable = { yz_economic_policy_1_var > 0 }
+		}
+		localization_key = yz_economic_policy_1_timeout_tt
+	}
+}
+defined_text = {
+	name = yz_economic_policy_2_timeout_text
+	text = {
+		trigger = {
+			check_variable = { yz_economic_policy_2_var > 0 }
+		}
+		localization_key = yz_economic_policy_2_timeout_tt
+	}
+}
+defined_text = {
+	name = yz_economic_policy_3_timeout_text
+	text = {
+		trigger = {
+			check_variable = { yz_economic_policy_3_var > 0 }
+		}
+		localization_key = yz_economic_policy_3_timeout_tt
+	}
+}
+
+defined_text = {
+
+	name = Megulu_industry_finished_dynamic_modifier_localisation		#美咕噜军工
+	text = {
+		trigger = {
+			has_country_flag = megulu_industry_18
+		}
+		localization_key = Megulu_industry_finished_dynamic_modifier_localisation_1_text
+	}
+	text = {
+		trigger = {
+			has_country_flag = megulu_industry_19
+		}
+		localization_key = Megulu_industry_finished_dynamic_modifier_localisation_2_text
+	}
+}
+
+defined_text = {
+
+	name = Megulu_industry_finished_dynamic_modifier_desc_localisation		#美咕噜军工描述
+	text = {
+		trigger = {
+			has_country_flag = megulu_industry_18
+		}
+		localization_key = Megulu_industry_finished_dynamic_modifier_desc_localisation_1_text
+	}
+	text = {
+		trigger = {
+			has_country_flag = megulu_industry_19
+		}
+		localization_key = Megulu_industry_finished_dynamic_modifier_desc_localisation_2_text
+	}
+}
+
+defined_text = {	#猫粮
+	name = CS_neko_text		
+	text = {
+		trigger = {
+			
+		}
+		localization_key = CS_neko1
+	}
+	text = {
+		trigger = {
+			has_country_flag = Yz_no_neko
+		}
+		localization_key = CS_neko2
+	}
+}
+defined_text = {	#芦花小春招募tt
+	name = recruit_luchun_text		
+	text = {
+		trigger = {
+			has_country_flag = qiyong_youzi_2
+		}
+		localization_key = recruit_luchun_1
+	}
+	text = {
+		trigger = {
+			has_country_flag = qiyong_youzi_1
+		}
+		localization_key = recruit_luchun_2
+	}
+}
+defined_text = {	#研究院
+	name = YZS_scientist_category_desc_text		
+	text = {
+		trigger = {
+			
+		}
+		localization_key = YZS_scientist_category_desc_1
+	}
+	text = {
+		trigger = {
+			has_country_flag = has_astral_research_academy
+		}
+		localization_key = YZS_scientist_category_desc_2
+	}
+}
+
+
+defined_text = {
+	name = love_depth_level_localisation	#好感等级
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 150 }
+		}
+		localization_key = love_level_4
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 120 }
+			check_variable = { love_depth < 151 }
+		}
+		localization_key = love_level_3
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 80 }
+			check_variable = { love_depth < 121 }
+		}
+		localization_key = love_level_2
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 30 }
+			check_variable = { love_depth < 81 }
+		}
+		localization_key = love_level_1
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > -1 }
+			check_variable = { love_depth < 31 }
+		}
+		localization_key = love_level_0
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > -50 }
+			check_variable = { love_depth < 0 }
+		}
+		localization_key = love_level_01
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > -100 }
+			check_variable = { love_depth < -49 }
+		}
+		localization_key = love_level_02
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth < -99 }
+		}
+		localization_key = love_level_03
+	}
+}
+
+defined_text = {
+	name = love_depth_level_localisation_desc	#好感等级描述
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 150 }
+		}
+		localization_key = love_level_4_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 120 }
+			check_variable = { love_depth < 151 }
+		}
+		localization_key = love_level_3_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 80 }
+			check_variable = { love_depth < 121 }
+		}
+		localization_key = love_level_2_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > 30 }
+			check_variable = { love_depth < 81 }
+		}
+		localization_key = love_level_1_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > -1 }
+			check_variable = { love_depth < 31 }
+		}
+		localization_key = love_level_0_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > -50 }
+			check_variable = { love_depth < 0 }
+		}
+		localization_key = love_level_01_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth > -100 }
+			check_variable = { love_depth < -49 }
+		}
+		localization_key = love_level_02_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = had_chosen_haogan
+			check_variable = { love_depth < -99 }
+		}
+		localization_key = love_level_03_desc
+	}
+}
+

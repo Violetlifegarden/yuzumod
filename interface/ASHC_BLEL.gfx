@@ -1,0 +1,34 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ASHC_event"
+		texturefile = "gfx/event_pictures/baliu_event1.png"
+	}
+	spriteType = {
+		name = "GFX_ASHC_event8"
+		texturefile = "gfx/event_pictures/baliu_event2.png"
+	}
+	spriteType = {
+		name = "GFX_ASHC_event10"
+		texturefile = "gfx/event_pictures/BALIUERLING.png"
+	}
+	spriteType = {
+		name = "GFX_ASHC_event12"
+		texturefile = "gfx/event_pictures/baliu_event3.png"
+	}
+	spriteType = {
+		name = "GFX_ASHC_event14"
+		texturefile = "gfx/event_pictures/baliu_event4.png"
+	}
+	spriteType = {
+		name = "GFX_ASHC_event17"
+		texturefile = "gfx/event_pictures/baliu_event5.png"
+	}
+	spriteType = {
+		name = "GFX_ASHC_event19"
+		texturefile = "gfx/event_pictures/baliu_event6.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_LTR_baliu"
+		texturefile = "gfx/leader/baliu_leader.png"
+	}
+}

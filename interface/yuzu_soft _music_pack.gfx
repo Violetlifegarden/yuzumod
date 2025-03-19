@@ -1,0 +1,9 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_senren_banka_album_art"
+		texturefile = "gfx/senren_banka_album_art.dds"
+		noOfFrames = 2
+	}
+    
+}

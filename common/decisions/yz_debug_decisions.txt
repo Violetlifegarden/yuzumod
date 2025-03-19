@@ -1,0 +1,295 @@
+debug_yuzu_they_will_know_fear = {
+	teeeeeeeeeest = {	
+		priority = 100000
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {
+			character_list_tooltip = {
+				limit = {
+					yz_general = yes
+				}
+				random_select_amount = 1000
+			}
+			
+		}
+	}
+	get_money = {     #测试柚子资金
+	    priority = 1000000
+	    visible = {
+			is_debug = yes
+			has_country_flag = qiyong_youzi_2
+	    }
+		complete_effect = {
+			add_to_variable = {
+				yz_money = 5000
+			}
+		}
+	}
+	get_yujinjin = {    #获取柚金金
+		priority = 999999
+		visible = {
+			is_debug = yes
+			has_country_flag = qiyong_youzi_2
+		}
+		complete_effect = {
+			add_to_variable = {
+				Yuzu_fund = 10
+			}
+		}
+	}
+	get_power = {	##测试用加各种点数
+		priority = 100000
+		visible = {
+			is_debug = yes
+			has_country_flag = qiyong_youzi_2
+		}
+		complete_effect = {
+			add_political_power = 2000
+			add_war_support = 1000
+			add_command_power = 1000
+			army_experience = 1000
+			add_stability = 1000
+			add_to_variable = {
+				yz_money = 10000
+			}
+		}
+	}
+
+	add_love_depth = {	##测试用加满好感
+		priority = 100000
+		visible = {
+			is_debug = yes
+			has_country_flag = qiyong_youzi_2
+		}
+		complete_effect = {
+			add_to_variable = {
+				love_depth = 1000
+			}
+			clamp_variable = {		#范围
+				var = love_depth
+				min = -100
+				max = 200
+			}
+		}
+	}
+
+	subtract_love_depth = {	##测试用清空好感
+		priority = 100000
+		visible = {
+			is_debug = yes
+			has_country_flag = qiyong_youzi_2
+		}
+		complete_effect = {
+			add_to_variable = {
+				love_depth = -1000
+			}
+			clamp_variable = {		#范围
+				var = love_depth
+				min = -100
+				max = 200
+			}
+		}
+	}
+	
+	
+
+	debug_love_sana_everyday_de = {#只要有爱每天都能让她开心
+		icon = GFX_zuonai
+		visible = {
+			is_debug = yes
+		}
+		available = {
+			is_debug = yes
+		}
+		complete_effect = {
+				random_army_leader = {
+					limit = {
+						has_trait = maid_sana_trait
+					}
+					add_unit_leader_trait = maid_sana_birthday_boost1	
+					add_unit_leader_trait = maid_sana_birthday_boost2	
+					add_unit_leader_trait = maid_sana_birthday_boost3	
+					add_unit_leader_trait = maid_sana_birthday_boost4	
+					add_unit_leader_trait = maid_sana_birthday_boost5	
+					add_skill_level = 99  
+					add_logistics = 99
+					add_planning = 99
+					add_defense = 99
+					add_attack = 99
+				}
+			set_country_flag = debug_love_sana_everyday
+		}
+
+	}
+	debug_sana_first = {#佐奈天下第一！
+		icon = GFX_zuonai
+		visible = {
+			is_debug = yes
+		}
+		available = {
+			is_debug = yes
+		}
+		complete_effect = {
+				every_army_leader = {
+					add_unit_leader_trait = maid_sana_birthday_boost1	
+					add_unit_leader_trait = maid_sana_birthday_boost2	
+					add_unit_leader_trait = maid_sana_birthday_boost3	
+					add_unit_leader_trait = maid_sana_birthday_boost4	
+					add_unit_leader_trait = maid_sana_birthday_boost5	
+					add_skill_level = 99  
+					add_logistics = 99
+					add_planning = 99
+					add_defense = 99
+					add_attack = 99
+				}
+		}
+
+	}
+
+	everyone_get_all_positive_traits = {#有新角色不必要往里面加
+		icon = GFX_fumika
+		visible = {
+			is_debug = yes
+		}
+		available = {
+			is_debug = yes
+		}
+		complete_effect = {
+				#country_event = { id = ASHC_event.1 }
+				add_country_leader_trait = SZDWN
+				add_country_leader_trait = SZRM
+				add_country_leader_trait = mhtm
+				add_country_leader_trait = sairi_leader_trait
+				add_country_leader_trait = gtzr
+				add_country_leader_trait = CZRYJZ
+				add_country_leader_trait = 0721
+				add_country_leader_trait = JLYM
+				add_country_leader_trait = RMZL
+				add_country_leader_trait = KZB
+				add_country_leader_trait = ZXZS
+				add_country_leader_trait = JJKYDLDZ 
+				add_country_leader_trait = GTCJ
+				add_country_leader_trait = navy_Yamato_nadeshiko
+				add_country_leader_trait = renminzhihui
+				add_country_leader_trait = SZDDL
+				add_country_leader_trait = XFJC
+				add_country_leader_trait = MY
+				add_ideas = fruit_cake
+				add_ideas = chocolate_donuts
+				add_ideas = cream_pudding
+				add_ideas = xiangcaosongbing
+				add_ideas = mengbulang
+				add_ideas = tilamisu
+				add_ideas = the_fool
+				add_ideas = the_chariot
+				add_ideas = the_sun
+				add_ideas = the_death_down
+				add_ideas = judgement
+				add_ideas = justice
+				add_ideas = the_strength
+				add_ideas = temperrance
+				add_ideas = the_devil
+				add_ideas = the_emperor
+				add_ideas = the_empress
+				add_ideas = the_hanged_man
+				add_ideas = the_hermit
+				add_ideas = the_hierophant
+				add_ideas = the_high_priestess
+				add_ideas = the_lovers
+				add_ideas = the_magician
+				add_ideas = the_moon_down
+				add_ideas = the_star
+				add_ideas = the_tower_down
+				add_ideas = the_world
+				add_ideas = wheel_of_fortune
+
+				set_country_flag  = tarot_the_fool
+				set_country_flag  = tarot_the_chariot
+				set_country_flag  = tarot_the_sun
+				set_country_flag  = tarot_death_down
+				set_country_flag  = tarot_judgement
+				set_country_flag  = tarot_justice
+				set_country_flag  = tarot_the_strength
+				set_country_flag  = tarot_temperrance
+				set_country_flag  = tarot_the_devil
+				set_country_flag  = tarot_the_emperor
+				set_country_flag  = tarot_the_empress
+				set_country_flag  = tarot_the_hanged_man
+				set_country_flag  = tarot_the_hermit
+				set_country_flag  = tarot_the_hierophant
+				set_country_flag  = tarot_high_priestess
+				set_country_flag  = tarot_the_lovers
+				set_country_flag  = tarot_the_magician
+				set_country_flag  = tarot_the_moon_down
+				set_country_flag  = tarot_the_star
+				set_country_flag  = tarot_the_tower_down
+				set_country_flag  = tarot_the_world
+				set_country_flag  = tarot_wheel_of_fortune
+				every_army_leader = {
+					add_unit_leader_trait = maid_sana_birthday_boost1	
+					add_unit_leader_trait = maid_sana_birthday_boost2	
+					add_unit_leader_trait = maid_sana_birthday_boost3	
+					add_unit_leader_trait = maid_sana_birthday_boost4	
+					add_unit_leader_trait = maid_sana_birthday_boost5
+					add_unit_leader_trait = maid_ninging_trait	
+					add_unit_leader_trait = maid_meigulu_trait	
+					add_unit_leader_trait = maid_chou_trait	
+					add_unit_leader_trait = maid_congyu_trait	
+					add_unit_leader_trait = maid_congyu_trait_1	
+					add_unit_leader_trait = maid_mozi_trait	
+					add_unit_leader_trait = maid_fangnai_trait	
+					add_unit_leader_trait = maid_fangnai2_trait 	
+					add_unit_leader_trait = maid_fangnai3_trait	
+					add_unit_leader_trait = maid_cuodao_trait	
+					add_unit_leader_trait = maid_cuodao_trait1	
+					add_unit_leader_trait = maid_cuodao_trait2	
+					add_unit_leader_trait = maid_qihai_trait	
+					add_unit_leader_trait = maid_kanna_trait	
+					add_unit_leader_trait = maid_gongping_trait	
+					add_unit_leader_trait = maid_noa_trait	
+					add_unit_leader_trait = maid_noa1_trait	
+					add_unit_leader_trait = maid_noa2_trait	
+					add_unit_leader_trait = maid_noa3_trait	
+					add_unit_leader_trait = maid_sana_trait	
+					add_unit_leader_trait = maid_zaozi_trait	
+					add_unit_leader_trait = maid_chihaya_trait_2	
+					add_unit_leader_trait = maid_chihaya_trait_3	
+					add_unit_leader_trait = maid_chihaya_trait_4	
+					add_unit_leader_trait = maid_chihaya_trait_5	
+					add_unit_leader_trait = maid_chihaya_trait	
+					add_unit_leader_trait = maid_hazuki_trait	
+					add_unit_leader_trait = maid_sairi_trait_1	
+					add_unit_leader_trait = maid_sairi_trait_2	
+					add_unit_leader_trait = maid_fumika_trait	
+					add_unit_leader_trait = maid_amane_trait	
+					add_unit_leader_trait = maid_kurumi_trait	
+					add_unit_leader_trait = maid_nozomi_trait_1	
+					add_unit_leader_trait = maid_toko_trait	
+					add_unit_leader_trait = maid_wakana_trait	
+					add_unit_leader_trait = maid_suzune_trait	
+					add_unit_leader_trait = maid_miu_trait	
+					add_unit_leader_trait = maid_masaki_trait	
+					add_unit_leader_trait = maid_Mayu_trait	
+					add_unit_leader_trait = maid_astral_boost1	
+					add_unit_leader_trait = maid_astral_boost2	
+					add_unit_leader_trait = maid_astral_boost3	
+					add_unit_leader_trait = yz_weizi_trait	
+					add_unit_leader_trait = yz_amane_trait_1	
+					add_unit_leader_trait = yz_amane_trait_2	
+					add_unit_leader_trait = maid_kotori_trait	
+					add_unit_leader_trait = maid_shirley_trait	
+					add_unit_leader_trait = married_trait	
+					add_unit_leader_trait = ATRI_trait	
+					add_unit_leader_trait = tielurenou	
+					add_unit_leader_trait = maid_tielurenou1_trait	
+					add_skill_level = 99  
+					add_logistics = 99
+					add_planning = 99
+					add_defense = 99
+					add_attack = 99
+					promote_leader = yes
+				}
+		}
+	}
+}

@@ -1,0 +1,182 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_tarot_empty"
+		texturefile = "gfx/guis/empty.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_chariot"
+		texturefile = "gfx/guis/the_chariot.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_chariot_down"
+		texturefile = "gfx/guis/the_chariot_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_sun"
+		texturefile = "gfx/guis/the_sun.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_sun_down"
+		texturefile = "gfx/guis/the_sun_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_death"
+		texturefile = "gfx/guis/death.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_death_down"
+		texturefile = "gfx/guis/death_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_judgement"
+		texturefile = "gfx/guis/judgement.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_judgement_down"
+		texturefile = "gfx/guis/judgement_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_justice"
+		texturefile = "gfx/guis/justice.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_justice_down"
+		texturefile = "gfx/guis/justice_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_strength"
+		texturefile = "gfx/guis/strength.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_strength_down"
+		texturefile = "gfx/guis/strength_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_temperrance"
+		texturefile = "gfx/guis/temperrance.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_temperrance_down"
+		texturefile = "gfx/guis/temperrance_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_devil"
+		texturefile = "gfx/guis/the_devil.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_devil_down"
+		texturefile = "gfx/guis/the_devil_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_emperor"
+		texturefile = "gfx/guis/the_emperor.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_emperor_down"
+		texturefile = "gfx/guis/the_emperor_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_empress"
+		texturefile = "gfx/guis/the_empress.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_empress_down"
+		texturefile = "gfx/guis/the_empress_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_fool"
+		texturefile = "gfx/guis/the_fool.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_fool_down"
+		texturefile = "gfx/guis/the_fool_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_hanged_man"
+		texturefile = "gfx/guis/the_hanged_man.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_hanged_man_down"
+		texturefile = "gfx/guis/the_hanged_man_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_hermit"
+		texturefile = "gfx/guis/the_hermit.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_hermit_down"
+		texturefile = "gfx/guis/the_hermit_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_hierophant"
+		texturefile = "gfx/guis/the_hierophant.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_hierophant_down"
+		texturefile = "gfx/guis/the_hierophant_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_high_priestess"
+		texturefile = "gfx/guis/the_high_priestess.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_high_priestess_down"
+		texturefile = "gfx/guis/the_high_priestess_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_lovers"
+		texturefile = "gfx/guis/the_lovers.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_lovers_down"
+		texturefile = "gfx/guis/the_lovers_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_magician"
+		texturefile = "gfx/guis/the_magician.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_magician_down"
+		texturefile = "gfx/guis/the_magician_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_moon"
+		texturefile = "gfx/guis/the_moon.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_moon_down"
+		texturefile = "gfx/guis/the_moon_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_star"
+		texturefile = "gfx/guis/the_star.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_star_down"
+		texturefile = "gfx/guis/the_star_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_tower"
+		texturefile = "gfx/guis/the_tower.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_tower_down"
+		texturefile = "gfx/guis/the_tower_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_world"
+		texturefile = "gfx/guis/the_world.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_the_world_down"
+		texturefile = "gfx/guis/the_world_down.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_wheel_of_fortune"
+		texturefile = "gfx/guis/wheel_of_fortune.png"
+	}
+	spriteType = {
+		name = "GFX_tarot_wheel_of_fortune_down"
+		texturefile = "gfx/guis/wheel_of_fortune_down.png"
+	}
+}

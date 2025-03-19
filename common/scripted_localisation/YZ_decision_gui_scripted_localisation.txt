@@ -1,0 +1,263 @@
+defined_text = {	# 副主席
+	name = Yzleader_portrait1_images	
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_nene
+		}
+		localization_key =  YzLeader_nene_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_murasame
+		}
+		localization_key =  YzLeader_mur_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_yoshino 
+		}
+		localization_key =  YzLeader_yoshino_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_megulu
+		}
+		localization_key =  YzLeader_meguru_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_ayase  
+		}
+		localization_key =  YzLeader_ayase_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_sana 
+		}
+		localization_key =  YzLeader_sana_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_hazuki
+		}
+		localization_key =  YzLeader_hazuki_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_miu 
+		}
+		localization_key =  YzLeader_miu_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_nanami 
+		}
+		localization_key =  YzLeader_nanami_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_mayu 
+		}
+		localization_key =  YzLeader_mayu_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_fumika 
+		}
+		localization_key =  YzLeader_fumika_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_noa 
+		}
+		localization_key =  YzLeader_noa_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_kanna 
+		}
+		localization_key =  YzLeader_kanna_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_VC_toko 
+		}
+		localization_key =  YzLeader_toko_image
+	}
+}
+
+defined_text = {	# 主席
+	name = Yzleader_portrait2_images	
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_nene
+		}
+		localization_key =  YzLeader_nene_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_murasame
+		}
+		localization_key =  YzLeader_mur_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_yoshino 
+		}
+		localization_key =  YzLeader_yoshino_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_megulu
+		}
+		localization_key =  YzLeader_meguru_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_ayase  
+		}
+		localization_key =  YzLeader_ayase_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_sana 
+		}
+		localization_key =  YzLeader_sana_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_hazuki
+		}
+		localization_key =  YzLeader_hazuki_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_miu 
+		}
+		localization_key =  YzLeader_miu_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_nanami 
+		}
+		localization_key =  YzLeader_nanami_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_mayu 
+		}
+		localization_key =  YzLeader_mayu_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_fumika 
+		}
+		localization_key =  YzLeader_fumika_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_noa 
+		}
+		localization_key =  YzLeader_noa_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_kanna 
+		}
+		localization_key =  YzLeader_kanna_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_CM_toko 
+		}
+		localization_key =  YzLeader_toko_image
+	}
+}
+
+defined_text = {	# 第一书记
+	name = Yzleader_portrait3_images	
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_nene
+		}
+		localization_key =  YzLeader_nene_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_murasame
+		}
+		localization_key =  YzLeader_mur_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_yoshino 
+		}
+		localization_key =  YzLeader_yoshino_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_megulu
+		}
+		localization_key =  YzLeader_meguru_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_ayase  
+		}
+		localization_key =  YzLeader_ayase_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_sana 
+		}
+		localization_key =  YzLeader_sana_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_hazuki
+		}
+		localization_key =  YzLeader_hazuki_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_miu 
+		}
+		localization_key =  YzLeader_miu_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_nanami 
+		}
+		localization_key =  YzLeader_nanami_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_mayu 
+		}
+		localization_key =  YzLeader_mayu_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_fumika 
+		}
+		localization_key =  YzLeader_fumika_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_noa 
+		}
+		localization_key =  YzLeader_noa_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_kanna 
+		}
+		localization_key =  YzLeader_kanna_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = YCG_FS_toko 
+		}
+		localization_key =  YzLeader_toko_image
+	}
+}

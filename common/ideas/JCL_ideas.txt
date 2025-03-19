@@ -1,0 +1,99 @@
+ideas = {
+	
+	country = {
+		
+		yoshino_love_level_4 = {
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.03
+				stability_factor = 0.02
+			}
+		}
+
+		yoshino_love_level_3 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.03
+				stability_factor = 0.01
+			}
+		}
+		
+		yoshino_love_level_2 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_factor = 0.02
+				stability_factor = 0.01
+			}
+		}
+		
+		yoshino_love_level_1 = {
+
+			picture = FRA_market_dynamism_yoshino
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_factor = 0.15
+				supply_node_range = 0.15
+				industrial_capacity_factory = 0.1
+				production_speed_supply_node_factor = 0.5
+				conscription = 0.005
+				training_time_factor = -0.05
+				send_volunteer_size = 2
+			}
+		}
+		
+		yoshino_love_level_0 = {
+
+			picture = FRA_market_dynamism_yoshino1
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_factor = -0.05
+				line_change_production_efficiency_factor = 0.1
+				conversion_cost_mil_to_civ_factor = -0.35
+			}
+		}
+	}
+
+	hidden_ideas = {
+		chose_yoshino = {			###检测是否真的选了芳乃
+
+		}
+	}
+
+
+}
+

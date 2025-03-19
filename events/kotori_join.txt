@@ -1,0 +1,55 @@
+add_namespace = kotori_event
+country_event = {
+	id = kotori_event.1
+	title = kotori_event.1.t
+	desc = kotori_event.1.d
+	picture = GFX_kotori_wake
+	
+	    trigger = {
+			check_variable = {
+				astral_breakthrough_point_total > 4
+				
+			}
+			not = {
+				has_country_flag = have_kotori
+			}
+    		}
+
+	
+	option = {
+		name = kotori_event.1.a
+        set_country_flag = have_kotori
+            meta_effect = {
+            text = {
+                generate_character = {
+
+                    token_base = yz_kotori
+                    name = "伊势琴里"
+                    gender = female
+                    nationality = JAP
+                    portraits = {
+                        civilian = {
+                            large = "gfx\leader\kotori.png" 
+                            small = "gfx\leader\kotori_small.png" 
+                        }
+                    }
+                    allowed_civil_war = {
+                     	is_ai = no
+                    }
+
+                    corps_commander = {
+                        traits = {
+                            maid_kotori_trait
+                        }
+            			attack_skill = 2
+            			defense_skill = 6
+            			planning_skill = 3
+            			logistics_skill = 4
+            			skill = 4
+                    }
+
+                }
+			}
+         }
+    }
+}

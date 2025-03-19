@@ -1,0 +1,260 @@
+add_namespace = yoshino_event 
+
+country_event= {
+    id = yoshino_event.1  #春日祭(初次相遇)
+    picture = GFX_yoshino_event1
+    title = yoshino_event.1.t
+    desc = yoshino_event.1.d
+    play_song = youzu27
+    is_triggered_only = yes
+
+    option = {
+        name = yoshino_event.1.a	#去看看吗
+        trigger = {
+            has_country_flag = qiyong_youzi_2
+        }
+        custom_effect_tooltip = yoshino_yes	#小字
+        add_stability = 0.01
+		add_political_power = 1
+		add_stability = 0.01
+        custom_effect_tooltip = yoshino_yes 
+        country_event= { id = yoshino_event.2 days = 3 }
+        country_event= { id = tongyong_event.1 } #待定
+        set_country_flag = yoshino_geilaozichufadierge      ###当时出bug急眼了写的
+        add_ideas = /
+        meta_effect = {
+            text = {
+                generate_character = {
+                    token_base = yoshino
+                    name = "朝武芳乃"
+                    gender = female
+                    nationality = JAP
+                    portraits = {
+                        civilian = {
+                            large = "gfx\leader\chaowufangnai_leader.png"
+                            small = "gfx\leader\yoshino2.png"
+                        }
+                        army = {
+                            large = "gfx\leader\yoshino.png"
+                        }
+                    }
+                    allowed_civil_war = {
+                        is_ai = no
+                    }
+                    corps_commander = {
+                traits={
+                    maid_fangnai_trait JAP_communist_sympathizer brilliant_strategist war_hero infantry_officer logistics_wizard marxist_academic trait_mountaineer adaptable skilled_staffer
+                }
+                id = 1001222
+                attack_skill = 2
+                defense_skill = 1
+                planning_skill = 2
+                logistics_skill = 1
+                skill = 2
+                visible = {
+                           is_ai = no
+                       }
+                   }
+               }
+           }
+       }
+        
+		hidden_effect = {
+            add_ideas = chose_yoshino   
+		}
+    }
+
+
+	option = {
+        name = yoshino_event.1.b   	#我不想走芳乃线（）
+        country_event = { id = tongyong_event.1 }
+		add_political_power = 1
+		custom_effect_tooltip = yoshino_hide	#小字
+        set_country_flag = no_yoshino
+        meta_effect = {
+            text = {
+                generate_character = {
+                    token_base = yoshino_1
+                    name = "朝武芳乃"
+                    gender = female
+                    nationality = JAP
+                    portraits = {
+                        civilian = {
+                            large = "gfx\leader\chaowufangnai_leader.png"
+                            small = "gfx\leader\yoshino2.png"
+                        }
+                        army = {
+                            large = "gfx\leader\yoshino.png"
+                        }
+                    }
+                    allowed_civil_war = {
+                        is_ai = no
+                    }
+                    corps_commander = {
+                traits={
+                    maid_fangnai_trait 
+                    JAP_communist_sympathizer 
+                    brilliant_strategist 
+                    war_hero 
+                    infantry_officer 
+                    logistics_wizard 
+                    marxist_academic 
+                    trait_mountaineer 
+                    adaptable skilled_staffer
+                }
+                id = 1001221
+                attack_skill = 6
+                defense_skill = 3
+                planning_skill = 5
+                logistics_skill = 5
+                skill = 5
+                visible = {
+                           is_ai = no
+                       }
+                   }
+               }
+           }
+       }
+    }
+}
+
+country_event= {
+    id = yoshino_event.2  #祟神入侵
+    picture = GFX_yoshino_event2 	#sd祟神入侵，初次交锋
+    desc = yoshino_event.2.d
+    title = yoshino_event.2.t #文案待定...
+    is_triggered_only = yes
+
+    option = {
+        name = yoshino_event.2.a
+		add_political_power = 15
+        add_to_variable = { experience_army = 5 }
+        custom_effect_tooltip = yoshino_love1	#初次袱禊
+         random_army_leader = {
+            limit = {
+                has_trait = maid_fangnai_trait
+            }
+            add_unit_leader_trait = maid_fangnai2_trait
+            add_skill_level = 1
+            add_attack = 1
+            add_logistics = 1
+        }
+        country_event= { id =  yoshino_event.4 days = 20 }
+		hidden_effect = {
+			add_stability = 0.01
+			
+		}
+    }
+}
+
+country_event= {
+    id = yoshino_event.4  #一起钓鱼
+    picture = GFX_yoshino_event4 	#钓鱼
+    title = yoshino_event.4.t
+    desc = yoshino_event.4.d	#文案待定
+    is_triggered_only = yes
+
+    option = {
+        name = yoshino_event.4.a	#指导芳乃
+		add_political_power = 10
+        add_stability = 0.01
+		hidden_effect = {
+			country_event = { id = yoshino_event.5 days = 15 }
+		}
+    }
+}
+
+country_event = {
+    id = yoshino_event.5   #布丁，芭菲冰淇淋！
+    picture = GFX_yoshino_event5
+    title = yoshino_event.5.t
+    desc = yoshino_event.5.d
+    is_triggered_only = yes
+
+    option = {
+        name = yoshino_event.5.a
+        add_political_power = 5
+        set_country_flag = allow_noa
+        custom_effect_tooltip = yoshino_alone
+        hidden_effect = {
+            country_event = { id = yoshino_event.8 days = 15 }
+            add_ideas = yoshino_love_level_0
+        }
+    }
+}
+
+country_event = {
+    id = yoshino_event.8   #告白
+    picture = GFX_yoshino_event8
+    title = yoshino_event.8.t
+    desc = yoshino_event.8.d
+    is_triggered_only = yes
+
+    option = {
+        name = yoshino_event.8.b	#
+        add_stability = 0.01
+		add_political_power = 10
+		add_stability = 0.01
+        random_army_leader = {
+            limit = {
+                has_trait = maid_fangnai2_trait
+            }
+            add_unit_leader_trait = maid_fangnai3_trait
+            add_skill_level = 2
+            add_logistics = 1
+            add_planning = 1
+            add_logistics = 1
+        }
+        hidden_effect = {
+            country_event = { id = yoshino_event.9 days = 14 }
+        }
+    }
+}
+
+country_event = {
+    id = yoshino_event.9   #与祟神和诅咒的最后一战
+    picture = GFX_yoshino_event9
+    title = yoshino_event.9.t
+    desc = yoshino_event.9.d
+    is_triggered_only = yes
+
+    option = {
+        name = yoshino_event.9.a	#为了美好的未来
+        add_to_variable = { experience_army = 15 }
+        add_to_variable = { experience_air = 10 }
+        add_to_variable = { experience_navy = 10 }
+		add_political_power = -5
+		random_army_leader = {
+            limit = {
+                has_trait = maid_yoshino_trait
+            }
+        }
+        hidden_effect = {
+            country_event = { id = yoshino_event.11 days = 10 }
+		}
+    }
+}
+
+country_event = {
+    id = yoshino_event.11   #有子和人新的生活
+    picture = GFX_yoshino_event11
+    title = yoshino_event.11.t
+    desc = yoshino_event.11.d
+    is_triggered_only = yes
+
+     option = {
+        name = yoshino_event.11.a	
+		add_political_power = 50
+		custom_effect_tooltip = yoshino_happy1
+        add_ideas = yoshino_love_level_1
+        yoshino_love_up = yes
+		hidden_effect = {
+            play_song = youzu6
+        }
+    }
+}
+
+
+
+
+

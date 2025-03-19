@@ -1,0 +1,61 @@
+######################################
+category = {
+ name = "UI"
+ soundeffects = {
+	Martial_Law_senreibanka
+	Martial_Law_Interface_yuri_s_Revenge_occupation
+	murcoming
+	makcoming
+	yoscoming
+	murasame_end
+	murasame_senren
+	wakcoming
+	nencoming
+	tokcoming
+	chocoming
+	megcoming
+	meg_exit
+	wak_title
+	aya_tittle
+	ayacoming
+	nan_goodbye
+	nancoming
+	hazcoming
+	maycoming
+	nat_end
+	natcoming
+	nat_yuzu
+	kan_title
+	kan_yuzu
+	kancoming
+	suz_yuzu
+	suzcoming
+	meicoming
+	mei_yuzu
+	noz_yuzu
+	nozcoming
+	meg_yuzu
+	kurcoming
+	ama_title
+	amacoming
+	oricoming
+	noa_goodbye
+	noacoming
+	fumcoming
+	oricoming
+	kagcoming
+	rok_kohcoming
+ }
+ 
+ compressor = 
+ {
+	enabled = yes
+	pregain = 3.0
+	postgain = 1.0
+	ratio = 2.0
+	threshold = -10.0
+	attacktime = 0.03
+	releasetime = 0.0
+ }
+}
+

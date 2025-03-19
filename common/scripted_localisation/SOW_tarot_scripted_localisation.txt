@@ -1,0 +1,809 @@
+defined_text = {
+
+	name = tarot_picture		#塔罗牌
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_chariot
+		}
+		localization_key = tarot_the_chariot_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_chariot_down
+		}
+		localization_key = tarot_the_chariot_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_sun
+		}
+		localization_key = tarot_the_sun_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_sun_down
+		}
+		localization_key = tarot_the_sun_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_star
+		}
+		localization_key = tarot_the_star_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_star_down
+		}
+		localization_key = tarot_the_star_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_wheel_of_fortune
+		}
+		localization_key = tarot_wheel_of_fortune_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_wheel_of_fortune_down
+		}
+		localization_key = tarot_wheel_of_fortune_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_world
+		}
+		localization_key = tarot_the_world_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_world_down
+		}
+		localization_key = tarot_the_world_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_tower
+		}
+		localization_key = tarot_the_tower_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_tower_down
+		}
+		localization_key = tarot_the_tower_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_moon
+		}
+		localization_key = tarot_the_moon_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_moon_down
+		}
+		localization_key = tarot_the_moon_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_magician
+		}
+		localization_key = tarot_the_magician_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_magician_down
+		}
+		localization_key = tarot_the_magician_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_lovers
+		}
+		localization_key = tarot_the_lovers_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_lovers_down
+		}
+		localization_key = tarot_the_lovers_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_high_priestess
+		}
+		localization_key = tarot_the_high_priestess_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_high_priestess_down
+		}
+		localization_key = tarot_the_high_priestess_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hierophant
+		}
+		localization_key = tarot_the_hierophant_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hierophant_down
+		}
+		localization_key = tarot_the_hierophant_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hermit
+		}
+		localization_key = tarot_the_hermit_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hermit_down
+		}
+		localization_key = tarot_the_hermit_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hanged_man
+		}
+		localization_key = tarot_the_hanged_man_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hanged_man_down
+		}
+		localization_key = tarot_the_hanged_man_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_fool
+		}
+		localization_key = tarot_the_fool_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_fool_down
+		}
+		localization_key = tarot_the_fool_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_empress
+		}
+		localization_key = tarot_the_empress_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_empress_down
+		}
+		localization_key = tarot_the_empress_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_emperor
+		}
+		localization_key = tarot_the_emperor_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_emperor_down
+		}
+		localization_key = tarot_the_emperor_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_devil
+		}
+		localization_key = tarot_the_devil_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_devil_down
+		}
+		localization_key = tarot_the_devil_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_temperrance
+		}
+		localization_key = tarot_temperrance_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_temperrance_down
+		}
+		localization_key = tarot_temperrance_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_strength
+		}
+		localization_key = tarot_strength_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_strength_down
+		}
+		localization_key = tarot_strength_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_justice
+		}
+		localization_key = tarot_justice_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_justice_down
+		}
+		localization_key = tarot_justice_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_judgement
+		}
+		localization_key = tarot_judgement_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_judgement_down
+		}
+		localization_key = tarot_judgement_down_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_death
+		}
+		localization_key = tarot_death_image
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_death_down
+		}
+		localization_key = tarot_death_down_image
+	}
+	
+}
+
+defined_text = {
+
+	name = tarot_name		#塔罗牌名字
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_chariot
+		}
+		localization_key = tarot_the_chariot_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_chariot_down
+		}
+		localization_key = tarot_the_chariot_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_sun
+		}
+		localization_key = tarot_the_sun_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_sun_down
+		}
+		localization_key = tarot_the_sun_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_star
+		}
+		localization_key = tarot_the_star_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_star_down
+		}
+		localization_key = tarot_the_star_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_wheel_of_fortune
+		}
+		localization_key = tarot_wheel_of_fortune_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_wheel_of_fortune_down
+		}
+		localization_key = tarot_wheel_of_fortune_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_world
+		}
+		localization_key = tarot_the_world_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_world_down
+		}
+		localization_key = tarot_the_world_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_tower
+		}
+		localization_key = tarot_the_tower_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_tower_down
+		}
+		localization_key = tarot_the_tower_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_moon
+		}
+		localization_key = tarot_the_moon_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_moon_down
+		}
+		localization_key = tarot_the_moon_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_magician
+		}
+		localization_key = tarot_the_magician_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_magician_down
+		}
+		localization_key = tarot_the_magician_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_lovers
+		}
+		localization_key = tarot_the_lovers_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_lovers_down
+		}
+		localization_key = tarot_the_lovers_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_high_priestess
+		}
+		localization_key = tarot_the_high_priestess_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_high_priestess_down
+		}
+		localization_key = tarot_the_high_priestess_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hierophant
+		}
+		localization_key = tarot_the_hierophant_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hierophant_down
+		}
+		localization_key = tarot_the_hierophant_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hermit
+		}
+		localization_key = tarot_the_hermit_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hermit_down
+		}
+		localization_key = tarot_the_hermit_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hanged_man
+		}
+		localization_key = tarot_the_hanged_man_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hanged_man_down
+		}
+		localization_key = tarot_the_hanged_man_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_fool
+		}
+		localization_key = tarot_the_fool_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_fool_down
+		}
+		localization_key = tarot_the_fool_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_empress
+		}
+		localization_key = tarot_the_empress_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_empress_down
+		}
+		localization_key = tarot_the_empress_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_emperor
+		}
+		localization_key = tarot_the_emperor_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_emperor_down
+		}
+		localization_key = tarot_the_emperor_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_devil
+		}
+		localization_key = tarot_the_devil_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_devil_down
+		}
+		localization_key = tarot_the_devil_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_temperrance
+		}
+		localization_key = tarot_temperrance_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_temperrance_down
+		}
+		localization_key = tarot_temperrance_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_strength
+		}
+		localization_key = tarot_strength_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_strength_down
+		}
+		localization_key = tarot_strength_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_justice
+		}
+		localization_key = tarot_justice_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_justice_down
+		}
+		localization_key = tarot_justice_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_judgement
+		}
+		localization_key = tarot_judgement_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_judgement_down
+		}
+		localization_key = tarot_judgement_down_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_death
+		}
+		localization_key = tarot_death_name
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_death_down
+		}
+		localization_key = tarot_death_down_name
+	}
+	
+}
+
+defined_text = {
+
+	name = tarot_desc		#塔罗牌描述
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_chariot
+		}
+		localization_key = tarot_the_chariot_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_chariot_down
+		}
+		localization_key = tarot_the_chariot_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_sun
+		}
+		localization_key = tarot_the_sun_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_sun_down
+		}
+		localization_key = tarot_the_sun_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_star
+		}
+		localization_key = tarot_the_star_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_star_down
+		}
+		localization_key = tarot_the_star_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_wheel_of_fortune
+		}
+		localization_key = tarot_wheel_of_fortune_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_wheel_of_fortune_down
+		}
+		localization_key = tarot_wheel_of_fortune_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_world
+		}
+		localization_key = tarot_the_world_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_world_down
+		}
+		localization_key = tarot_the_world_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_tower
+		}
+		localization_key = tarot_the_tower_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_tower_down
+		}
+		localization_key = tarot_the_tower_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_moon
+		}
+		localization_key = tarot_the_moon_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_moon_down
+		}
+		localization_key = tarot_the_moon_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_magician
+		}
+		localization_key = tarot_the_magician_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_magician_down
+		}
+		localization_key = tarot_the_magician_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_lovers
+		}
+		localization_key = tarot_the_lovers_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_lovers_down
+		}
+		localization_key = tarot_the_lovers_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_high_priestess
+		}
+		localization_key = tarot_the_high_priestess_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_high_priestess_down
+		}
+		localization_key = tarot_the_high_priestess_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hierophant
+		}
+		localization_key = tarot_the_hierophant_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hierophant_down
+		}
+		localization_key = tarot_the_hierophant_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hermit
+		}
+		localization_key = tarot_the_hermit_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hermit_down
+		}
+		localization_key = tarot_the_hermit_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hanged_man
+		}
+		localization_key = tarot_the_hanged_man_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_hanged_man_down
+		}
+		localization_key = tarot_the_hanged_man_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_fool
+		}
+		localization_key = tarot_the_fool_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_fool_down
+		}
+		localization_key = tarot_the_fool_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_empress
+		}
+		localization_key = tarot_the_empress_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_empress_down
+		}
+		localization_key = tarot_the_empress_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_emperor
+		}
+		localization_key = tarot_the_emperor_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_emperor_down
+		}
+		localization_key = tarot_the_emperor_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_devil
+		}
+		localization_key = tarot_the_devil_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_the_devil_down
+		}
+		localization_key = tarot_the_devil_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_temperrance
+		}
+		localization_key = tarot_temperrance_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_temperrance_down
+		}
+		localization_key = tarot_temperrance_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_strength
+		}
+		localization_key = tarot_strength_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_strength_down
+		}
+		localization_key = tarot_strength_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_justice
+		}
+		localization_key = tarot_justice_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_justice_down
+		}
+		localization_key = tarot_justice_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_judgement
+		}
+		localization_key = tarot_judgement_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_judgement_down
+		}
+		localization_key = tarot_judgement_down_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_death
+		}
+		localization_key = tarot_death_name_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = tarot_death_down
+		}
+		localization_key = tarot_death_down_name_desc
+	}
+}
+

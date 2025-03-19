@@ -1,0 +1,2187 @@
+youzi_military_industrial_organization_0 = { 
+	icon = GFX_idea_youzi_weaopns
+
+	allowed = {	
+        has_dlc = "Arms Against Tyranny"
+	}
+    visible = {
+		owner = { 
+            has_country_flag = youzi_MIO_1
+		}
+	}
+	equipment_type = { 
+		infantry_equipment
+		support_equipment
+		artillery_equipment
+		anti_tank_equipment
+		anti_air_equipment
+		rocket_artillery_equipment
+		motorized_rocket_equipment
+		railway_gun_equipment
+		train_equipment 
+		motorized_equipment
+		super_heavy_artillery_equipment
+		helicopter_equipment
+	}
+	research_categories = {
+		infantry_weapons
+		support_tech
+		mio_cat_all_artillery_equipment
+		mio_cat_tech_all_motorized_mechanized
+		train_tech
+	}
+    tree_header_text = {
+		text = youzi_artillery_department
+        x = 1
+	}
+    tree_header_text = {
+		text = youzi_weapons_department
+		x = 4
+	}
+
+	tree_header_text = {
+		text = youzi_production_department
+		x = 7
+	}
+
+	tree_header_text = {
+		text = youzi_vehicles_department
+		x = 9
+	}
+    initial_trait = {
+	    token = youzi_mechanized
+		name =  youzi_mechanized
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_size_up_requirement = -0.15
+			military_industrial_organization_funds_gain = 0.3
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.5
+		}
+    	equipment_bonus = {
+			reliability = 0.1
+			maximum_speed = 0.05
+			soft_attack = 0.05
+			hard_attack = 0.07
+			breakthrough = 0.2
+        	build_cost_ic = 0.1
+		    }
+        production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+    trait = {
+		token = youzi_mechanized_0
+		name  = youzi_mechanized_0
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=0 }
+
+        all_parents = { youzi_mechanized_3 }
+        
+        limit_to_equipment_type = { 
+			artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+			rocket_artillery_equipment
+			motorized_rocket_equipment
+		    super_heavy_artillery_equipment
+		}
+        equipment_bonus = {
+           reliability = 0.15
+		   defense = 0.05
+		}
+	}
+	 trait = {
+		token = youzi_mechanized_1
+		name  = youzi_mechanized_1 
+		icon = GFX_generic_mio_department_icon_artillery
+
+		position = { x=0 y=2 }
+
+        all_parents = { youzi_mechanized_0 }
+        
+        limit_to_equipment_type = { 
+			artillery_equipment
+			rocket_artillery_equipment
+		}
+        equipment_bonus = {
+            build_cost_ic = -0.1
+			breakthrough = 0.1
+			reliability = -0.07
+        }
+	}
+	trait = {
+		token = youzi_mechanized_2
+		name  = youzi_mechanized_2   
+		icon = GFX_generic_mio_department_icon_tank_general_spg
+
+		position = { x=0 y=4 }
+
+        all_parents = { youzi_mechanized_1 }
+        
+        limit_to_equipment_type = { 
+			artillery_equipment
+			rocket_artillery_equipment
+			motorized_rocket_equipment
+			super_heavy_artillery_equipment
+		}
+        equipment_bonus = {
+           soft_attack = 0.15
+		   defense = 0.1
+		   hard_attack = 0.08
+		}
+	}
+	trait = {
+		token = youzi_mechanized_3
+		name  = youzi_mechanized_3   
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=0 }
+
+        
+        limit_to_equipment_type = { 
+			artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+			rocket_artillery_equipment
+			motorized_rocket_equipment
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_size_up_requirement = -0.15
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.15
+		}
+	}
+	trait = {
+		token = youzi_mechanized_4
+		name  = youzi_mechanized_4   
+		icon = GFX_generic_mio_department_icon_tank_general_weapons
+
+		position = { x=1 y=4 }
+
+        all_parents = { youzi_mechanized_2 youzi_mechanized_7 }
+
+		limit_to_equipment_type = { 
+			artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+			rocket_artillery_equipment
+			motorized_rocket_equipment
+			super_heavy_artillery_equipment
+		}
+        
+		equipment_bonus = {
+            soft_attack = 0.25
+			hard_attack = 0.2
+			ap_attack = 0.15
+		}
+	}
+	trait = {
+		token = youzi_mechanized_5
+		name  = youzi_mechanized_5   
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=2 y=0 }
+
+        all_parents = { youzi_mechanized_3 }
+        
+        limit_to_equipment_type = { 
+			anti_air_equipment
+	   }
+	   equipment_bonus = {
+		   soft_attack = 0.05
+		   hard_attack = 0.05
+		   air_attack = 0.1
+		   breakthrough = 0.05
+		   defense = 0.05
+	   }
+	}
+	trait = {
+		token = youzi_mechanized_6
+		name  = youzi_mechanized_6   
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		position = { x=2 y=2 }
+
+        all_parents = { youzi_mechanized_5 }
+
+		limit_to_equipment_type = { 
+			anti_tank_equipment
+	   }
+        
+		equipment_bonus = {
+            soft_attack = 0.05
+			hard_attack = 0.1
+			ap_attack = 0.1
+			breakthrough = 0.05
+		    defense = 0.05
+		}
+	}
+	trait = {
+		token = youzi_mechanized_7
+		name  = youzi_mechanized_7   
+		icon = GFX_generic_mio_trait_icon_detection
+
+		position = { x=2 y=4 }
+
+        all_parents = { youzi_mechanized_6 }
+        
+        limit_to_equipment_type = { 
+			artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+			rocket_artillery_equipment
+			motorized_rocket_equipment
+			super_heavy_artillery_equipment
+		}
+        equipment_bonus = {
+            soft_attack = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.05
+			air_attack = 0.05
+		}
+	}
+	trait = {
+		token = youzi_mechanized_8
+		name  = youzi_mechanized_8   
+		icon = GFX_generic_mio_department_icon_infantry_production
+
+		position = { x=3 y=0 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		}
+        equipment_bonus = {
+           build_cost_ic = -0.1
+		   soft_attack = -0.07
+		}
+	}
+	trait = {
+		token = youzi_mechanized_9
+		name  = youzi_mechanized_9   
+		icon =  GFX_generic_mio_department_icon_infantry_quality
+
+		position = { x=5 y=0 }
+
+		all_parents = { youzi_mechanized_8 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		}
+		equipment_bonus = {
+			defense = 0.1
+			soft_attack = 0.05
+			breakthrough = 0.05
+		 }
+	}
+	trait = {
+		token = youzi_mechanized_10
+		name  = youzi_mechanized_10   
+		icon =  GFX_generic_mio_department_icon_infantry_line_efficiency
+
+		position = { x=5 y=2 }
+
+		all_parents = { youzi_mechanized_9 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		}
+		equipment_bonus = {
+			reliability = 0.07
+			soft_attack = 0.02
+			ap_attack = 0.1
+		}
+	}
+	trait = {
+		token = youzi_mechanized_11
+		name  = youzi_mechanized_11   
+		icon =  GFX_generic_mio_department_icon_tank_general_at
+
+		position = { x=5 y=4 }
+
+		all_parents = { youzi_mechanized_10 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		}
+		equipment_bonus = {
+			soft_attack = 0.07
+			hard_attack = 0.2
+			breakthrough = 0.1
+		}
+	}
+	trait = {
+		token = youzi_mechanized_12
+		name  = youzi_mechanized_12   
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=6 y=0 }
+		
+		limit_to_equipment_type = { 
+		    infantry_equipment
+		    support_equipment
+		    artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+		    rocket_artillery_equipment
+		    motorized_rocket_equipment
+		    railway_gun_equipment
+		    train_equipment 
+		    motorized_equipment
+		}
+        production_bonus = {
+			production_efficiency_cap_factor = 0.1
+		 }
+	}
+	trait = {
+		token = youzi_mechanized_13
+		name  = youzi_mechanized_13   
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+
+		position = { x=8 y=0 }
+		
+		all_parents = { youzi_mechanized_12 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		    artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+		    rocket_artillery_equipment
+		    motorized_rocket_equipment
+		    railway_gun_equipment
+		    train_equipment 
+		    motorized_equipment
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.15
+            production_resource_penalty_factor = -0.15
+        }
+	}
+	trait = {
+		token = youzi_mechanized_14
+		name  = youzi_mechanized_14   
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=8 y=2 }
+		
+		all_parents = { youzi_mechanized_13 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		    artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+		    rocket_artillery_equipment
+		    motorized_rocket_equipment
+		    railway_gun_equipment
+		    train_equipment 
+		    motorized_equipment
+			helicopter_equipment
+		}
+        equipment_bonus = {
+			build_cost_ic = -0.1
+		}
+	}
+	trait = {
+		token = youzi_mechanized_15
+		name  = youzi_mechanized_15   
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+
+		position = { x=6 y=2 }
+		
+		all_parents = { youzi_mechanized_14 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		    artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+		    rocket_artillery_equipment
+		    motorized_rocket_equipment
+		    railway_gun_equipment
+		    train_equipment 
+		    motorized_equipment
+		}
+		production_bonus = {
+		    production_efficiency_gain_factor = 0.15
+		}
+	}
+	trait = {
+		token = youzi_mechanized_16
+		name  = youzi_mechanized_16   
+		icon = GFX_generic_mio_trait_icon_naval_range
+
+		position = { x=6 y=4 }
+		
+		all_parents = { youzi_mechanized_15 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		    artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+		    rocket_artillery_equipment
+		    motorized_rocket_equipment
+		    railway_gun_equipment
+		    train_equipment 
+		    motorized_equipment
+		}
+		organization_modifier = {
+			military_industrial_organization_design_team_change_cost = -0.15
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.15
+		}
+        
+	}
+	trait = {
+		token = youzi_mechanized_17
+		name  = youzi_mechanized_17   
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=8 y=4 }
+		
+		all_parents = { youzi_mechanized_16 }
+		
+		limit_to_equipment_type = { 
+			infantry_equipment
+		    support_equipment
+		    artillery_equipment
+		    anti_tank_equipment
+		    anti_air_equipment
+		    rocket_artillery_equipment
+		    motorized_rocket_equipment
+		    railway_gun_equipment
+		    train_equipment 
+		    motorized_equipment
+		}
+		production_bonus = {
+		    production_capacity_factor = 0.1
+		}
+	}
+	trait = {
+		token = youzi_mechanized_18
+		name  = youzi_mechanized_18   
+		icon = GFX_generic_mio_department_icon_motorized_mechanized_engine
+
+		position = { x=9 y=0 }
+		
+		limit_to_equipment_type = {   
+			motorized_equipment
+			helicopter_equipment
+		}
+        equipment_bonus = {
+           soft_attack = 0.05
+		   breakthrough = 0.1
+		   maximum_speed = 0.15
+		   hardness = 0.1
+		   build_cost_ic = -0.05
+		   reliability = -0.15
+		}
+	}
+    trait = {
+		token = youzi_mechanized_19
+		name  = youzi_mechanized_19   
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=9 y=2 }
+
+		all_parents = { youzi_mechanized_18 }
+		
+		limit_to_equipment_type = {   
+			train_equipment
+			helicopter_equipment
+		}
+        equipment_bonus = {
+            build_cost_ic = -0.05
+		}
+		production_bonus = {
+		    production_capacity_factor = 0.1
+		}
+	}
+
+ 	trait = {
+		token = youzi_mechanized_20
+		name  = youzi_mechanized_20   
+		icon = GFX_generic_mio_trait_icon_hg_attack
+
+		position = { x=9 y=4 }
+
+		all_parents = { youzi_mechanized_19 }
+		
+		limit_to_equipment_type = {   
+			railway_gun_equipment
+		}
+        equipment_bonus = {
+            railway_gun_attack = 0.3
+		}
+	}
+}
+youzi_naval_offshore_manufacturing_center_organization_0 = { 
+	icon = GFX_idea_youzi_screen
+
+	allowed = {	
+        has_dlc = "Arms Against Tyranny"
+	}
+    visible = {
+		owner = { 
+            has_country_flag = youzi_MIO_2
+		}
+	}
+	equipment_type = { 
+		convoy_1 screen_ship submarine 
+	}
+	research_categories = {
+		mio_cat_tech_all_screen_ship_and_modules mio_cat_tech_all_submarine_and_modules
+	}
+    tree_header_text = {
+		text = youzi_ship_department
+        x = 1
+	}
+    tree_header_text = {
+		text = youzi_submarine_department
+		x = 7
+	}
+
+	
+    initial_trait = {
+	    token = youzi_naval_offshore_manufacturing
+		name =  youzi_naval_offshore_manufacturing
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_size_up_requirement = -0.25
+			military_industrial_organization_funds_gain = 0.75
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.5
+		}
+    	equipment_bonus = {
+			naval_speed = 0.05
+        	build_cost_ic = 0.1
+    	}
+        production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+    trait = {
+		token = youzi_naval_offshore_manufacturing_0
+		name  = youzi_naval_offshore_manufacturing_0
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+
+		position = { x=1 y=0 }
+        
+        limit_to_equipment_type = { 
+			convoy_1
+			screen_ship
+		}
+        equipment_bonus = {
+            build_cost_ic = -0.15
+			max_strength = -0.1
+		}
+		production_bonus = {
+			production_capacity_factor = 0.1
+			production_efficiency_cap_factor = 0.1
+		}
+	}
+	 trait = {
+		token = youzi_naval_offshore_manufacturing_1
+		name  = youzi_naval_offshore_manufacturing_1
+		icon = GFX_generic_mio_department_icon_tank_general_spg
+
+		position = { x=1 y=1 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_0 }
+        
+        limit_to_equipment_type = { 
+			convoy_1
+			screen_ship
+		}
+        equipment_bonus = {
+            mines_planting = 0.25
+			sub_detection = 0.3
+			torpedo_attack = 0.25
+			max_strength = 0.05
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_2
+		name  = youzi_naval_offshore_manufacturing_2
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=1 y=2 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_1 }
+		
+		limit_to_equipment_type = { 
+			convoy_1
+			screen_ship
+		}
+        equipment_bonus = {
+            anti_air_attack = 0.2
+			naval_weather_penalty_factor = -0.15
+			build_cost_ic = 0.05
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_3
+		name  = youzi_naval_offshore_manufacturing_3
+		icon = GFX_generic_mio_trait_icon_hg_attack
+
+		position = { x=1 y=3 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_2 }
+		
+		limit_to_equipment_type = { 
+			convoy_1
+			screen_ship
+		}
+        equipment_bonus = {
+            reliability = 0.05
+		    lg_attack = 0.25
+			naval_light_gun_hit_chance_factor = 0.15
+			lg_armor_piercing = 0.1
+			max_strength = 0.05
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_4
+		name  = youzi_naval_offshore_manufacturing_4
+		icon = GFX_generic_mio_trait_icon_naval_range
+
+		position = { x=1 y=4 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_3 }
+		
+		limit_to_equipment_type = { 
+			convoy_1
+			screen_ship
+		}
+        equipment_bonus = {
+            naval_speed = 0.1
+			naval_range = 0.1
+			armor_value = 0.15
+			build_cost_ic = -0.025
+			surface_detection = 0.3
+			mission_convoy_escort_efficiency = 0.1
+			spotting_chance_factor = 0.1
+			naval_night_attack = 0.1
+			screening_efficiency = 0.1
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_5
+		name  = youzi_naval_offshore_manufacturing_5
+		icon = GFX_generic_mio_department_icon_ship_general_engine
+
+		position = { x=7 y=0 }
+		
+		limit_to_equipment_type = { 
+			submarine
+		}
+        equipment_bonus = {
+           max_strength = 0.1
+		   reliability = 0.05
+		   sub_visibility = -0.25
+		   surface_visibility = -0.25
+		   build_cost_ic = 0.05
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_6
+		name  = youzi_naval_offshore_manufacturing_6
+		icon = GFX_generic_mio_department_icon_ship_submarine_conversion
+
+		position = { x=7 y=1 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_5 }
+		
+		limit_to_equipment_type = { 
+			submarine
+		}
+        equipment_bonus = {
+           naval_speed = 0.2
+		   fuel_consumption = 0.1
+		   naval_range = 0.5
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_7
+		name  = youzi_naval_offshore_manufacturing_7
+		icon = GFX_generic_mio_trait_icon_surface_detection
+
+		position = { x=7 y=2 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_6 }
+		
+		limit_to_equipment_type = { 
+			submarine
+		}
+        equipment_bonus = {
+          surface_detection = 0.5
+		  sub_detection = 0.5
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_8
+		name  = youzi_naval_offshore_manufacturing_8
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=7 y=3 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_7 }
+		
+		limit_to_equipment_type = { 
+			submarine
+		}
+        equipment_bonus = {
+          torpedo_attack = 0.3
+		  naval_torpedo_hit_chance_factor = 0.2
+		}
+	}
+	trait = {
+		token = youzi_naval_offshore_manufacturing_9
+		name  = youzi_naval_offshore_manufacturing_9
+		icon = GFX_generic_mio_department_icon_ship_submarine_production
+
+		position = { x=7 y=4 }
+
+		all_parents = { youzi_naval_offshore_manufacturing_8 }
+		
+		limit_to_equipment_type = { 
+			submarine
+		}
+		production_bonus = {
+			production_capacity_factor = 0.1
+			production_efficiency_cap_factor = 0.1
+		}
+        equipment_bonus = {
+          build_cost_ic = -0.1
+		  max_strength = -0.05
+		  reliability = 0.05
+		}
+	}
+}
+youzi_naval_ocean_research_bureau_center_organization_110 = { 
+	icon = GFX_idea_youzi_ocean
+
+	allowed = {	
+        has_dlc = "Arms Against Tyranny"
+	}
+    visible = {
+		owner = { 
+            has_country_flag = youzi_MIO_3
+		}
+	}
+	equipment_type = { 
+		mio_cat_eq_all_battleship mio_cat_eq_all_carrier mio_cat_eq_all_cruiser
+	}
+	research_categories = {
+		mio_cat_tech_all_carrier_and_modules mio_cat_tech_all_capital_ship_and_modules mio_cat_tech_all_cruiser_and_modules  
+	}
+    tree_header_text = {
+		text = youzi_capital_department
+        x = 2
+	}
+    tree_header_text = {
+		text = youzi_carrier_department
+		x = 5
+	}
+	tree_header_text = {
+		text = youzi_cruiser_department
+		x = 8
+	}
+
+    initial_trait = {
+	    token = youzi_naval_ocean
+		name =  youzi_naval_ocean
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_size_up_requirement = -0.25
+			military_industrial_organization_funds_gain = 0.75
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.5
+		}
+    	equipment_bonus = {
+			naval_speed = 0.05
+        	build_cost_ic = 0.1
+    	}
+        production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+    trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_0
+		name  = youzi_naval_ocean_research_bureau_center_organization_0
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=1 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship
+		}
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_1 }
+        equipment_bonus = {
+            build_cost_ic = -0.15
+			armor_value = -0.15
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_1
+		name  = youzi_naval_ocean_research_bureau_center_organization_1
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=3 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship
+		}
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_0 }
+        equipment_bonus = {
+            build_cost_ic = 0.15
+			armor_value = 0.2
+			max_strength = 0.15
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_2
+		name  = youzi_naval_ocean_research_bureau_center_organization_2
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=1 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship
+		}
+		relative_position_id = youzi_naval_ocean_research_bureau_center_organization_0
+		any_parent = {  youzi_naval_ocean_research_bureau_center_organization_0 youzi_naval_ocean_research_bureau_center_organization_1 }
+		equipment_bonus = {
+            reliability = 0.1
+			armor_value = 0.05
+			naval_heavy_gun_hit_chance_factor = 0.15
+			naval_torpedo_damage_reduction_factor = 0.1
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_3
+		name  = youzi_naval_ocean_research_bureau_center_organization_3
+		icon = GFX_generic_mio_department_icon_ship_capital_ship_weapons
+
+		position = { x=2 y=2 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship
+		}
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_2 }
+        equipment_bonus = {
+			lg_armor_piercing = 0.15
+			lg_attack = 0.15
+			hg_armor_piercing = 0.15
+			hg_attack = 0.3
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_4
+		name  = youzi_naval_ocean_research_bureau_center_organization_4
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=1 y=3 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship
+		}
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_3 }
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_5 }
+        equipment_bonus = {
+			naval_speed = 0.2
+			fuel_consumption = 0.1
+			surface_detection = 0.15
+            sub_detection = 0.15
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_5
+		name  = youzi_naval_ocean_research_bureau_center_organization_5
+		icon = GFX_generic_mio_department_icon_ship_general_quality
+
+		position = { x=3 y=3 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship
+		}
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_3 }
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_4 }
+        equipment_bonus = {
+			naval_range =  0.4
+			fuel_consumption = -0.15
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_6
+		name  = youzi_naval_ocean_research_bureau_center_organization_6
+		icon = GFX_generic_mio_department_icon_ship_carrier_offense
+
+		position = { x=5 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_carrier
+		}
+		
+        equipment_bonus = {
+			carrier_size = 3
+			armor_value = 0.05
+			max_strength = 0.05
+			build_cost_ic = 0.05
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_7
+		name  = youzi_naval_ocean_research_bureau_center_organization_7
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=4 y=1 }
+
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_6 }
+
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_8 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_carrier
+		}
+		
+        equipment_bonus = {
+			build_cost_ic = -0.15
+			reliability = -0.15
+			armor_value = -0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.15
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_8
+		name  = youzi_naval_ocean_research_bureau_center_organization_8
+		icon = GFX_generic_mio_trait_icon_max_strength
+
+		position = { x=6 y=1 }
+
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_6 }
+
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_7 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_carrier
+		}
+		
+        equipment_bonus = {
+			build_cost_ic = 0.1
+			reliability = 0.15
+			armor_value = 0.1
+			anti_air_attack = 0.15
+			lg_attack = 0.15 
+		}
+	}
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_9
+		name  = youzi_naval_ocean_research_bureau_center_organization_9
+		icon = GFX_generic_mio_trait_icon_surface_detection
+
+		position = { x=1 y=1 }
+
+		relative_position_id = youzi_naval_ocean_research_bureau_center_organization_7
+		any_parent = {  youzi_naval_ocean_research_bureau_center_organization_7 youzi_naval_ocean_research_bureau_center_organization_8 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_carrier
+		}
+		
+        equipment_bonus = {
+			surface_detection = 0.7
+			sub_detection = 0.7
+			surface_visibility = -0.15
+			naval_speed = 0.15
+		}
+    }
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_10
+		name  = youzi_naval_ocean_research_bureau_center_organization_10
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=5 y=3 }
+
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_9 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_carrier
+		}
+		
+        equipment_bonus = {
+			naval_range = 0.3
+			naval_speed = 0.1
+			fuel_consumption = -0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.15
+		}
+    }
+    trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_11
+		name  = youzi_naval_ocean_research_bureau_center_organization_11
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_engine
+
+		position = { x=8 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_cruiser
+		}
+		
+        equipment_bonus = {
+			lg_armor_piercing = 0.15
+            lg_attack = 0.2
+			hg_attack = 0.1
+			build_cost_ic = 0.1 
+		}
+    }
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_12
+		name  = youzi_naval_ocean_research_bureau_center_organization_12
+		icon = GFX_generic_mio_department_icon_ship_capital_ship_production
+
+		position = { x=8 y=1 }
+
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_11 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_cruiser
+		}
+		
+        equipment_bonus = {
+			reliability = -0.1
+			build_cost_ic = -0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.15
+			production_efficiency_cap_factor = 0.1
+            production_efficiency_gain_factor = 0.1
+			production_resource_penalty_factor = -0.1
+		}
+    }
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_13
+		name  = youzi_naval_ocean_research_bureau_center_organization_13
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=7 y=2 }
+
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_12 }
+
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_14 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_cruiser
+		}
+		
+        equipment_bonus = {
+			surface_detection = 0.25
+			naval_speed = 0.2
+		}
+    }
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_14
+		name  = youzi_naval_ocean_research_bureau_center_organization_14
+		icon = GFX_generic_mio_department_icon_ship_carrier_offense
+
+		position = { x=9 y=2 }
+
+		all_parents = { youzi_naval_ocean_research_bureau_center_organization_12 }
+
+		mutually_exclusive = { youzi_naval_ocean_research_bureau_center_organization_13 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_cruiser
+		}
+		
+        equipment_bonus = {
+			sub_detection = 0.25
+			naval_range = 0.2
+		}
+    }
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_15
+		name  = youzi_naval_ocean_research_bureau_center_organization_15
+		icon = GFX_generic_mio_trait_icon_conversion_speed
+
+		position = { x=1 y=1 }
+
+		relative_position_id = youzi_naval_ocean_research_bureau_center_organization_13
+		any_parent = {  youzi_naval_ocean_research_bureau_center_organization_13 youzi_naval_ocean_research_bureau_center_organization_14 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_cruiser
+		}
+		
+        equipment_bonus = {
+			hg_armor_piercing = 0.1
+			naval_light_gun_hit_chance_factor = 0.15
+            naval_heavy_gun_hit_chance_factor = 0.15
+			lg_attack = 0.05
+		}
+    }
+	trait = {
+		token = youzi_naval_ocean_research_bureau_center_organization_16
+		name  = youzi_naval_ocean_research_bureau_center_organization_16
+		icon = GFX_generic_mio_trait_icon_naval_range
+
+		position = { x=3 y=1 }
+
+		any_parent = { youzi_naval_ocean_research_bureau_center_organization_4 youzi_naval_ocean_research_bureau_center_organization_5 youzi_naval_ocean_research_bureau_center_organization_10 youzi_naval_ocean_research_bureau_center_organization_15   }
+
+		relative_position_id = youzi_naval_ocean_research_bureau_center_organization_4 youzi_naval_ocean_research_bureau_center_organization_15 
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_battleship mio_cat_eq_all_carrier mio_cat_eq_all_cruiser
+		}
+		
+        equipment_bonus = {
+			reliability = 0.15
+            naval_range = 0.2
+            max_strength = 0.15
+			fuel_consumption = -0.15
+			anti_air_attack = 0.2
+			build_cost_ic = 0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+    }
+}
+youzi_air_force_aviation_administration_0 = { 
+	icon = GFX_idea_youzi_air
+
+	allowed = {	
+        has_dlc = "Arms Against Tyranny"
+	}
+    visible = {
+		owner = { 
+            has_country_flag = youzi_MIO_4
+		}
+	}
+	equipment_type = { 
+		mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane  mio_cat_eq_all_large_plane transport_plane_equipment mothership_equipment
+	}
+	research_categories = {
+		 mio_cat_all_light_aircraft_and_modules
+	}
+    tree_header_text = {
+		text = youzi_small_department
+        x = 1
+	}
+    tree_header_text = {
+		text = youzi_medium_department
+		x = 4
+	}
+	tree_header_text = {
+		text = youzi_large_department
+		x = 7
+	}
+
+	 initial_trait = {
+	    token = youzi_air_force_aviation_administration
+		name =  youzi_air_force_aviation_administration
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_size_up_requirement = -0.15
+			military_industrial_organization_funds_gain = 0.25
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.2
+		}
+    	equipment_bonus = {
+			maximum_speed = 0.05
+        	build_cost_ic = -0.05
+    	}
+        production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+  trait = {
+		token = youzi_air_force_aviation_administration_1
+		name  = youzi_air_force_aviation_administration_1
+		icon = GFX_generic_mio_department_icon_plane_general_production
+
+		position = { x=1 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		
+        equipment_bonus = {
+			air_agility = 0.2
+			air_range = 0.15
+			fuel_consumption = -0.1
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_2
+		name  = youzi_air_force_aviation_administration_2
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=0 y=1 }
+
+		all_parents = { youzi_air_force_aviation_administration_1 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_3 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		
+        equipment_bonus = {
+			air_defence = 0.2
+			reliability = 0.1
+			air_agility = -0.05
+			build_cost_ic = 0.1
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_3
+		name  = youzi_air_force_aviation_administration_3
+		icon = GFX_generic_mio_department_icon_plane_light_production
+
+		position = { x=2 y=1 }
+
+		all_parents = { youzi_air_force_aviation_administration_1 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_2 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		
+        equipment_bonus = {
+			air_defence = -0.15
+			reliability = -0.05
+			air_agility = 0.05
+			build_cost_ic = -0.1
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_4
+		name  = youzi_air_force_aviation_administration_4
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=1 y=1 }
+
+        relative_position_id = youzi_air_force_aviation_administration_2
+		any_parent = { youzi_air_force_aviation_administration_2 youzi_air_force_aviation_administration_3}
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		production_bonus = {
+		    production_capacity_factor = 0.1
+		    production_efficiency_cap_factor = 0.1
+		    production_efficiency_gain_factor =-0.10
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_5
+		name  = youzi_air_force_aviation_administration_5
+		icon = GFX_generic_mio_department_icon_plane_fighter_combat
+
+		position = { x=0 y=3 }
+
+		all_parents = { youzi_air_force_aviation_administration_4 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_6 youzi_air_force_aviation_administration_7 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		
+        equipment_bonus = {
+			air_superiority = 0.1
+			air_attack = 0.2
+			maximum_speed = 0.15
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_6
+		name  = youzi_air_force_aviation_administration_6
+		icon = GFX_generic_mio_department_icon_tank_general_spg
+
+		position = { x=1 y=3 }
+
+		all_parents = { youzi_air_force_aviation_administration_4 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_5 youzi_air_force_aviation_administration_7 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		
+        equipment_bonus = {
+			air_ground_attack = 0.25
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_7
+		name  = youzi_air_force_aviation_administration_7
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=2 y=3 }
+
+		all_parents = { youzi_air_force_aviation_administration_4 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_5 youzi_air_force_aviation_administration_6 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		
+        equipment_bonus = {
+			naval_strike_attack = 0.2
+            naval_strike_targetting = 0.1
+		}
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_8
+		name  = youzi_air_force_aviation_administration_8
+		icon = GFX_generic_mio_department_icon_plane_naval_bomber_quality
+
+		position = { x=1 y=1 }
+
+        relative_position_id = youzi_air_force_aviation_administration_5
+		any_parent = { youzi_air_force_aviation_administration_5 youzi_air_force_aviation_administration_6 youzi_air_force_aviation_administration_7}
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_small_plane 
+		}
+		equipment_bonus = {
+			thrust = 0.15
+            night_penalty = -0.15
+		}
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_9
+		name  = youzi_air_force_aviation_administration_9
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=4 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+		equipment_bonus = {
+			air_defence = 0.2
+			air_agility = -0.03
+		}
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_10
+		name  = youzi_air_force_aviation_administration_10
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=4 y=1 }
+
+		all_parents = { youzi_air_force_aviation_administration_9 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+        production_bonus = {
+		    production_capacity_factor = 0.15
+		    production_efficiency_cap_factor = 0.25
+		    production_efficiency_gain_factor =-0.10
+		}  
+		equipment_bonus = {
+			build_cost_ic = -0.1
+		}
+	}
+	    organization_modifier = {
+		military_industrial_organization_research_bonus = 0.2
+		military_industrial_organization_funds_gain = 0.15
+    }
+	trait = {
+		token = youzi_air_force_aviation_administration_11
+		name  = youzi_air_force_aviation_administration_11
+		icon = GFX_generic_mio_department_icon_plane_heavy_fighter_combat
+
+		position = { x=3 y=2 }
+
+		all_parents = { youzi_air_force_aviation_administration_10 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_12 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+		equipment_bonus = {
+			air_attack = 0.3
+		}
+	} 
+	trait = {
+		token = youzi_air_force_aviation_administration_12
+		name  = youzi_air_force_aviation_administration_12
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+
+		position = { x=5 y=2 }
+
+		all_parents = { youzi_air_force_aviation_administration_10 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_11 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+		equipment_bonus = {
+			air_ground_attack = 0.2
+			air_bombing = 0.15
+        }
+	} 
+	trait = {
+		token = youzi_air_force_aviation_administration_13
+		name  = youzi_air_force_aviation_administration_13
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=1 y=1 }
+
+		relative_position_id = youzi_air_force_aviation_administration_11
+		any_parent = { youzi_air_force_aviation_administration_11 youzi_air_force_aviation_administration_12}    
+		
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+		production_bonus = {
+		    production_resource_need_factor = -0.15
+            production_resource_penalty_factor = -0.15
+            production_conversion_speed_factor = 0.15
+		}  
+	} 
+	trait = {
+		token = youzi_air_force_aviation_administration_14
+		name  = youzi_air_force_aviation_administration_14
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=3 y=4 }
+
+		all_parents = { youzi_air_force_aviation_administration_13 }    
+		
+		equipment_bonus = {
+			fuel_consumption = -0.2
+			maximum_speed = -0.02
+        }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+		
+	} 
+	trait = {
+		token = youzi_air_force_aviation_administration_15
+		name  = youzi_air_force_aviation_administration_15
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=5 y=4 }
+
+		all_parents = { youzi_air_force_aviation_administration_13 }    
+		
+		equipment_bonus = {
+			air_range = 0.6
+			maximum_speed = -0.15
+        }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_plane   transport_plane_equipment 
+		}
+		
+	} 
+	trait = {
+		token = youzi_air_force_aviation_administration_16
+		name  = youzi_air_force_aviation_administration_16
+		icon = GFX_generic_mio_department_icon_plane_heavy_technology
+
+		position = { x=7 y=0 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_large_plane 
+			mothership_equipment
+		}
+		equipment_bonus = {
+			air_range = 0.4
+			fuel_consumption = 0.15
+			maximum_speed = 0.15
+			build_cost_ic = 0.1
+		}
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_17
+		name  = youzi_air_force_aviation_administration_17
+		icon = GFX_generic_mio_department_icon_plane_heavy_quality
+
+		position = { x=7 y=1 }
+
+		all_parents = { youzi_air_force_aviation_administration_16 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_large_plane 
+			mothership_equipment
+		}
+		equipment_bonus = {
+			air_agility = -0.05
+            air_attack = 0.3
+            air_defence = 0.3
+			build_cost_ic = 0.05
+		}
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_18
+		name  = youzi_air_force_aviation_administration_18
+		icon = GFX_generic_mio_department_icon_plane_cas_conversion
+
+		position = { x=7 y=2 }
+
+		all_parents = { youzi_air_force_aviation_administration_17 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_large_plane 
+			mothership_equipment
+		}
+		equipment_bonus = {
+			air_ground_attack = 0.4
+            air_bombing = 0.6
+		}
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_19
+		name  = youzi_air_force_aviation_administration_19
+		icon = GFX_generic_mio_department_icon_plane_heavy
+
+		position = { x=7 y=3 }
+
+		all_parents = { youzi_air_force_aviation_administration_18 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_large_plane 
+			mothership_equipment
+		}
+		equipment_bonus = {
+			air_agility = 0.15
+		}
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_20
+		name  = youzi_air_force_aviation_administration_20
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+
+		position = { x=6 y=4 }
+
+		all_parents = { youzi_air_force_aviation_administration_19 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_21 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_large_plane 
+			mothership_equipment
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.15
+			reliability = -0.1
+			air_defence = -0.1
+        }
+		production_bonus = {
+			production_efficiency_cap_factor= 0.15
+			production_efficiency_gain_factor = -0.05
+			production_capacity_factor = 0.1
+		}  
+	}	
+	trait = {
+		token = youzi_air_force_aviation_administration_21
+		name  = youzi_air_force_aviation_administration_21
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=8 y=4 }
+
+		all_parents = { youzi_air_force_aviation_administration_19 }
+
+		mutually_exclusive = { youzi_air_force_aviation_administration_20 }
+        
+        limit_to_equipment_type = { 
+			mio_cat_eq_all_large_plane 
+			mothership_equipment
+		}
+		equipment_bonus = {
+			build_cost_ic = 0.1
+			reliability = 0.2
+			air_defence = 0.2
+			air_superiority = 0.4
+        }
+	}	
+}
+youzi_tank_design_and_production_Center_organization_0 = { 
+		
+	icon = GFX_idea_youzi_tank
+
+	allowed = {	
+		has_dlc = "Arms Against Tyranny"
+	}
+	visible = {
+		owner = { 
+			has_country_flag = youzi_MIO_5
+		}
+	}
+	equipment_type = { 
+		armor
+		armored_car_equipment
+		mechanized_equipment
+	    land_cruiser_chassis
+		self_propelled_super_heavy_artillery_equipment
+	}
+	research_categories = {
+		armor 
+		armored_car_equipment
+		mechanized_equipment
+	}
+	tree_header_text = {
+		text = youzi_light_tank_department
+		x = 0
+	}
+	tree_header_text = {
+		text = youzi_medium_tank_department
+		x = 2
+	}
+	tree_header_text = {
+		text = youzi_heavy_tank_department
+		x = 5
+	}
+	tree_header_text = {
+		text = youzi_mechanized_department
+		x = 7
+	}
+	tree_header_text = {
+		text = youzi_factory_department
+		x = 9
+	}
+	
+	initial_trait = {
+		token = youzi_tank_manufacturing
+		name =  youzi_tank_manufacturing
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_size_up_requirement = -0.25
+			military_industrial_organization_funds_gain = 0.25
+		}
+		equipment_bonus = {
+			build_cost_ic = 0.1
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_0
+		name  = youzi_tank_manufacturing_0
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+
+		position = { x=0 y=0 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_light_tank
+		}
+		equipment_bonus = {
+			maximum_speed = 0.2
+			breakthrough = 0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_1
+		name  = youzi_tank_manufacturing_1
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=0 y=1 }
+
+		all_parents = { youzi_tank_manufacturing_0 }
+
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_light_tank
+		}
+		equipment_bonus = {
+			maximum_speed = 0.1
+			build_cost_ic = -0.15
+			armor_value = -0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_2
+		name  = youzi_tank_manufacturing_2
+		icon = GFX_generic_mio_department_icon_tank_general_at
+
+		position = { x=0 y=2 }
+
+		all_parents = { youzi_tank_manufacturing_1 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_light_tank
+		}
+		equipment_bonus = {
+			soft_attack = 0.06
+			defense = 0.05
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_3
+		name  = youzi_tank_manufacturing_3
+		icon = GFX_generic_mio_trait_icon_batteries_hit_chance
+
+		position = { x=0 y=3 }
+
+		all_parents = { youzi_tank_manufacturing_2 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_light_tank
+		}
+		equipment_bonus = {
+			hard_attack = 0.06
+            ap_attack = 0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_4
+		name  = youzi_tank_manufacturing_4
+		icon = GFX_generic_mio_department_icon_tank_light_tank_production
+
+		position = { x=2 y=0 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_tank
+		}
+		equipment_bonus = {
+			reliability = 0.15
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_5
+		name  = youzi_tank_manufacturing_5
+		icon = GFX_generic_mio_department_icon_tank_light_tank_armor
+
+		position = { x=1 y=1 }
+
+		all_parents = { youzi_tank_manufacturing_4 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_6 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_tank
+		}
+		equipment_bonus = {
+			armor_value = -0.15
+            defense = -0.15
+			build_cost_ic = -0.2
+			reliability = -0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_6
+		name  = youzi_tank_manufacturing_6
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=3 y=1 }
+
+		all_parents = { youzi_tank_manufacturing_4 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_5 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_tank
+		}
+		equipment_bonus = {
+			armor_value = 0.15
+            defense = 0.1
+			build_cost_ic = 0.12
+			reliability = 0.05
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_7
+		name  = youzi_tank_manufacturing_7
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=1 }
+
+		relative_position_id = youzi_tank_manufacturing_5
+		any_parent = {  youzi_tank_manufacturing_5 youzi_tank_manufacturing_6 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_tank
+		}
+		equipment_bonus = {
+			breakthrough = 0.15
+			hardness = 0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_8
+		name  = youzi_tank_manufacturing_8
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=3 }
+
+		all_parents = { youzi_tank_manufacturing_7 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_9 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_tank
+		}
+		equipment_bonus = {
+			soft_attack = 0.12
+			air_attack = 0.1
+			defense = 0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_9
+		name  = youzi_tank_manufacturing_9
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		position = { x=3 y=3 }
+
+		all_parents = { youzi_tank_manufacturing_7 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_8 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_medium_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			hard_attack = 0.12
+			air_attack = 0.1
+			ap_attack = 0.12
+			breakthrough = 0.03
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_10
+		name  = youzi_tank_manufacturing_10
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_conversion
+
+		position = { x=4 y=0 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_11 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			reliability = 0.15
+            defense = 0.1
+			build_cost_ic = 0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_11
+		name  = youzi_tank_manufacturing_11
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_engine
+
+		position = { x=6 y=0 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_10 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			reliability = -0.15
+            breakthrough = 0.1
+			build_cost_ic = -0.18
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_12
+		name  = youzi_tank_manufacturing_12
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=1 y=1 }
+
+		relative_position_id = youzi_tank_manufacturing_10
+		any_parent = {  youzi_tank_manufacturing_10 youzi_tank_manufacturing_11 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			armor_value = 0.35
+			hardness = 0.3
+			build_cost_ic = 0.06
+			defense = 0.05
+			build_cost_ic = 0.05
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_13
+		name  = youzi_tank_manufacturing_13
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_quality
+
+		position = { x=4 y=2 }
+
+		all_parents = { youzi_tank_manufacturing_12 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_14 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			soft_attack = 0.15
+            breakthrough = 0.15
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_14
+		name  = youzi_tank_manufacturing_14
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_at
+
+		position = { x=6 y=2 }
+
+		all_parents = { youzi_tank_manufacturing_12 }
+
+		mutually_exclusive = { youzi_tank_manufacturing_13 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			hard_attack = 0.15
+            ap_attack = 0.15
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_15
+		name  = youzi_tank_manufacturing_15
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_weapons
+
+		position = { x=1 y=1 }
+
+		relative_position_id = youzi_tank_manufacturing_13
+		any_parent = {  youzi_tank_manufacturing_13 youzi_tank_manufacturing_14 }
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+			self_propelled_super_heavy_artillery_equipment
+		}
+		equipment_bonus = {
+			soft_attack = 0.03
+            hard_attack = 0.03
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_16
+		name  = youzi_tank_manufacturing_16
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
+
+		position = { x=2 y=1 }
+
+		relative_position_id = youzi_tank_manufacturing_3
+		any_parent = { youzi_tank_manufacturing_3 youzi_tank_manufacturing_8 youzi_tank_manufacturing_9 youzi_tank_manufacturing_15 }
+		
+		limit_to_equipment_type = { 
+			modern_tank_chassis
+			land_cruiser_chassis
+		}
+		equipment_bonus = {
+			reliability = 0.2
+            defense = 0.2
+            breakthrough = 0.25
+            armor_value = 0.16
+			build_cost_ic = 0.07
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_17
+		name  = youzi_tank_manufacturing_17
+		icon = GFX_generic_mio_department_icon_tank_general_quality
+
+		position = { x=2 y=5 }
+
+		all_parents = { youzi_tank_manufacturing_16 }
+		
+		limit_to_equipment_type = { 
+			modern_tank_chassis
+			land_cruiser_chassis
+		}
+		equipment_bonus = {
+			soft_attack = 0.25
+            hard_attack = 0.25
+            ap_attack = 0.2
+			build_cost_ic = 0.08
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_18
+		name  = youzi_tank_manufacturing_18
+		icon = GFX_generic_mio_department_icon_armored_car_engine
+
+		position = { x=7 y=0 }
+
+		limit_to_equipment_type = { 
+			mechanized_equipment
+		}
+		equipment_bonus = {
+			reliability = -0.05
+			build_cost_ic = -0.15
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_19
+		name  = youzi_tank_manufacturing_19
+		icon = GFX_generic_mio_department_icon_mechanized_hull
+
+		position = { x=7 y=1 }
+
+		all_parents = { youzi_tank_manufacturing_18 }
+
+		limit_to_equipment_type = { 
+			mechanized_equipment
+		}
+		equipment_bonus = {
+			armor_value = 0.05
+			defense = 0.1
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_20
+		name  = youzi_tank_manufacturing_20
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=7 y=2 }
+
+		all_parents = { youzi_tank_manufacturing_19 }
+
+		limit_to_equipment_type = { 
+			mechanized_equipment
+		}
+		equipment_bonus = {
+			soft_attack = 0.1
+            hard_attack = 0.05
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_21
+		name  = youzi_tank_manufacturing_21
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=7 y=3 }
+
+		all_parents = { youzi_tank_manufacturing_20 }
+
+		limit_to_equipment_type = { 
+			mechanized_equipment
+		}
+		equipment_bonus = {
+			fuel_consumption = -0.2
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_22
+		name  = youzi_tank_manufacturing_22
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=9 y=0 }
+
+		limit_to_equipment_type = { 
+			armor
+		    armored_car_equipment
+		    mechanized_equipment
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_size_up_requirement = -0.2
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.15
+			military_industrial_organization_design_team_change_cost = -0.2
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_23
+		name  = youzi_tank_manufacturing_23
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_technology
+
+		position = { x=9 y=1 }
+
+		all_parents = { youzi_tank_manufacturing_22 }
+
+		limit_to_equipment_type = { 
+			armor
+		    armored_car_equipment
+		    mechanized_equipment
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+	trait = {
+		token = youzi_tank_manufacturing_24
+		name  = youzi_tank_manufacturing_24
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=9 y=2 }
+
+		all_parents = { youzi_tank_manufacturing_23 }
+
+		limit_to_equipment_type = { 
+			armor
+		    armored_car_equipment
+		    mechanized_equipment
+		}
+		production_bonus = {
+			production_capacity_factor = 0.07
+		 }
+	}
+	trait = {
+		token = youzi_tank_manufacturing_25
+		name  = youzi_tank_manufacturing_25
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=9 y=3 }
+
+		all_parents = { youzi_tank_manufacturing_24 }
+
+		limit_to_equipment_type = { 
+			armor
+		    armored_car_equipment
+		    mechanized_equipment
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.1
+            production_resource_penalty_factor = -0.15
+            production_conversion_speed_factor =  0.15
+		 }
+	}
+	trait = {
+		token = youzi_tank_manufacturing_26
+		name  = youzi_tank_manufacturing_26
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=9 y=4 }
+
+		all_parents = { youzi_tank_manufacturing_25 }
+
+		limit_to_equipment_type = { 
+			armor
+		    armored_car_equipment
+		    mechanized_equipment
+		}
+		production_bonus = {
+			roduction_efficiency_cap_factor = 0.1
+            production_efficiency_gain_factor = 0.15
+		 }
+	}
+ }

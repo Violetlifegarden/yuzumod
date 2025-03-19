@@ -1,0 +1,111 @@
+sub_units = {
+
+	yzc_artillery_brigade = {
+		abbreviation = "YZCART"
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1198
+		ai_priority = 100
+		active = yes
+		is_artillery_brigade = yes
+		
+		type = {
+			infantry
+			artillery
+		}
+
+		group = combat_support
+		
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+		}
+
+		combat_width = 3
+		can_be_parachuted = yes
+		manpower = 1000
+		#Offensive Abilities
+		soft_attack = 0.25
+		hard_attack = 0.2
+		need = {
+			artillery_equipment = 36
+			motorized_equipment = 42
+			support_equipment = 15
+		}
+		
+		max_strength = 15
+		max_organisation = 10
+		default_morale = 0.45
+		training_time = 100
+		weight = 0.3
+		supply_consumption = 0.1
+		suppression = 10
+		#Line artillery bonuses
+		# soft_attack = 0.25
+		plains = {
+			movement = 0.15
+		}
+	}
+
+	yzc_self_propelled_artillery_brigade = {
+		abbreviation = "YZCSPA"
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 11983
+		ai_priority = 100
+		active = yes
+		is_artillery_brigade = yes
+		
+		type = {
+			infantry
+			artillery
+			armor
+		}
+
+		group = combat_support
+		
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+			category_tanks
+			category_front_line
+		}
+		can_be_parachuted = yes
+
+		combat_width = 3
+		suppression = 10
+		manpower = 1000
+		need = {
+			medium_tank_artillery_chassis = 36
+			motorized_equipment = 42
+			support_equipment = 15
+		}
+		
+		#Offensive Abilities
+		soft_attack = 0.2
+		hard_attack = 0.25
+		armor_value = 0.02
+		
+		max_strength = 30
+		max_organisation = 30
+		default_morale = 0.5
+		training_time = 100
+		weight = 0.5
+		supply_consumption = 0.12
+
+		plains = {
+			movement = 0.1
+		}
+		urban = {
+			attack = 0.3
+		}
+		fort = {
+			attack = 0.35
+		}
+		amphibious = {
+			attack = 0.5
+		}
+	}
+}

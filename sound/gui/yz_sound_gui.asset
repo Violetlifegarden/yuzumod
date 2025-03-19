@@ -1,0 +1,303 @@
+soundeffect =
+{
+	name = Martial_Law_senreibanka
+	sounds = {
+		sound = Martial_Law_senreibanka
+	}
+}
+soundeffect =
+{
+	name = Martial_Law_Interface_yuri_s_Revenge_occupation
+	sounds = {
+		sound = Martial_Law_Interface_yuri_s_Revenge_occupation
+	}
+}
+soundeffect =
+{
+	name = murcoming
+	sounds = {
+		sound = murcoming
+	}
+}
+soundeffect =
+{
+	name = makcoming
+	sounds = {
+		sound = makcoming
+	}
+}
+soundeffect =
+{
+	name = yoscoming
+	sounds = {
+		sound = yoscoming
+	}
+}
+soundeffect =
+{
+	name = murasame_end
+	sounds = {
+		sound = murasame_end
+	}
+}
+soundeffect =
+{
+	name = murasame_senren
+	sounds = {
+		sound = murasame_senren
+	}
+}
+soundeffect =
+{
+	name = megcoming
+	sounds = {
+		sound = megcoming
+	}
+}
+soundeffect =
+{
+	name = nencoming
+	sounds = {
+		sound = nencoming
+	}
+}
+soundeffect =
+{
+	name = tokcoming
+	sounds = {
+		sound = tokcoming
+	}
+}
+soundeffect =
+{
+	name = wakcoming
+	sounds = {
+		sound = wakcoming
+	}
+}
+soundeffect =
+{
+	name = chocoming
+	sounds = {
+		sound = chocoming
+	}
+}
+soundeffect =
+{
+	name = meg_exit
+	sounds = {
+		sound = meg_exit
+	}
+}
+soundeffect =
+{
+	name = wak_title
+	sounds = {
+		sound = wak_title
+	}
+}
+
+soundeffect =
+{
+	name = nancoming
+	sounds = {
+		sound = nancoming
+	}
+}
+soundeffect =
+{
+	name = ayacoming
+	sounds = {
+		sound = ayacoming
+	}
+}
+soundeffect =
+{
+	name = hazcoming
+	sounds = {
+		sound = hazcoming
+	}
+}
+soundeffect =
+{
+	name = maycoming
+	sounds = {
+		sound = maycoming
+	}
+}
+soundeffect =
+{
+	name = aya_tittle
+	sounds = {
+		sound = aya_tittle
+	}
+}
+soundeffect =
+{
+	name = nan_goodbye
+	sounds = {
+		sound = nan_goodbye
+	}
+}
+soundeffect =
+{
+	name = nat_end
+	sounds = {
+		sound = nat_end
+	}
+}
+soundeffect =
+{
+	name = nat_yuzu
+	sounds = {
+		sound = nat_yuzu
+	}
+}
+soundeffect =
+{
+	name = natcoming
+	sounds = {
+		sound = natcoming
+	}
+}
+soundeffect =
+{
+	name = suz_yuzu
+	sounds = {
+		sound = suz_yuzu
+	}
+}
+soundeffect =
+{
+	name = mei_yuzu
+	sounds = {
+		sound = mei_yuzu
+	}
+}
+soundeffect =
+{
+	name = meicoming
+	sounds = {
+		sound = meicoming
+	}
+}
+soundeffect =
+{
+	name = suzcoming
+	sounds = {
+		sound = suzcoming
+	}
+}
+soundeffect =
+{
+	name = kancoming
+	sounds = {
+		sound = kancoming
+	}
+}
+soundeffect =
+{
+	name = kan_title
+	sounds = {
+		sound = kan_title
+	}
+}
+soundeffect =
+{
+	name = kan_yuzu
+	sounds = {
+		sound = kan_yuzu
+	}
+}
+soundeffect =
+{
+	name = noz_yuzu
+	sounds = {
+		sound = noz_yuzu
+	}
+}
+soundeffect =
+{
+	name = amacoming
+	sounds = {
+		sound = amacoming
+	}
+}
+soundeffect =
+{
+	name = kagcoming
+	sounds = {
+		sound = kagcoming
+	}
+}
+soundeffect =
+{
+	name = kurcoming
+	sounds = {
+		sound = kurcoming
+	}
+}
+soundeffect =
+{
+	name = noacoming
+	sounds = {
+		sound = noacoming
+	}
+}
+soundeffect =
+{
+	name = oricoming
+	sounds = {
+		sound = oricoming
+	}
+}
+soundeffect =
+{
+	name = fumcoming
+	sounds = {
+		sound = fumcoming
+	}
+}
+soundeffect =
+{
+	name = ama_title
+	sounds = {
+		sound = ama_title
+	}
+}
+soundeffect =
+{
+	name = noa_goodbye
+	sounds = {
+		sound = noa_goodbye
+	}
+}
+soundeffect =
+{
+	name = murasame_attention1
+	sounds = {
+		sound = murasame_attention1
+	}
+}
+soundeffect =
+{
+	name = nozcoming
+	sounds = {
+		sound = nozcoming
+	}
+}
+soundeffect =
+{
+	name = rok_kohcoming
+	sounds = {
+		sound = rok_kohcoming
+	}
+}
+soundeffect =
+{
+	name = meg_yuzu
+	sounds = {
+		sound = meg_yuzu
+	}
+}
+
